@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RentalOfPremises.WinForms.Properties
+namespace TestShell.Properties
 {
 
 
