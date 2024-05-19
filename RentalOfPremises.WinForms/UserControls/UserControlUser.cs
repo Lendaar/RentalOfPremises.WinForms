@@ -1,8 +1,8 @@
-﻿using System;
+﻿using RentalOfPremises.WinForms.Forms;
+using System;
 using System.Windows.Forms;
-using TestShell.Forms;
 
-namespace TestShell.UserControls
+namespace RentalOfPremises.WinForms.UserControls
 {
     public partial class UserControlUser : UserControl
     {

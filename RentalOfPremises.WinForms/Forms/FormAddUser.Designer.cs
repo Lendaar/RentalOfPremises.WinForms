@@ -1,4 +1,4 @@
-﻿namespace TestShell.Forms
+﻿namespace RentalOfPremises.WinForms.Forms
 {
     partial class FormAddUser
     {

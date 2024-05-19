@@ -1,6 +1,6 @@
 ﻿using MaterialSkin.Controls;
 
-namespace TestShell
+namespace RentalOfPremises.WinForms.Forms
 {
     public partial class Form1 : MaterialForm
     {

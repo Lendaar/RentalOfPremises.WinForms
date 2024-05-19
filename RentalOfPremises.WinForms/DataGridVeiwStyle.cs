@@ -1,11 +1,11 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace TestShell
+namespace RentalOfPremises.WinForms
 {
     public static class DataGridVeiwStyle
     {
-        public static void  Stylization(this DataGridView dgv)
+        public static void Stylization(this DataGridView dgv)
         {
             dgv.BorderStyle = BorderStyle.None;
             dgv.BackgroundColor = Color.FromArgb(58, 58, 58); ;

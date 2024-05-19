@@ -1,4 +1,4 @@
-﻿namespace TestShell
+﻿namespace RentalOfPremises.WinForms.Forms
 {
     partial class FormAuthorization
     {

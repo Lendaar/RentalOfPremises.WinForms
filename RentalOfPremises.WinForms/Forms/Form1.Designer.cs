@@ -1,4 +1,6 @@
-﻿namespace TestShell
+﻿using RentalOfPremises.WinForms.UserControls;
+
+namespace RentalOfPremises.WinForms.Forms
 {
     partial class Form1
     {
@@ -38,7 +40,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.userControlUser3 = new TestShell.UserControls.UserControlUser();
+            this.userControlUser3 = new UserControlUser();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();

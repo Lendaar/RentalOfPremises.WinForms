@@ -1,4 +1,4 @@
-﻿namespace TestShell.UserControls
+﻿namespace RentalOfPremises.WinForms.UserControls
 {
     partial class UserControlUser
     {
