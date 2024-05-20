@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RentalOfPremises.WinForms.General;
 using RentalOfPremises.WinForms.Models;
 using RentalOfPremises.WinForms.ModelsRequest.User;
 using System;
@@ -86,12 +87,19 @@ namespace RentalOfPremises.WinForms.BL
                 var users = await client.PutAsync("User/", data);
                 if (users.StatusCode.Equals(HttpStatusCode.Conflict))
                 {
-                    MessageBox.Show("Ошибка валидации", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var rez = await users.Content.ReadAsStringAsync();
+                    var errors = JsonConvert.DeserializeObject<Errors>(rez);
+
+                    var message = "";
+                    foreach ( var error in errors.MessageErrors )
+                    {
+                        message += error.Message + "\n";
+                    }
+                    MessageBox.Show($"{message}", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return DialogResult.No;
                 }
                 
                 users.EnsureSuccessStatusCode();
-
                 MessageBox.Show("Запись обновлена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return DialogResult.OK;
             }

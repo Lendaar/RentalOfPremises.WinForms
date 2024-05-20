@@ -107,8 +107,10 @@
     <Compile Include="Forms\FormAuthorization.Designer.cs">
       <DependentUpon>FormAuthorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="General\Errors.cs" />
     <Compile Include="General\GetElementsFromEnum.cs" />
     <Compile Include="General\GetHttpClient.cs" />
+    <Compile Include="General\MessageErrors.cs" />
     <Compile Include="General\InitMaterial.cs" />
     <Compile Include="ModelsRequest\ContractRequest.cs" />
     <Compile Include="ModelsRequest\PaymentInvoiceRequestModel.cs" />
