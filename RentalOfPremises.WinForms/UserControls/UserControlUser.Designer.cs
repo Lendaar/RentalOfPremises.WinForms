@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            MaterialSkin.MaterialListBoxItem materialListBoxItem1 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem2 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem3 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem4 = new MaterialSkin.MaterialListBoxItem();
             this.materialLabel_count = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox_search = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialButton_delete = new MaterialSkin.Controls.MaterialButton();
@@ -41,13 +37,13 @@
             this.materialListBox_filter = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialButton_exit = new MaterialSkin.Controls.MaterialButton();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -64,9 +60,9 @@
             this.materialLabel_count.Margin = new System.Windows.Forms.Padding(5);
             this.materialLabel_count.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel_count.Name = "materialLabel_count";
-            this.materialLabel_count.Size = new System.Drawing.Size(157, 19);
+            this.materialLabel_count.Size = new System.Drawing.Size(111, 19);
             this.materialLabel_count.TabIndex = 16;
-            this.materialLabel_count.Text = "Количество записей:";
+            this.materialLabel_count.Text = "Всего записей:";
             // 
             // materialTextBox_search
             // 
@@ -99,6 +95,7 @@
             this.materialTextBox_search.TrailingIcon = null;
             this.materialTextBox_search.UseAccent = false;
             this.materialTextBox_search.UseSystemPasswordChar = false;
+            this.materialTextBox_search.TextChanged += new System.EventHandler(this.materialTextBox_search_TextChanged);
             // 
             // materialButton_delete
             // 
@@ -184,22 +181,6 @@
             this.materialListBox_filter.BorderColor = System.Drawing.Color.LightGray;
             this.materialListBox_filter.Depth = 0;
             this.materialListBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            materialListBoxItem1.SecondaryText = "Все пользователи";
-            materialListBoxItem1.Tag = null;
-            materialListBoxItem1.Text = "По умолчанию";
-            materialListBoxItem2.SecondaryText = "";
-            materialListBoxItem2.Tag = null;
-            materialListBoxItem2.Text = "Сотрудник";
-            materialListBoxItem3.SecondaryText = "";
-            materialListBoxItem3.Tag = null;
-            materialListBoxItem3.Text = "Ст. Сотрудник";
-            materialListBoxItem4.SecondaryText = "";
-            materialListBoxItem4.Tag = null;
-            materialListBoxItem4.Text = "Администратор";
-            this.materialListBox_filter.Items.Add(materialListBoxItem1);
-            this.materialListBox_filter.Items.Add(materialListBoxItem2);
-            this.materialListBox_filter.Items.Add(materialListBoxItem3);
-            this.materialListBox_filter.Items.Add(materialListBoxItem4);
             this.materialListBox_filter.Location = new System.Drawing.Point(17, 49);
             this.materialListBox_filter.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox_filter.Name = "materialListBox_filter";
@@ -210,6 +191,7 @@
             this.materialListBox_filter.Size = new System.Drawing.Size(218, 229);
             this.materialListBox_filter.TabIndex = 1;
             this.materialListBox_filter.UseAccentColor = true;
+            this.materialListBox_filter.SelectedIndexChanged += new MaterialSkin.Controls.MaterialListBox.SelectedIndexChangedEventHandler(this.materialListBox_filter_SelectedIndexChanged);
             // 
             // materialLabel2
             // 
@@ -228,7 +210,6 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -245,27 +226,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1103, 558);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ФИО";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Логин";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Роль";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // tableLayoutPanel1
             // 
@@ -332,6 +293,35 @@
             this.materialButton_exit.UseVisualStyleBackColor = true;
             this.materialButton_exit.Click += new System.EventHandler(this.materialButton_exit_Click);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "FIO";
+            this.Column1.HeaderText = "ФИО";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 416;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "LoginUser";
+            this.Column2.FillWeight = 50F;
+            this.Column2.HeaderText = "Логин";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column2.Width = 333;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "RoleUser";
+            this.Column3.FillWeight = 30F;
+            this.Column3.HeaderText = "Роль";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column3.Width = 333;
+            // 
             // UserControlUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +329,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UserControlUser";
             this.Size = new System.Drawing.Size(1390, 657);
+            this.Load += new System.EventHandler(this.UserControlUser_Load);
             this.materialCard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

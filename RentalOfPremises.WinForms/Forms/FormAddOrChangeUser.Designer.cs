@@ -64,7 +64,7 @@
             this.materialButton_cancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_cancel.UseAccentColor = false;
             this.materialButton_cancel.UseVisualStyleBackColor = true;
-            this.materialButton_cancel.Click += new System.EventHandler(this.materialButton2_Click);
+            this.materialButton_cancel.Click += new System.EventHandler(this.materialButton_cancel_Click);
             // 
             // materialButton_save
             // 
@@ -86,7 +86,7 @@
             this.materialButton_save.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_save.UseAccentColor = false;
             this.materialButton_save.UseVisualStyleBackColor = true;
-            this.materialButton_save.Click += new System.EventHandler(this.materialButton1_Click);
+            this.materialButton_save.Click += new System.EventHandler(this.materialButton_save_Click);
             // 
             // materialLabel1
             // 
@@ -111,7 +111,7 @@
             this.materialTextBox_name.Hint = "Введите имя";
             this.materialTextBox_name.LeadingIcon = null;
             this.materialTextBox_name.Location = new System.Drawing.Point(125, 111);
-            this.materialTextBox_name.MaxLength = 20;
+            this.materialTextBox_name.MaxLength = 100;
             this.materialTextBox_name.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_name.Name = "materialTextBox_name";
             this.materialTextBox_name.PasswordChar = '\0';
@@ -154,7 +154,7 @@
             this.materialTextBox_surname.Hint = "Введите фамилию";
             this.materialTextBox_surname.LeadingIcon = null;
             this.materialTextBox_surname.Location = new System.Drawing.Point(125, 181);
-            this.materialTextBox_surname.MaxLength = 20;
+            this.materialTextBox_surname.MaxLength = 100;
             this.materialTextBox_surname.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_surname.Name = "materialTextBox_surname";
             this.materialTextBox_surname.PasswordChar = '\0';
@@ -196,7 +196,7 @@
             this.materialTextBox_patronomic.Hint = "Введите отчество";
             this.materialTextBox_patronomic.LeadingIcon = null;
             this.materialTextBox_patronomic.Location = new System.Drawing.Point(125, 251);
-            this.materialTextBox_patronomic.MaxLength = 20;
+            this.materialTextBox_patronomic.MaxLength = 100;
             this.materialTextBox_patronomic.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_patronomic.Name = "materialTextBox_patronomic";
             this.materialTextBox_patronomic.PasswordChar = '\0';
@@ -238,7 +238,7 @@
             this.materialTextBox_login.Hint = "Введите логин";
             this.materialTextBox_login.LeadingIcon = null;
             this.materialTextBox_login.Location = new System.Drawing.Point(659, 111);
-            this.materialTextBox_login.MaxLength = 20;
+            this.materialTextBox_login.MaxLength = 100;
             this.materialTextBox_login.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_login.Name = "materialTextBox_login";
             this.materialTextBox_login.PasswordChar = '\0';
@@ -280,7 +280,7 @@
             this.materialTextBox_password.Hint = "Введите пароль";
             this.materialTextBox_password.LeadingIcon = null;
             this.materialTextBox_password.Location = new System.Drawing.Point(659, 181);
-            this.materialTextBox_password.MaxLength = 20;
+            this.materialTextBox_password.MaxLength = 100;
             this.materialTextBox_password.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_password.Name = "materialTextBox_password";
             this.materialTextBox_password.PasswordChar = '\0';
@@ -344,7 +344,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(1148, 397);
+            this.ClientSize = new System.Drawing.Size(1180, 475);
             this.Controls.Add(this.materialComboBox_role);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);
