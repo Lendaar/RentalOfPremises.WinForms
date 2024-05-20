@@ -122,8 +122,7 @@
             this.materialTextBox_name.SelectionLength = 0;
             this.materialTextBox_name.SelectionStart = 0;
             this.materialTextBox_name.ShortcutsEnabled = true;
-            this.materialTextBox_name.ShowAssistiveText = true;
-            this.materialTextBox_name.Size = new System.Drawing.Size(407, 64);
+            this.materialTextBox_name.Size = new System.Drawing.Size(407, 48);
             this.materialTextBox_name.TabIndex = 9;
             this.materialTextBox_name.TabStop = false;
             this.materialTextBox_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -344,7 +343,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(1180, 475);
+            this.ClientSize = new System.Drawing.Size(1196, 394);
             this.Controls.Add(this.materialComboBox_role);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);
