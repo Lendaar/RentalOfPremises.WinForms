@@ -33,6 +33,7 @@ namespace RentalOfPremises.WinForms
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
             dgv.MultiSelect = false;
+            dgv.AutoGenerateColumns = false;
         }
     }
 }
