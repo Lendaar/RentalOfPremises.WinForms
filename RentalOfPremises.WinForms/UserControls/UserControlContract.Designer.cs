@@ -45,14 +45,16 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.materialButton_toPDF = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialButton_exit = new MaterialSkin.Controls.MaterialButton();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.materialButton_toPDF = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialLabel_count
@@ -76,9 +78,9 @@
             this.materialTextBox_search.Depth = 0;
             this.materialTextBox_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox_search.HideSelection = true;
-            this.materialTextBox_search.Hint = "Поиск по наименованию арендатора";
+            this.materialTextBox_search.Hint = "Поиск по арендатору";
             this.materialTextBox_search.LeadingIcon = null;
-            this.materialTextBox_search.Location = new System.Drawing.Point(664, 10);
+            this.materialTextBox_search.Location = new System.Drawing.Point(498, 10);
             this.materialTextBox_search.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.materialTextBox_search.MaxLength = 32767;
             this.materialTextBox_search.MouseState = MaterialSkin.MouseState.OUT;
@@ -91,7 +93,7 @@
             this.materialTextBox_search.SelectionLength = 0;
             this.materialTextBox_search.SelectionStart = 0;
             this.materialTextBox_search.ShortcutsEnabled = true;
-            this.materialTextBox_search.Size = new System.Drawing.Size(313, 48);
+            this.materialTextBox_search.Size = new System.Drawing.Size(270, 48);
             this.materialTextBox_search.TabIndex = 14;
             this.materialTextBox_search.TabStop = false;
             this.materialTextBox_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -168,8 +170,9 @@
             this.materialCard1.Controls.Add(this.materialListBox_roomInArend);
             this.materialCard1.Controls.Add(this.materialLabel2);
             this.materialCard1.Depth = 0;
+            this.materialCard1.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(1126, 67);
+            this.materialCard1.Location = new System.Drawing.Point(14, 3);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14, 3, 14, 14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
@@ -282,7 +285,7 @@
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.materialLabel_count, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.materialCard1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -299,34 +302,12 @@
             this.flowLayoutPanel1.Controls.Add(this.materialButton_add);
             this.flowLayoutPanel1.Controls.Add(this.materialButton_change);
             this.flowLayoutPanel1.Controls.Add(this.materialButton_delete);
-            this.flowLayoutPanel1.Controls.Add(this.materialButton_toPDF);
             this.flowLayoutPanel1.Controls.Add(this.materialTextBox_search);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1106, 58);
             this.flowLayoutPanel1.TabIndex = 10;
-            // 
-            // materialButton_toPDF
-            // 
-            this.materialButton_toPDF.AutoSize = false;
-            this.materialButton_toPDF.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton_toPDF.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton_toPDF.Depth = 0;
-            this.materialButton_toPDF.HighEmphasis = true;
-            this.materialButton_toPDF.Icon = null;
-            this.materialButton_toPDF.Location = new System.Drawing.Point(502, 6);
-            this.materialButton_toPDF.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton_toPDF.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton_toPDF.Name = "materialButton_toPDF";
-            this.materialButton_toPDF.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton_toPDF.Size = new System.Drawing.Size(158, 45);
-            this.materialButton_toPDF.TabIndex = 15;
-            this.materialButton_toPDF.Text = "Сохранить в PDF";
-            this.materialButton_toPDF.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton_toPDF.UseAccentColor = false;
-            this.materialButton_toPDF.UseVisualStyleBackColor = true;
-            this.materialButton_toPDF.Click += new System.EventHandler(this.materialButton_toPDF_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -360,6 +341,39 @@
             this.materialButton_exit.UseVisualStyleBackColor = true;
             this.materialButton_exit.Click += new System.EventHandler(this.materialButton_exit_Click);
             // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.materialCard1);
+            this.flowLayoutPanel3.Controls.Add(this.materialButton_toPDF);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(1115, 67);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(274, 558);
+            this.flowLayoutPanel3.TabIndex = 18;
+            // 
+            // materialButton_toPDF
+            // 
+            this.materialButton_toPDF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton_toPDF.AutoSize = false;
+            this.materialButton_toPDF.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton_toPDF.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton_toPDF.Depth = 0;
+            this.materialButton_toPDF.HighEmphasis = true;
+            this.materialButton_toPDF.Icon = null;
+            this.materialButton_toPDF.Location = new System.Drawing.Point(14, 318);
+            this.materialButton_toPDF.Margin = new System.Windows.Forms.Padding(14, 6, 4, 6);
+            this.materialButton_toPDF.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton_toPDF.Name = "materialButton_toPDF";
+            this.materialButton_toPDF.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton_toPDF.Size = new System.Drawing.Size(252, 45);
+            this.materialButton_toPDF.TabIndex = 15;
+            this.materialButton_toPDF.Text = "Сохранить в PDF";
+            this.materialButton_toPDF.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton_toPDF.UseAccentColor = false;
+            this.materialButton_toPDF.UseVisualStyleBackColor = true;
+            this.materialButton_toPDF.Click += new System.EventHandler(this.materialButton_toPDF_Click);
+            // 
             // UserControlContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +387,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,5 +414,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton_toPDF;
         private MaterialSkin.Controls.MaterialListBox materialListBox_roomInArend;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
     }
 }

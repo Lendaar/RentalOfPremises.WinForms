@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            MaterialSkin.MaterialListBoxItem materialListBoxItem16 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem17 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem18 = new MaterialSkin.MaterialListBoxItem();
+            MaterialSkin.MaterialListBoxItem materialListBoxItem1 = new MaterialSkin.MaterialListBoxItem();
+            MaterialSkin.MaterialListBoxItem materialListBoxItem2 = new MaterialSkin.MaterialListBoxItem();
+            MaterialSkin.MaterialListBoxItem materialListBoxItem3 = new MaterialSkin.MaterialListBoxItem();
             this.materialLabel_count = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox_search = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialButton_delete = new MaterialSkin.Controls.MaterialButton();
@@ -91,7 +91,7 @@
             this.materialTextBox_search.SelectionLength = 0;
             this.materialTextBox_search.SelectionStart = 0;
             this.materialTextBox_search.ShortcutsEnabled = true;
-            this.materialTextBox_search.Size = new System.Drawing.Size(272, 48);
+            this.materialTextBox_search.Size = new System.Drawing.Size(270, 48);
             this.materialTextBox_search.TabIndex = 14;
             this.materialTextBox_search.TabStop = false;
             this.materialTextBox_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -183,18 +183,18 @@
             this.materialListBox_filter.BorderColor = System.Drawing.Color.LightGray;
             this.materialListBox_filter.Depth = 0;
             this.materialListBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            materialListBoxItem16.SecondaryText = "Все пользователи";
-            materialListBoxItem16.Tag = null;
-            materialListBoxItem16.Text = "По умолчанию";
-            materialListBoxItem17.SecondaryText = "";
-            materialListBoxItem17.Tag = null;
-            materialListBoxItem17.Text = "Занято";
-            materialListBoxItem18.SecondaryText = "";
-            materialListBoxItem18.Tag = null;
-            materialListBoxItem18.Text = "Свободно";
-            this.materialListBox_filter.Items.Add(materialListBoxItem16);
-            this.materialListBox_filter.Items.Add(materialListBoxItem17);
-            this.materialListBox_filter.Items.Add(materialListBoxItem18);
+            materialListBoxItem1.SecondaryText = "Все пользователи";
+            materialListBoxItem1.Tag = null;
+            materialListBoxItem1.Text = "По умолчанию";
+            materialListBoxItem2.SecondaryText = "";
+            materialListBoxItem2.Tag = null;
+            materialListBoxItem2.Text = "Занято";
+            materialListBoxItem3.SecondaryText = "";
+            materialListBoxItem3.Tag = null;
+            materialListBoxItem3.Text = "Свободно";
+            this.materialListBox_filter.Items.Add(materialListBoxItem1);
+            this.materialListBox_filter.Items.Add(materialListBoxItem2);
+            this.materialListBox_filter.Items.Add(materialListBoxItem3);
             this.materialListBox_filter.Location = new System.Drawing.Point(17, 59);
             this.materialListBox_filter.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox_filter.Name = "materialListBox_filter";

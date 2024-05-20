@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            MaterialSkin.MaterialListBoxItem materialListBoxItem5 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem6 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem7 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem8 = new MaterialSkin.MaterialListBoxItem();
+            MaterialSkin.MaterialListBoxItem materialListBoxItem1 = new MaterialSkin.MaterialListBoxItem();
+            MaterialSkin.MaterialListBoxItem materialListBoxItem2 = new MaterialSkin.MaterialListBoxItem();
+            MaterialSkin.MaterialListBoxItem materialListBoxItem3 = new MaterialSkin.MaterialListBoxItem();
+            MaterialSkin.MaterialListBoxItem materialListBoxItem4 = new MaterialSkin.MaterialListBoxItem();
             this.materialLabel_count = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox_search = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialButton_delete = new MaterialSkin.Controls.MaterialButton();
@@ -42,6 +42,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -50,7 +51,6 @@
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialListBox_filter = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialButton_allInfo = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -96,7 +96,7 @@
             this.materialTextBox_search.SelectionLength = 0;
             this.materialTextBox_search.SelectionStart = 0;
             this.materialTextBox_search.ShortcutsEnabled = true;
-            this.materialTextBox_search.Size = new System.Drawing.Size(272, 48);
+            this.materialTextBox_search.Size = new System.Drawing.Size(270, 48);
             this.materialTextBox_search.TabIndex = 14;
             this.materialTextBox_search.TabStop = false;
             this.materialTextBox_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -222,6 +222,12 @@
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "КПП";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -319,22 +325,22 @@
             this.materialListBox_filter.BorderColor = System.Drawing.Color.LightGray;
             this.materialListBox_filter.Depth = 0;
             this.materialListBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            materialListBoxItem5.SecondaryText = "Все пользователи";
-            materialListBoxItem5.Tag = null;
-            materialListBoxItem5.Text = "По умолчанию";
-            materialListBoxItem6.SecondaryText = "";
-            materialListBoxItem6.Tag = null;
-            materialListBoxItem6.Text = "Сотрудник";
-            materialListBoxItem7.SecondaryText = "";
-            materialListBoxItem7.Tag = null;
-            materialListBoxItem7.Text = "Ст. Сотрудник";
-            materialListBoxItem8.SecondaryText = "";
-            materialListBoxItem8.Tag = null;
-            materialListBoxItem8.Text = "Администратор";
-            this.materialListBox_filter.Items.Add(materialListBoxItem5);
-            this.materialListBox_filter.Items.Add(materialListBoxItem6);
-            this.materialListBox_filter.Items.Add(materialListBoxItem7);
-            this.materialListBox_filter.Items.Add(materialListBoxItem8);
+            materialListBoxItem1.SecondaryText = "Все пользователи";
+            materialListBoxItem1.Tag = null;
+            materialListBoxItem1.Text = "По умолчанию";
+            materialListBoxItem2.SecondaryText = "";
+            materialListBoxItem2.Tag = null;
+            materialListBoxItem2.Text = "Сотрудник";
+            materialListBoxItem3.SecondaryText = "";
+            materialListBoxItem3.Tag = null;
+            materialListBoxItem3.Text = "Ст. Сотрудник";
+            materialListBoxItem4.SecondaryText = "";
+            materialListBoxItem4.Tag = null;
+            materialListBoxItem4.Text = "Администратор";
+            this.materialListBox_filter.Items.Add(materialListBoxItem1);
+            this.materialListBox_filter.Items.Add(materialListBoxItem2);
+            this.materialListBox_filter.Items.Add(materialListBoxItem3);
+            this.materialListBox_filter.Items.Add(materialListBoxItem4);
             this.materialListBox_filter.Location = new System.Drawing.Point(17, 37);
             this.materialListBox_filter.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox_filter.Name = "materialListBox_filter";
@@ -356,12 +362,6 @@
             this.materialLabel2.Size = new System.Drawing.Size(218, 23);
             this.materialLabel2.TabIndex = 0;
             this.materialLabel2.Text = "Фильтрация по ролям";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "КПП";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // materialButton_allInfo
             // 
