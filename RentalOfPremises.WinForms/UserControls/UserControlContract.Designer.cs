@@ -46,7 +46,8 @@
             this.materialButton_toPDF = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialButton_exit = new MaterialSkin.Controls.MaterialButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.materialListBox_filter = new MaterialSkin.Controls.MaterialListBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -164,7 +165,8 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.groupBox1);
+            this.materialCard1.Controls.Add(this.materialListBox_filter);
+            this.materialCard1.Controls.Add(this.materialLabel2);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(1126, 67);
@@ -330,15 +332,33 @@
             this.materialButton_exit.UseVisualStyleBackColor = true;
             this.materialButton_exit.Click += new System.EventHandler(this.materialButton_exit_Click);
             // 
-            // groupBox1
+            // materialListBox_filter
             // 
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(7, 9);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(235, 243);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Арендованные помещения";
+            this.materialListBox_filter.BackColor = System.Drawing.Color.White;
+            this.materialListBox_filter.BorderColor = System.Drawing.Color.LightGray;
+            this.materialListBox_filter.Depth = 0;
+            this.materialListBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialListBox_filter.Location = new System.Drawing.Point(17, 50);
+            this.materialListBox_filter.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialListBox_filter.Name = "materialListBox_filter";
+            this.materialListBox_filter.SelectedIndex = -1;
+            this.materialListBox_filter.SelectedItem = null;
+            this.materialListBox_filter.ShowBorder = false;
+            this.materialListBox_filter.ShowScrollBar = true;
+            this.materialListBox_filter.Size = new System.Drawing.Size(218, 229);
+            this.materialListBox_filter.TabIndex = 3;
+            this.materialListBox_filter.UseAccentColor = true;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(17, 15);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(218, 23);
+            this.materialLabel2.TabIndex = 2;
+            this.materialLabel2.Text = "Арендованные помещения";
             // 
             // UserControlContract
             // 
@@ -377,6 +397,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private MaterialSkin.Controls.MaterialButton materialButton_toPDF;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialListBox materialListBox_filter;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
     }
 }

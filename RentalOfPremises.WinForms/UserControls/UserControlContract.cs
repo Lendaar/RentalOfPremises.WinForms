@@ -38,9 +38,8 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton_add_Click(object sender, EventArgs e)
         {
-            //var form = new FormAddUser();
-            //form.ShowDialog();
-            dataGridView1.Rows.Add("fsdfsd");
+            var form = new FormAddOrChangeContract();
+            form.ShowDialog();
         }
     }
 }
