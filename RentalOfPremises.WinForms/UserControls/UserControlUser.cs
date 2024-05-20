@@ -12,30 +12,29 @@ namespace RentalOfPremises.WinForms.UserControls
             dataGridView1.Stylization();
         }
 
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-            //var form = new FormAddUser();
-            //form.ShowDialog();
-            dataGridView1.Rows.Add("fsdfsd");
-        }
-
-        private void materialButton3_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void materialButton4_Click(object sender, EventArgs e)
+        private void materialButton_exit_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Вы действительно хотите выйти из аккаунта?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 ((Form)this.TopLevelControl).Close();
             }
+        }
+
+        private void materialButton_delete_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+        }
+
+        private void materialButton_change_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton_add_Click(object sender, EventArgs e)
+        {
+            var form = new FormAddOrChangeUser();
+            form.ShowDialog();
         }
     }
 }

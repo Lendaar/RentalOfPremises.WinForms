@@ -28,44 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialTextBox_login = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox22 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.materialTextBox_password = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialButton_auth = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton_exit = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
-            // materialTextBox21
+            // materialTextBox_login
             // 
-            this.materialTextBox21.AnimateReadOnly = false;
-            this.materialTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox21.Depth = 0;
-            this.materialTextBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox21.HelperText = "Введите логин";
-            this.materialTextBox21.HideSelection = true;
-            this.materialTextBox21.LeadingIcon = null;
-            this.materialTextBox21.Location = new System.Drawing.Point(132, 142);
-            this.materialTextBox21.MaxLength = 20;
-            this.materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox21.Name = "materialTextBox21";
-            this.materialTextBox21.PasswordChar = '\0';
-            this.materialTextBox21.PrefixSuffixText = null;
-            this.materialTextBox21.ReadOnly = false;
-            this.materialTextBox21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox21.SelectedText = "";
-            this.materialTextBox21.SelectionLength = 0;
-            this.materialTextBox21.SelectionStart = 0;
-            this.materialTextBox21.ShortcutsEnabled = true;
-            this.materialTextBox21.ShowAssistiveText = true;
-            this.materialTextBox21.Size = new System.Drawing.Size(407, 64);
-            this.materialTextBox21.TabIndex = 1;
-            this.materialTextBox21.TabStop = false;
-            this.materialTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox21.TrailingIcon = null;
-            this.materialTextBox21.UseAccent = false;
-            this.materialTextBox21.UseSystemPasswordChar = false;
+            this.materialTextBox_login.AnimateReadOnly = false;
+            this.materialTextBox_login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialTextBox_login.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.materialTextBox_login.Depth = 0;
+            this.materialTextBox_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox_login.HideSelection = true;
+            this.materialTextBox_login.Hint = "Введите логин";
+            this.materialTextBox_login.LeadingIcon = null;
+            this.materialTextBox_login.Location = new System.Drawing.Point(132, 142);
+            this.materialTextBox_login.MaxLength = 20;
+            this.materialTextBox_login.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox_login.Name = "materialTextBox_login";
+            this.materialTextBox_login.PasswordChar = '\0';
+            this.materialTextBox_login.PrefixSuffixText = null;
+            this.materialTextBox_login.ReadOnly = false;
+            this.materialTextBox_login.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.materialTextBox_login.SelectedText = "";
+            this.materialTextBox_login.SelectionLength = 0;
+            this.materialTextBox_login.SelectionStart = 0;
+            this.materialTextBox_login.ShortcutsEnabled = true;
+            this.materialTextBox_login.Size = new System.Drawing.Size(407, 48);
+            this.materialTextBox_login.TabIndex = 1;
+            this.materialTextBox_login.TabStop = false;
+            this.materialTextBox_login.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialTextBox_login.TrailingIcon = null;
+            this.materialTextBox_login.UseAccent = false;
+            this.materialTextBox_login.UseSystemPasswordChar = false;
             // 
             // materialLabel1
             // 
@@ -91,92 +90,92 @@
             this.materialLabel2.TabIndex = 3;
             this.materialLabel2.Text = "Пароль:";
             // 
-            // materialTextBox22
+            // materialTextBox_password
             // 
-            this.materialTextBox22.AnimateReadOnly = false;
-            this.materialTextBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox22.Depth = 0;
-            this.materialTextBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox22.HelperText = "Введите пароль";
-            this.materialTextBox22.HideSelection = true;
-            this.materialTextBox22.LeadingIcon = null;
-            this.materialTextBox22.Location = new System.Drawing.Point(132, 216);
-            this.materialTextBox22.MaxLength = 20;
-            this.materialTextBox22.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox22.Name = "materialTextBox22";
-            this.materialTextBox22.PasswordChar = '●';
-            this.materialTextBox22.PrefixSuffixText = null;
-            this.materialTextBox22.ReadOnly = false;
-            this.materialTextBox22.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox22.SelectedText = "";
-            this.materialTextBox22.SelectionLength = 0;
-            this.materialTextBox22.SelectionStart = 0;
-            this.materialTextBox22.ShortcutsEnabled = true;
-            this.materialTextBox22.ShowAssistiveText = true;
-            this.materialTextBox22.Size = new System.Drawing.Size(407, 64);
-            this.materialTextBox22.TabIndex = 4;
-            this.materialTextBox22.TabStop = false;
-            this.materialTextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox22.TrailingIcon = null;
-            this.materialTextBox22.UseAccent = false;
-            this.materialTextBox22.UseSystemPasswordChar = true;
+            this.materialTextBox_password.AnimateReadOnly = false;
+            this.materialTextBox_password.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialTextBox_password.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.materialTextBox_password.Depth = 0;
+            this.materialTextBox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox_password.HideSelection = true;
+            this.materialTextBox_password.Hint = "Введите пароль";
+            this.materialTextBox_password.LeadingIcon = null;
+            this.materialTextBox_password.Location = new System.Drawing.Point(132, 216);
+            this.materialTextBox_password.MaxLength = 20;
+            this.materialTextBox_password.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox_password.Name = "materialTextBox_password";
+            this.materialTextBox_password.PasswordChar = '●';
+            this.materialTextBox_password.PrefixSuffixText = null;
+            this.materialTextBox_password.ReadOnly = false;
+            this.materialTextBox_password.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.materialTextBox_password.SelectedText = "";
+            this.materialTextBox_password.SelectionLength = 0;
+            this.materialTextBox_password.SelectionStart = 0;
+            this.materialTextBox_password.ShortcutsEnabled = true;
+            this.materialTextBox_password.Size = new System.Drawing.Size(407, 48);
+            this.materialTextBox_password.TabIndex = 4;
+            this.materialTextBox_password.TabStop = false;
+            this.materialTextBox_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialTextBox_password.TrailingIcon = null;
+            this.materialTextBox_password.UseAccent = false;
+            this.materialTextBox_password.UseSystemPasswordChar = true;
             // 
-            // materialButton1
+            // materialButton_auth
             // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(51, 299);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(181, 49);
-            this.materialButton1.TabIndex = 5;
-            this.materialButton1.Text = "Войти";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            this.materialButton_auth.AutoSize = false;
+            this.materialButton_auth.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton_auth.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton_auth.Depth = 0;
+            this.materialButton_auth.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.materialButton_auth.HighEmphasis = true;
+            this.materialButton_auth.Icon = null;
+            this.materialButton_auth.Location = new System.Drawing.Point(51, 299);
+            this.materialButton_auth.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton_auth.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton_auth.Name = "materialButton_auth";
+            this.materialButton_auth.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton_auth.Size = new System.Drawing.Size(181, 49);
+            this.materialButton_auth.TabIndex = 5;
+            this.materialButton_auth.Text = "Авторизоваться";
+            this.materialButton_auth.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton_auth.UseAccentColor = false;
+            this.materialButton_auth.UseVisualStyleBackColor = true;
+            this.materialButton_auth.Click += new System.EventHandler(this.materialButton1_Click);
             // 
-            // materialButton2
+            // materialButton_exit
             // 
-            this.materialButton2.AutoSize = false;
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(339, 299);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(181, 49);
-            this.materialButton2.TabIndex = 6;
-            this.materialButton2.Text = "Отмена";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
-            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
+            this.materialButton_exit.AutoSize = false;
+            this.materialButton_exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton_exit.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
+            this.materialButton_exit.Depth = 0;
+            this.materialButton_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.materialButton_exit.HighEmphasis = true;
+            this.materialButton_exit.Icon = null;
+            this.materialButton_exit.Location = new System.Drawing.Point(339, 299);
+            this.materialButton_exit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton_exit.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton_exit.Name = "materialButton_exit";
+            this.materialButton_exit.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton_exit.Size = new System.Drawing.Size(181, 49);
+            this.materialButton_exit.TabIndex = 6;
+            this.materialButton_exit.Text = "Выход";
+            this.materialButton_exit.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton_exit.UseAccentColor = false;
+            this.materialButton_exit.UseVisualStyleBackColor = true;
+            this.materialButton_exit.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // FormAuthorization
             // 
-            this.AcceptButton = this.materialButton1;
+            this.AcceptButton = this.materialButton_auth;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.CancelButton = this.materialButton2;
+            this.CancelButton = this.materialButton_exit;
             this.ClientSize = new System.Drawing.Size(586, 375);
-            this.Controls.Add(this.materialButton2);
-            this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.materialTextBox22);
+            this.Controls.Add(this.materialButton_exit);
+            this.Controls.Add(this.materialButton_auth);
+            this.Controls.Add(this.materialTextBox_password);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.materialTextBox21);
+            this.Controls.Add(this.materialTextBox_login);
             this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_64;
             this.MaximizeBox = false;
             this.Name = "FormAuthorization";
@@ -191,11 +190,11 @@
         }
 
         #endregion
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
+        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox_login;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox22;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox_password;
+        private MaterialSkin.Controls.MaterialButton materialButton_auth;
+        private MaterialSkin.Controls.MaterialButton materialButton_exit;
     }
 }

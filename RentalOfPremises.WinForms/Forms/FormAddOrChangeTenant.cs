@@ -17,7 +17,7 @@ namespace RentalOfPremises.WinForms.Forms
 
         private void materialButton1_Click_2(object sender, System.EventArgs e)
         {
-            materialMaskedTextBox1.Mask = "000";
+            materialMaskedTextBox_telephone.Mask = "000";
         }
     }
 }

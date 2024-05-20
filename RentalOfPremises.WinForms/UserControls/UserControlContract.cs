@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace RentalOfPremises.WinForms.UserControls
 {
-    public partial class UserControlRoom : UserControl
+    public partial class UserControlContract : UserControl
     {
-        public UserControlRoom()
+        public UserControlContract()
         {
             InitializeComponent();
             dataGridView1.Stylization();
@@ -21,6 +21,11 @@ namespace RentalOfPremises.WinForms.UserControls
             }
         }
 
+        private void materialButton_toPDF_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void materialButton_delete_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
@@ -33,8 +38,9 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton_add_Click(object sender, EventArgs e)
         {
-            var form = new FormAddOrChangeRoom();
-            form.ShowDialog();
+            //var form = new FormAddUser();
+            //form.ShowDialog();
+            dataGridView1.Rows.Add("fsdfsd");
         }
     }
 }
