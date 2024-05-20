@@ -9,8 +9,8 @@ namespace RentalOfPremises.WinForms
         {
             var material = MaterialSkinManager.Instance;
             material.AddFormToManage(form);
-            material.Theme = MaterialSkinManager.Themes.DARK;
-            material.ColorScheme = new ColorScheme(Primary.Grey50, Primary.Grey600, Primary.Grey900, Accent.Blue100, TextShade.BLACK);
+            material.Theme = MaterialSkinManager.Themes.LIGHT;
+            material.ColorScheme = new ColorScheme(Primary.Blue200, Primary.LightBlue300, Primary.Blue500, Accent.Blue100, TextShade.BLACK);
         }
     }
 }
