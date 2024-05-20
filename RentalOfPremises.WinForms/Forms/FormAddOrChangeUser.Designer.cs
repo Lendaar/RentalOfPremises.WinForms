@@ -1,6 +1,6 @@
 ﻿namespace RentalOfPremises.WinForms.Forms
 {
-    partial class FormAddUser
+    partial class FormAddOrChangeUser
     {
         /// <summary>
         /// Required designer variable.

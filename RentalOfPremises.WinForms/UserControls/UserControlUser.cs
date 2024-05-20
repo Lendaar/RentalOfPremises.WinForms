@@ -14,8 +14,9 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            var form = new FormAddUser();
-            form.ShowDialog();
+            //var form = new FormAddUser();
+            //form.ShowDialog();
+            dataGridView1.Rows.Add("fsdfsd");
         }
 
         private void materialButton3_Click(object sender, EventArgs e)
