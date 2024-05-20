@@ -2,9 +2,9 @@
 
 namespace RentalOfPremises.WinForms.Forms
 {
-    public partial class Form1 : MaterialForm
+    public partial class FormMain : MaterialForm
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
             InitMaterial.GetUI(this);

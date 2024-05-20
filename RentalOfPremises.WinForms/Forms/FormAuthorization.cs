@@ -22,7 +22,7 @@ namespace RentalOfPremises.WinForms.Forms
         private void materialButton1_Click(object sender, System.EventArgs e)
         {
             this.Hide();
-            var form = new Form1();
+            var form = new FormMain();
             form.ShowDialog();
             this.Show();
         }

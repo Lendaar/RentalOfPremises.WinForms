@@ -2,7 +2,7 @@
 
 namespace RentalOfPremises.WinForms.Forms
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -31,7 +31,7 @@ namespace RentalOfPremises.WinForms.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -40,9 +40,9 @@ namespace RentalOfPremises.WinForms.Forms
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.userControlUser3 = new UserControlUser();
+            this.userControlUser3 = new RentalOfPremises.WinForms.UserControls.UserControlUser();
             this.materialTabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -71,7 +71,6 @@ namespace RentalOfPremises.WinForms.Forms
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.userControlUser3);
             this.tabPage1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabPage1.ImageKey = "dogovor.png";
             this.tabPage1.Location = new System.Drawing.Point(4, 42);
@@ -130,6 +129,7 @@ namespace RentalOfPremises.WinForms.Forms
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.userControlUser3);
             this.tabPage6.ImageKey = "user.png";
             this.tabPage6.Location = new System.Drawing.Point(4, 42);
             this.tabPage6.Name = "tabPage6";
@@ -153,12 +153,12 @@ namespace RentalOfPremises.WinForms.Forms
             // userControlUser3
             // 
             this.userControlUser3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlUser3.Location = new System.Drawing.Point(3, 3);
+            this.userControlUser3.Location = new System.Drawing.Point(0, 0);
             this.userControlUser3.Name = "userControlUser3";
-            this.userControlUser3.Size = new System.Drawing.Size(1580, 573);
-            this.userControlUser3.TabIndex = 0;
+            this.userControlUser3.Size = new System.Drawing.Size(1586, 579);
+            this.userControlUser3.TabIndex = 1;
             // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -170,13 +170,13 @@ namespace RentalOfPremises.WinForms.Forms
             this.ForeColor = System.Drawing.Color.White;
             this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_48;
             this.MinimumSize = new System.Drawing.Size(1600, 700);
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Padding = new System.Windows.Forms.Padding(3, 72, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Договоры для аренды";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.materialTabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -192,7 +192,7 @@ namespace RentalOfPremises.WinForms.Forms
         private System.Windows.Forms.TabPage tabPage6;
         private UserControls.UserControlUser userControlUser1;
         private UserControls.UserControlUser userControlUser2;
-        private UserControls.UserControlUser userControlUser3;
+        private UserControlUser userControlUser3;
     }
 }
 
