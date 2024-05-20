@@ -32,13 +32,13 @@ namespace RentalOfPremises.WinForms.BL
                 }
                 else
                 {
-                    return null;
+                    return new List<UserResponse>();
                 }
             }
             catch 
             {
                 MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                return new List<UserResponse>();
             }
         }
 
