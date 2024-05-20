@@ -34,6 +34,8 @@
             this.materialButton_change = new MaterialSkin.Controls.MaterialButton();
             this.materialButton_add = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialListBox_roomInArend = new MaterialSkin.Controls.MaterialListBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +48,6 @@
             this.materialButton_toPDF = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialButton_exit = new MaterialSkin.Controls.MaterialButton();
-            this.materialListBox_filter = new MaterialSkin.Controls.MaterialListBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -165,7 +165,7 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.materialListBox_filter);
+            this.materialCard1.Controls.Add(this.materialListBox_roomInArend);
             this.materialCard1.Controls.Add(this.materialLabel2);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -176,6 +176,34 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(252, 295);
             this.materialCard1.TabIndex = 10;
+            // 
+            // materialListBox_roomInArend
+            // 
+            this.materialListBox_roomInArend.BackColor = System.Drawing.Color.White;
+            this.materialListBox_roomInArend.BorderColor = System.Drawing.Color.LightGray;
+            this.materialListBox_roomInArend.Depth = 0;
+            this.materialListBox_roomInArend.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialListBox_roomInArend.Location = new System.Drawing.Point(17, 50);
+            this.materialListBox_roomInArend.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialListBox_roomInArend.Name = "materialListBox_roomInArend";
+            this.materialListBox_roomInArend.SelectedIndex = -1;
+            this.materialListBox_roomInArend.SelectedItem = null;
+            this.materialListBox_roomInArend.ShowBorder = false;
+            this.materialListBox_roomInArend.ShowScrollBar = true;
+            this.materialListBox_roomInArend.Size = new System.Drawing.Size(218, 229);
+            this.materialListBox_roomInArend.TabIndex = 3;
+            this.materialListBox_roomInArend.UseAccentColor = true;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(17, 15);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(218, 23);
+            this.materialLabel2.TabIndex = 2;
+            this.materialLabel2.Text = "Арендованные помещения";
             // 
             // dataGridView1
             // 
@@ -332,34 +360,6 @@
             this.materialButton_exit.UseVisualStyleBackColor = true;
             this.materialButton_exit.Click += new System.EventHandler(this.materialButton_exit_Click);
             // 
-            // materialListBox_filter
-            // 
-            this.materialListBox_filter.BackColor = System.Drawing.Color.White;
-            this.materialListBox_filter.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox_filter.Depth = 0;
-            this.materialListBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox_filter.Location = new System.Drawing.Point(17, 50);
-            this.materialListBox_filter.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox_filter.Name = "materialListBox_filter";
-            this.materialListBox_filter.SelectedIndex = -1;
-            this.materialListBox_filter.SelectedItem = null;
-            this.materialListBox_filter.ShowBorder = false;
-            this.materialListBox_filter.ShowScrollBar = true;
-            this.materialListBox_filter.Size = new System.Drawing.Size(218, 229);
-            this.materialListBox_filter.TabIndex = 3;
-            this.materialListBox_filter.UseAccentColor = true;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(17, 15);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(218, 23);
-            this.materialLabel2.TabIndex = 2;
-            this.materialLabel2.Text = "Арендованные помещения";
-            // 
             // UserControlContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,7 +397,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private MaterialSkin.Controls.MaterialButton materialButton_toPDF;
-        private MaterialSkin.Controls.MaterialListBox materialListBox_filter;
+        private MaterialSkin.Controls.MaterialListBox materialListBox_roomInArend;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
     }
 }
