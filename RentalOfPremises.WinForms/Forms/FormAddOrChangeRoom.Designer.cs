@@ -246,7 +246,7 @@
             this.materialMaskedTextBox_liter.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.materialMaskedTextBox_liter.LeadingIcon = null;
             this.materialMaskedTextBox_liter.Location = new System.Drawing.Point(180, 115);
-            this.materialMaskedTextBox_liter.Mask = "L";
+            this.materialMaskedTextBox_liter.Mask = "LL";
             this.materialMaskedTextBox_liter.MaxLength = 32767;
             this.materialMaskedTextBox_liter.MouseState = MaterialSkin.MouseState.OUT;
             this.materialMaskedTextBox_liter.Name = "materialMaskedTextBox_liter";
@@ -458,7 +458,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(644, 488);
+            this.ClientSize = new System.Drawing.Size(660, 527);
             this.Controls.Add(this.materialMaskedTextBox_liter);
             this.Controls.Add(this.materialComboBox_type);
             this.Controls.Add(this.materialLabel6);

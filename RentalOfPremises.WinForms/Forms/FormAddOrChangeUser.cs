@@ -12,7 +12,6 @@ namespace RentalOfPremises.WinForms.Forms
     public partial class FormAddOrChangeUser : MaterialForm
     {
         private readonly UserRequest user;
-        public UserRequest User => user;
 
         private bool IsEdit = false;
 
@@ -27,9 +26,9 @@ namespace RentalOfPremises.WinForms.Forms
             materialComboBox_role.Items.Clear();
             foreach (RoleTypes dir in Enum.GetValues(typeof(RoleTypes)))
             {
-                materialComboBox_role.Items.Add(new EnumRoleTypesConverter(dir));
+                materialComboBox_role.Items.Add(new EnumConverter(dir));
             }
-            materialComboBox_role.DisplayMember = nameof(EnumRoleTypesConverter.DislplayValue);
+            materialComboBox_role.DisplayMember = nameof(EnumConverter.DislplayValue);
             materialComboBox_role.SelectedIndex = 0;
         }
 
@@ -39,7 +38,7 @@ namespace RentalOfPremises.WinForms.Forms
             materialTextBox_surname.Text = userForChange.Surname;
             materialTextBox_patronomic.Text = userForChange.Patronymic;
             materialTextBox_login.Text = userForChange.LoginUser;
-            materialComboBox_role.SelectedItem = materialComboBox_role.Items.Cast<EnumRoleTypesConverter>().FirstOrDefault(x => x.RoleType.ToString() == userForChange.RoleUser);
+            materialComboBox_role.SelectedItem = materialComboBox_role.Items.Cast<EnumConverter>().FirstOrDefault(x => x.Type.ToString() == userForChange.RoleUser);
             user.Id = userForChange.Id;
             IsEdit = true;
             this.Text = "Изменение пользователя";
@@ -53,14 +52,14 @@ namespace RentalOfPremises.WinForms.Forms
             user.Patronymic = materialTextBox_patronomic.Text;
             user.LoginUser = materialTextBox_login.Text;
             user.PasswordUser = materialTextBox_password.Text;
-            user.RoleUser = ((EnumRoleTypesConverter)materialComboBox_role.SelectedItem).RoleType;
+            user.RoleUser = (RoleTypes)((EnumConverter)materialComboBox_role.SelectedItem).Type;
             if (!IsEdit)
             {
-                Dialog = await UserHttpClient.CreateUser(user);
+                Dialog = await HttpClient.CreateData(user, "User/");
             }
             else
             {
-                Dialog = await UserHttpClient.UpdateUser(user);
+                Dialog = await HttpClient.UpdateData(user, "User/");
             }
             if(Dialog == DialogResult.OK)
             {
