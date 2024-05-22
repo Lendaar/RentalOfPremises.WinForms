@@ -28,7 +28,7 @@ namespace RentalOfPremises.WinForms
             dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255 ,130, 177, 255);
             dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 15, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 15, FontStyle.Regular);
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(126, 126, 126);
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
