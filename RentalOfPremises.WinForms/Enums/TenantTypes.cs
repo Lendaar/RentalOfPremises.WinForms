@@ -1,4 +1,6 @@
-﻿namespace RentalOfPremises.Api.Enums
+﻿using System.ComponentModel;
+
+namespace RentalOfPremises.Api.Enums
 {
     /// <summary>
     /// Тип организации
@@ -8,11 +10,13 @@
         /// <summary>
         /// Юр лицо
         /// </summary>
+        [Description("Юридическое лицо")]
         Legal,
 
         /// <summary>
         /// ИП
         /// </summary>
+        [Description("Индивидуальный предприниматель")]
         Individual
     }
 }
