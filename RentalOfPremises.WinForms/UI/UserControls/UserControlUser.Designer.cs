@@ -103,6 +103,7 @@
             this.materialButton_delete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_delete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_delete.Depth = 0;
+            this.materialButton_delete.Enabled = false;
             this.materialButton_delete.HighEmphasis = true;
             this.materialButton_delete.Icon = null;
             this.materialButton_delete.Location = new System.Drawing.Point(336, 6);
@@ -124,6 +125,7 @@
             this.materialButton_change.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_change.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_change.Depth = 0;
+            this.materialButton_change.Enabled = false;
             this.materialButton_change.HighEmphasis = true;
             this.materialButton_change.Icon = null;
             this.materialButton_change.Location = new System.Drawing.Point(170, 6);
@@ -228,6 +230,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1103, 558);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Column1
             // 

@@ -3,7 +3,6 @@ using RentalOfPremises.WinForms.BL;
 using RentalOfPremises.WinForms.Enums;
 using RentalOfPremises.WinForms.Forms;
 using RentalOfPremises.WinForms.Models;
-using RentalOfPremises.WinForms.ModelsRequest.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,16 +31,17 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private async void materialButton_delete_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Вы действительно хотите удалить пользователя?", "Информация", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            var record = (UserResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+            if (MessageBox.Show($"Вы действительно хотите удалить {record.FIO}?", "Информация", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                await UserHttpClient.DeleteUser(((UserResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem).Id);
+                await HttpClient.DeleteData(record.Id, "User/");
                 UserControlUser_Load(sender, e);
             }
         }
 
         private void materialButton_change_Click(object sender, EventArgs e)
         {
-            var userChange = ((UserResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem);
+            var userChange = (UserResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
             var form = new FormAddOrChangeUser(userChange);
             form.ShowDialog();
             UserControlUser_Load(sender, e);
@@ -56,10 +56,11 @@ namespace RentalOfPremises.WinForms.UserControls
 
         public async void UserControlUser_Load(object sender, EventArgs e)
         {
-            var data = await UserHttpClient.GetUsers();
+            var data = await HttpClient.GetData<UserResponse>("User/");
+            data.ForEach(x => x.InitFio());
             dataGridView1.DataSource = data;
             Users = data;
-            materialLabel_count.Text = "Всего записей: " + dataGridView1.Rows.Count;
+            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
         }
 
         private void FillListBox()
@@ -80,14 +81,9 @@ namespace RentalOfPremises.WinForms.UserControls
         {
             if (dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "RoleUser")
             {
-                var myStatus = ParseEnum<RoleTypes>(e.Value.ToString());
+                var myStatus = GetElementsFromEnum.ParseEnum<RoleTypes>(e.Value.ToString());
                 e.Value = myStatus.PerevodDescription();
             }
-        }
-
-        public static T ParseEnum<T>(string value)
-        {
-            return (T)Enum.Parse(typeof(T), value, true);
         }
 
         private void materialListBox_filter_SelectedIndexChanged(object sender, MaterialListBoxItem selectedItem)
@@ -99,18 +95,25 @@ namespace RentalOfPremises.WinForms.UserControls
         {
             WorkOnData();
         }
+
         public void WorkOnData()
         {
             var data = materialListBox_filter.SelectedItem;
             if (data.Tag is RoleTypes employee)
             {
-                var result = Users.Where(x => x.RoleUser == employee.ToString() && x.FIO.Contains(materialTextBox_search.Text)).ToList();
+                var result = Users.Where(x => x.RoleUser == employee.ToString() && x.FIO.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList();
                 dataGridView1.DataSource = result;
             }
             else
             {
-                dataGridView1.DataSource = Users.Where(x => x.FIO.Contains(materialTextBox_search.Text)).ToList();
+                dataGridView1.DataSource = Users.Where(x => x.FIO.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList();
             }
+            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            materialButton_change.Enabled = materialButton_delete.Enabled = dataGridView1.SelectedRows.Count > 0;
         }
     }
 }
