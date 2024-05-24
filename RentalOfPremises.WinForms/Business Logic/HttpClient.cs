@@ -20,8 +20,8 @@ namespace RentalOfPremises.WinForms.BL
                 var data = await client.GetAsync(path);
                 data.EnsureSuccessStatusCode();
                 var result = await data.Content.ReadAsStringAsync();
-                var usersResponse = JsonConvert.DeserializeObject<List<T>>(result);
-                return usersResponse;
+                var listResponse = JsonConvert.DeserializeObject<List<T>>(result);
+                return listResponse;
             }
             catch 
             {
@@ -40,7 +40,7 @@ namespace RentalOfPremises.WinForms.BL
                 var data = await client.PostAsync(path, content);
                 if (data.StatusCode.Equals(HttpStatusCode.Conflict))
                 {
-                    GetMessageFromValidator.GetMessage(data);
+                    GetMessageFromApi.GetMessageFromValidator(data);
                     return DialogResult.No;
                 }
                 data.EnsureSuccessStatusCode();
@@ -50,7 +50,7 @@ namespace RentalOfPremises.WinForms.BL
             catch
             {
                 MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return DialogResult.Cancel;
+                return DialogResult.No;
             }
         }
 
@@ -60,6 +60,11 @@ namespace RentalOfPremises.WinForms.BL
             {
                 var client = new GetHttpClient().GetClient();
                 var data = await client.DeleteAsync(path + id);
+                if(data.StatusCode.Equals(HttpStatusCode.NotAcceptable))
+                {
+                    GetMessageFromApi.GetMessageAboutErrors(data);
+                    return;
+                }
                 data.EnsureSuccessStatusCode();
                 MessageBox.Show("Запись удалена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -79,7 +84,12 @@ namespace RentalOfPremises.WinForms.BL
                 var data = await client.PutAsync(path, content);
                 if (data.StatusCode.Equals(HttpStatusCode.Conflict))
                 {
-                    GetMessageFromValidator.GetMessage(data);
+                    GetMessageFromApi.GetMessageFromValidator(data);
+                    return DialogResult.No;
+                }
+                if (data.StatusCode.Equals(HttpStatusCode.NotAcceptable))
+                {
+                    GetMessageFromApi.GetMessageAboutErrors(data);
                     return DialogResult.No;
                 }
                 data.EnsureSuccessStatusCode();
