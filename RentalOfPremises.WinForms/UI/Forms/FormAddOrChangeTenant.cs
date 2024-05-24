@@ -60,6 +60,14 @@ namespace RentalOfPremises.WinForms.Forms
             this.materialButton_save.Text = "Изменить";
         }
 
+        public FormAddOrChangeTenant(TenantResponse tenantForChange, bool view) : this(tenantForChange)
+        {
+            materialButton_cancel.Text = "Назад";
+            this.Text = "Информация об арендаторе";
+            materialButton_save.Visible = view;
+            BlockAllControls(this);
+        }
+
         private async void materialButton_save_Click(object sender, System.EventArgs e)
         {
             Tenant.Name = materialTextBox_name.Text.Trim();
@@ -139,6 +147,22 @@ namespace RentalOfPremises.WinForms.Forms
                 materialMaskedTextBox_KPP.Enabled = true;
                 materialMaskedTextBox_okpo.Mask = "00000000";
                 materialMaskedTextBox_ogrn.Mask = "0000000000";
+            }
+        }
+
+        private void BlockAllControls(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c.GetType() == typeof(MaterialTextBox2) || c.GetType() == typeof(MaterialMaskedTextBox) ||
+                    c.GetType() == typeof(MaterialComboBox) || c.GetType() == typeof(MaterialMultiLineTextBox2))
+                {
+                    c.Enabled = false;
+                }
+                else
+                {
+                    BlockAllControls(c);
+                }
             }
         }
     }

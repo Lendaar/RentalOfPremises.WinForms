@@ -377,6 +377,7 @@
             this.materialButton_allInfo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_allInfo.UseAccentColor = false;
             this.materialButton_allInfo.UseVisualStyleBackColor = true;
+            this.materialButton_allInfo.Click += new System.EventHandler(this.materialButton_allInfo_Click);
             // 
             // UserControlTenant
             // 

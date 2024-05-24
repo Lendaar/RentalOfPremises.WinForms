@@ -114,5 +114,13 @@ namespace RentalOfPremises.WinForms.UserControls
         {
             materialButton_change.Enabled = materialButton_delete.Enabled = dataGridView1.SelectedRows.Count > 0;
         }
+
+        private void materialButton_allInfo_Click(object sender, EventArgs e)
+        {
+            var tenantChange = (TenantResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+            var form = new FormAddOrChangeTenant(tenantChange, false);
+            form.ShowDialog();
+            UserControlTenant_Load(sender, e);
+        }
     }
 }
