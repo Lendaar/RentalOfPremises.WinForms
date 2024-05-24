@@ -128,6 +128,7 @@
             this.materialTextBox_electro.TrailingIcon = null;
             this.materialTextBox_electro.UseAccent = false;
             this.materialTextBox_electro.UseSystemPasswordChar = false;
+            this.materialTextBox_electro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialTextBox_electro_KeyPress);
             // 
             // materialLabel2
             // 
@@ -169,6 +170,7 @@
             this.materialTextBox_waretIn.TrailingIcon = null;
             this.materialTextBox_waretIn.UseAccent = false;
             this.materialTextBox_waretIn.UseSystemPasswordChar = false;
+            this.materialTextBox_waretIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialTextBox_electro_KeyPress);
             // 
             // materialLabel3
             // 
@@ -210,6 +212,7 @@
             this.materialTextBox_waterOut.TrailingIcon = null;
             this.materialTextBox_waterOut.UseAccent = false;
             this.materialTextBox_waterOut.UseSystemPasswordChar = false;
+            this.materialTextBox_waterOut.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialTextBox_electro_KeyPress);
             // 
             // materialLabel4
             // 
@@ -251,6 +254,7 @@
             this.materialTextBox_propuskHuman.TrailingIcon = null;
             this.materialTextBox_propuskHuman.UseAccent = false;
             this.materialTextBox_propuskHuman.UseSystemPasswordChar = false;
+            this.materialTextBox_propuskHuman.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialTextBox_electro_KeyPress);
             // 
             // materialLabel5
             // 
@@ -292,6 +296,7 @@
             this.materialTextBox_propuskLegAvto.TrailingIcon = null;
             this.materialTextBox_propuskLegAvto.UseAccent = false;
             this.materialTextBox_propuskLegAvto.UseSystemPasswordChar = false;
+            this.materialTextBox_propuskLegAvto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialTextBox_electro_KeyPress);
             // 
             // materialTextBox_propuskGruzAvto
             // 
@@ -322,6 +327,7 @@
             this.materialTextBox_propuskGruzAvto.TrailingIcon = null;
             this.materialTextBox_propuskGruzAvto.UseAccent = false;
             this.materialTextBox_propuskGruzAvto.UseSystemPasswordChar = false;
+            this.materialTextBox_propuskGruzAvto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialTextBox_electro_KeyPress);
             // 
             // materialLabel6
             // 
@@ -340,7 +346,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(985, 409);
+            this.ClientSize = new System.Drawing.Size(1001, 448);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialTextBox_propuskGruzAvto);
             this.Controls.Add(this.materialLabel5);
