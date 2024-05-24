@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            MaterialSkin.MaterialListBoxItem materialListBoxItem1 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem2 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem3 = new MaterialSkin.MaterialListBoxItem();
-            MaterialSkin.MaterialListBoxItem materialListBoxItem4 = new MaterialSkin.MaterialListBoxItem();
             this.materialLabel_count = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox_search = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialButton_delete = new MaterialSkin.Controls.MaterialButton();
@@ -103,6 +99,7 @@
             this.materialTextBox_search.TrailingIcon = null;
             this.materialTextBox_search.UseAccent = false;
             this.materialTextBox_search.UseSystemPasswordChar = false;
+            this.materialTextBox_search.TextChanged += new System.EventHandler(this.materialTextBox_search_TextChanged);
             // 
             // materialButton_delete
             // 
@@ -110,6 +107,7 @@
             this.materialButton_delete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_delete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_delete.Depth = 0;
+            this.materialButton_delete.Enabled = false;
             this.materialButton_delete.HighEmphasis = true;
             this.materialButton_delete.Icon = null;
             this.materialButton_delete.Location = new System.Drawing.Point(336, 6);
@@ -131,6 +129,7 @@
             this.materialButton_change.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_change.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_change.Depth = 0;
+            this.materialButton_change.Enabled = false;
             this.materialButton_change.HighEmphasis = true;
             this.materialButton_change.Icon = null;
             this.materialButton_change.Location = new System.Drawing.Point(170, 6);
@@ -190,11 +189,14 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1103, 558);
+            this.dataGridView1.Size = new System.Drawing.Size(1056, 558);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "Title";
             this.Column1.HeaderText = "Наименование арендатора";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -202,6 +204,7 @@
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "Type";
             this.Column2.HeaderText = "Тип";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -209,6 +212,7 @@
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "Telephone";
             this.Column3.HeaderText = "Телефон";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -216,6 +220,7 @@
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "Inn";
             this.Column4.HeaderText = "ИНН";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -224,6 +229,7 @@
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "Kpp";
             this.Column5.HeaderText = "КПП";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -231,8 +237,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.47482F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.52518F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.materialLabel_count, 0, 2);
@@ -258,17 +264,17 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1104, 58);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1057, 58);
             this.flowLayoutPanel1.TabIndex = 10;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.materialButton_exit);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(1113, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(1066, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(274, 58);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(321, 58);
             this.flowLayoutPanel2.TabIndex = 17;
             // 
             // materialButton_exit
@@ -280,7 +286,7 @@
             this.materialButton_exit.Depth = 0;
             this.materialButton_exit.HighEmphasis = true;
             this.materialButton_exit.Icon = null;
-            this.materialButton_exit.Location = new System.Drawing.Point(102, 6);
+            this.materialButton_exit.Location = new System.Drawing.Point(149, 6);
             this.materialButton_exit.Margin = new System.Windows.Forms.Padding(14, 6, 0, 6);
             this.materialButton_exit.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton_exit.Name = "materialButton_exit";
@@ -299,9 +305,9 @@
             this.flowLayoutPanel3.Controls.Add(this.materialButton_allInfo);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(1113, 67);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(1066, 67);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(274, 558);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(321, 558);
             this.flowLayoutPanel3.TabIndex = 18;
             // 
             // materialCard1
@@ -316,7 +322,7 @@
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(252, 203);
+            this.materialCard1.Size = new System.Drawing.Size(290, 203);
             this.materialCard1.TabIndex = 11;
             // 
             // materialListBox_filter
@@ -325,43 +331,30 @@
             this.materialListBox_filter.BorderColor = System.Drawing.Color.LightGray;
             this.materialListBox_filter.Depth = 0;
             this.materialListBox_filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            materialListBoxItem1.SecondaryText = "Все пользователи";
-            materialListBoxItem1.Tag = null;
-            materialListBoxItem1.Text = "По умолчанию";
-            materialListBoxItem2.SecondaryText = "";
-            materialListBoxItem2.Tag = null;
-            materialListBoxItem2.Text = "Сотрудник";
-            materialListBoxItem3.SecondaryText = "";
-            materialListBoxItem3.Tag = null;
-            materialListBoxItem3.Text = "Ст. Сотрудник";
-            materialListBoxItem4.SecondaryText = "";
-            materialListBoxItem4.Tag = null;
-            materialListBoxItem4.Text = "Администратор";
-            this.materialListBox_filter.Items.Add(materialListBoxItem1);
-            this.materialListBox_filter.Items.Add(materialListBoxItem2);
-            this.materialListBox_filter.Items.Add(materialListBoxItem3);
-            this.materialListBox_filter.Items.Add(materialListBoxItem4);
-            this.materialListBox_filter.Location = new System.Drawing.Point(17, 37);
+            this.materialListBox_filter.Location = new System.Drawing.Point(19, 56);
             this.materialListBox_filter.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox_filter.Name = "materialListBox_filter";
             this.materialListBox_filter.SelectedIndex = -1;
             this.materialListBox_filter.SelectedItem = null;
             this.materialListBox_filter.ShowBorder = false;
             this.materialListBox_filter.ShowScrollBar = true;
-            this.materialListBox_filter.Size = new System.Drawing.Size(218, 166);
+            this.materialListBox_filter.Size = new System.Drawing.Size(248, 143);
             this.materialListBox_filter.TabIndex = 1;
             this.materialListBox_filter.UseAccentColor = true;
+            this.materialListBox_filter.SelectedIndexChanged += new MaterialSkin.Controls.MaterialListBox.SelectedIndexChangedEventHandler(this.materialListBox_filter_SelectedIndexChanged);
             // 
             // materialLabel2
             // 
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel2.Location = new System.Drawing.Point(17, 14);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(218, 23);
+            this.materialLabel2.Size = new System.Drawing.Size(218, 43);
             this.materialLabel2.TabIndex = 0;
-            this.materialLabel2.Text = "Фильтрация по ролям";
+            this.materialLabel2.Text = "Фильтрация по типу арендатора";
+            this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // materialButton_allInfo
             // 
@@ -378,7 +371,7 @@
             this.materialButton_allInfo.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton_allInfo.Name = "materialButton_allInfo";
             this.materialButton_allInfo.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton_allInfo.Size = new System.Drawing.Size(272, 45);
+            this.materialButton_allInfo.Size = new System.Drawing.Size(310, 45);
             this.materialButton_allInfo.TabIndex = 14;
             this.materialButton_allInfo.Text = "Подробнее";
             this.materialButton_allInfo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -392,6 +385,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UserControlTenant";
             this.Size = new System.Drawing.Size(1390, 657);
+            this.Load += new System.EventHandler(this.UserControlTenant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -415,15 +409,15 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private MaterialSkin.Controls.MaterialButton materialButton_exit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialListBox materialListBox_filter;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private MaterialSkin.Controls.MaterialButton materialButton_allInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

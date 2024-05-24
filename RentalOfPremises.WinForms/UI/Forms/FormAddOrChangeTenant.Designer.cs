@@ -33,7 +33,6 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox_bank = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox_bik = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox_email = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -64,6 +63,7 @@
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialMultiLineTextBox_address = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialMaskedTextBox_bik = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -92,8 +92,9 @@
             this.materialComboBox_type.Name = "materialComboBox_type";
             this.materialComboBox_type.Size = new System.Drawing.Size(407, 49);
             this.materialComboBox_type.StartIndex = 0;
-            this.materialComboBox_type.TabIndex = 35;
+            this.materialComboBox_type.TabIndex = 5;
             this.materialComboBox_type.UseAccent = false;
+            this.materialComboBox_type.SelectedIndexChanged += new System.EventHandler(this.materialComboBox_type_SelectedIndexChanged);
             // 
             // materialLabel6
             // 
@@ -142,7 +143,7 @@
             this.materialTextBox_bank.SelectionStart = 0;
             this.materialTextBox_bank.ShortcutsEnabled = true;
             this.materialTextBox_bank.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_bank.TabIndex = 32;
+            this.materialTextBox_bank.TabIndex = 15;
             this.materialTextBox_bank.TabStop = false;
             this.materialTextBox_bank.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_bank.TrailingIcon = null;
@@ -160,36 +161,6 @@
             this.materialLabel4.Size = new System.Drawing.Size(36, 19);
             this.materialLabel4.TabIndex = 31;
             this.materialLabel4.Text = "БИК:";
-            // 
-            // materialTextBox_bik
-            // 
-            this.materialTextBox_bik.AnimateReadOnly = false;
-            this.materialTextBox_bik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox_bik.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox_bik.Depth = 0;
-            this.materialTextBox_bik.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox_bik.HideSelection = true;
-            this.materialTextBox_bik.Hint = "Введите БИК";
-            this.materialTextBox_bik.LeadingIcon = null;
-            this.materialTextBox_bik.Location = new System.Drawing.Point(90, 320);
-            this.materialTextBox_bik.MaxLength = 20;
-            this.materialTextBox_bik.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox_bik.Name = "materialTextBox_bik";
-            this.materialTextBox_bik.PasswordChar = '\0';
-            this.materialTextBox_bik.PrefixSuffixText = null;
-            this.materialTextBox_bik.ReadOnly = false;
-            this.materialTextBox_bik.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox_bik.SelectedText = "";
-            this.materialTextBox_bik.SelectionLength = 0;
-            this.materialTextBox_bik.SelectionStart = 0;
-            this.materialTextBox_bik.ShortcutsEnabled = true;
-            this.materialTextBox_bik.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_bik.TabIndex = 30;
-            this.materialTextBox_bik.TabStop = false;
-            this.materialTextBox_bik.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox_bik.TrailingIcon = null;
-            this.materialTextBox_bik.UseAccent = false;
-            this.materialTextBox_bik.UseSystemPasswordChar = false;
             // 
             // materialLabel3
             // 
@@ -226,7 +197,7 @@
             this.materialTextBox_email.SelectionStart = 0;
             this.materialTextBox_email.ShortcutsEnabled = true;
             this.materialTextBox_email.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_email.TabIndex = 28;
+            this.materialTextBox_email.TabIndex = 7;
             this.materialTextBox_email.TabStop = false;
             this.materialTextBox_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_email.TrailingIcon = null;
@@ -280,7 +251,7 @@
             this.materialTextBox_name.SelectionStart = 0;
             this.materialTextBox_name.ShortcutsEnabled = true;
             this.materialTextBox_name.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_name.TabIndex = 24;
+            this.materialTextBox_name.TabIndex = 2;
             this.materialTextBox_name.TabStop = false;
             this.materialTextBox_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_name.TrailingIcon = null;
@@ -302,11 +273,12 @@
             this.materialButton_cancel.Name = "materialButton_cancel";
             this.materialButton_cancel.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton_cancel.Size = new System.Drawing.Size(285, 67);
-            this.materialButton_cancel.TabIndex = 23;
+            this.materialButton_cancel.TabIndex = 19;
             this.materialButton_cancel.Text = "Отмена";
             this.materialButton_cancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_cancel.UseAccentColor = false;
             this.materialButton_cancel.UseVisualStyleBackColor = true;
+            this.materialButton_cancel.Click += new System.EventHandler(this.materialButton_cancel_Click);
             // 
             // materialButton_save
             // 
@@ -314,6 +286,7 @@
             this.materialButton_save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_save.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_save.Depth = 0;
+            this.materialButton_save.Enabled = false;
             this.materialButton_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.materialButton_save.HighEmphasis = true;
             this.materialButton_save.Icon = null;
@@ -323,12 +296,12 @@
             this.materialButton_save.Name = "materialButton_save";
             this.materialButton_save.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton_save.Size = new System.Drawing.Size(285, 67);
-            this.materialButton_save.TabIndex = 22;
+            this.materialButton_save.TabIndex = 18;
             this.materialButton_save.Text = "Создать";
             this.materialButton_save.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_save.UseAccentColor = false;
             this.materialButton_save.UseVisualStyleBackColor = true;
-            this.materialButton_save.Click += new System.EventHandler(this.materialButton1_Click_2);
+            this.materialButton_save.Click += new System.EventHandler(this.materialButton_save_Click);
             // 
             // materialLabel7
             // 
@@ -365,7 +338,7 @@
             this.materialTextBox_patronomic.SelectionStart = 0;
             this.materialTextBox_patronomic.ShortcutsEnabled = true;
             this.materialTextBox_patronomic.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_patronomic.TabIndex = 40;
+            this.materialTextBox_patronomic.TabIndex = 3;
             this.materialTextBox_patronomic.TabStop = false;
             this.materialTextBox_patronomic.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_patronomic.TrailingIcon = null;
@@ -407,7 +380,7 @@
             this.materialTextBox_surname.SelectionStart = 0;
             this.materialTextBox_surname.ShortcutsEnabled = true;
             this.materialTextBox_surname.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_surname.TabIndex = 38;
+            this.materialTextBox_surname.TabIndex = 1;
             this.materialTextBox_surname.TabStop = false;
             this.materialTextBox_surname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_surname.TrailingIcon = null;
@@ -448,7 +421,7 @@
             this.materialTextBox_title.SelectionStart = 0;
             this.materialTextBox_title.ShortcutsEnabled = true;
             this.materialTextBox_title.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_title.TabIndex = 36;
+            this.materialTextBox_title.TabIndex = 4;
             this.materialTextBox_title.TabStop = false;
             this.materialTextBox_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_title.TrailingIcon = null;
@@ -468,7 +441,7 @@
             this.groupBox1.Location = new System.Drawing.Point(25, 116);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(546, 247);
-            this.groupBox1.TabIndex = 42;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ФИО генерального директора";
             // 
@@ -505,17 +478,19 @@
             this.materialMaskedTextBox_telephone.ShortcutsEnabled = true;
             this.materialMaskedTextBox_telephone.Size = new System.Drawing.Size(407, 48);
             this.materialMaskedTextBox_telephone.SkipLiterals = true;
-            this.materialMaskedTextBox_telephone.TabIndex = 43;
+            this.materialMaskedTextBox_telephone.TabIndex = 6;
             this.materialMaskedTextBox_telephone.TabStop = false;
-            this.materialMaskedTextBox_telephone.Text = "+7 (   )    -  -";
+            this.materialMaskedTextBox_telephone.Text = "+7 (___) ___-__-__";
             this.materialMaskedTextBox_telephone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox_telephone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox_telephone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.materialMaskedTextBox_telephone.TrailingIcon = null;
             this.materialMaskedTextBox_telephone.UseSystemPasswordChar = false;
             this.materialMaskedTextBox_telephone.ValidatingType = null;
+            this.materialMaskedTextBox_telephone.TextChanged += new System.EventHandler(this.materialMaskedTextBox_ogrn_TextChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.materialMaskedTextBox_bik);
             this.groupBox2.Controls.Add(this.materialMaskedTextBox_ogrn);
             this.groupBox2.Controls.Add(this.materialMaskedTextBox_okpo);
             this.groupBox2.Controls.Add(this.materialMaskedTextBox_ks);
@@ -530,14 +505,13 @@
             this.groupBox2.Controls.Add(this.materialTextBox_bank);
             this.groupBox2.Controls.Add(this.materialLabel4);
             this.groupBox2.Controls.Add(this.materialLabel11);
-            this.groupBox2.Controls.Add(this.materialTextBox_bik);
             this.groupBox2.Controls.Add(this.materialLabel12);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.groupBox2.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox2.Location = new System.Drawing.Point(620, 116);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(546, 597);
-            this.groupBox2.TabIndex = 44;
+            this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Банковские реквизиты";
             // 
@@ -574,13 +548,15 @@
             this.materialMaskedTextBox_ogrn.ShortcutsEnabled = true;
             this.materialMaskedTextBox_ogrn.Size = new System.Drawing.Size(407, 48);
             this.materialMaskedTextBox_ogrn.SkipLiterals = true;
-            this.materialMaskedTextBox_ogrn.TabIndex = 55;
+            this.materialMaskedTextBox_ogrn.TabIndex = 17;
             this.materialMaskedTextBox_ogrn.TabStop = false;
+            this.materialMaskedTextBox_ogrn.Text = "_____________";
             this.materialMaskedTextBox_ogrn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox_ogrn.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox_ogrn.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.materialMaskedTextBox_ogrn.TrailingIcon = null;
             this.materialMaskedTextBox_ogrn.UseSystemPasswordChar = false;
             this.materialMaskedTextBox_ogrn.ValidatingType = null;
+            this.materialMaskedTextBox_ogrn.TextChanged += new System.EventHandler(this.materialMaskedTextBox_ogrn_TextChanged);
             // 
             // materialMaskedTextBox_okpo
             // 
@@ -615,13 +591,15 @@
             this.materialMaskedTextBox_okpo.ShortcutsEnabled = true;
             this.materialMaskedTextBox_okpo.Size = new System.Drawing.Size(407, 48);
             this.materialMaskedTextBox_okpo.SkipLiterals = true;
-            this.materialMaskedTextBox_okpo.TabIndex = 54;
+            this.materialMaskedTextBox_okpo.TabIndex = 16;
             this.materialMaskedTextBox_okpo.TabStop = false;
+            this.materialMaskedTextBox_okpo.Text = "________";
             this.materialMaskedTextBox_okpo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox_okpo.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox_okpo.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.materialMaskedTextBox_okpo.TrailingIcon = null;
             this.materialMaskedTextBox_okpo.UseSystemPasswordChar = false;
             this.materialMaskedTextBox_okpo.ValidatingType = null;
+            this.materialMaskedTextBox_okpo.TextChanged += new System.EventHandler(this.materialMaskedTextBox_ogrn_TextChanged);
             // 
             // materialMaskedTextBox_ks
             // 
@@ -656,13 +634,15 @@
             this.materialMaskedTextBox_ks.ShortcutsEnabled = true;
             this.materialMaskedTextBox_ks.Size = new System.Drawing.Size(407, 48);
             this.materialMaskedTextBox_ks.SkipLiterals = true;
-            this.materialMaskedTextBox_ks.TabIndex = 53;
+            this.materialMaskedTextBox_ks.TabIndex = 13;
             this.materialMaskedTextBox_ks.TabStop = false;
+            this.materialMaskedTextBox_ks.Text = "____________________";
             this.materialMaskedTextBox_ks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox_ks.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox_ks.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.materialMaskedTextBox_ks.TrailingIcon = null;
             this.materialMaskedTextBox_ks.UseSystemPasswordChar = false;
             this.materialMaskedTextBox_ks.ValidatingType = null;
+            this.materialMaskedTextBox_ks.TextChanged += new System.EventHandler(this.materialMaskedTextBox_ogrn_TextChanged);
             // 
             // materialMaskedTextBox_rs
             // 
@@ -697,13 +677,15 @@
             this.materialMaskedTextBox_rs.ShortcutsEnabled = true;
             this.materialMaskedTextBox_rs.Size = new System.Drawing.Size(407, 48);
             this.materialMaskedTextBox_rs.SkipLiterals = true;
-            this.materialMaskedTextBox_rs.TabIndex = 52;
+            this.materialMaskedTextBox_rs.TabIndex = 12;
             this.materialMaskedTextBox_rs.TabStop = false;
+            this.materialMaskedTextBox_rs.Text = "____________________";
             this.materialMaskedTextBox_rs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox_rs.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox_rs.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.materialMaskedTextBox_rs.TrailingIcon = null;
             this.materialMaskedTextBox_rs.UseSystemPasswordChar = false;
             this.materialMaskedTextBox_rs.ValidatingType = null;
+            this.materialMaskedTextBox_rs.TextChanged += new System.EventHandler(this.materialMaskedTextBox_ogrn_TextChanged);
             // 
             // materialMaskedTextBox_KPP
             // 
@@ -738,13 +720,15 @@
             this.materialMaskedTextBox_KPP.ShortcutsEnabled = true;
             this.materialMaskedTextBox_KPP.Size = new System.Drawing.Size(407, 48);
             this.materialMaskedTextBox_KPP.SkipLiterals = true;
-            this.materialMaskedTextBox_KPP.TabIndex = 51;
+            this.materialMaskedTextBox_KPP.TabIndex = 11;
             this.materialMaskedTextBox_KPP.TabStop = false;
+            this.materialMaskedTextBox_KPP.Text = "_________";
             this.materialMaskedTextBox_KPP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox_KPP.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox_KPP.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.materialMaskedTextBox_KPP.TrailingIcon = null;
             this.materialMaskedTextBox_KPP.UseSystemPasswordChar = false;
             this.materialMaskedTextBox_KPP.ValidatingType = null;
+            this.materialMaskedTextBox_KPP.TextChanged += new System.EventHandler(this.materialMaskedTextBox_ogrn_TextChanged);
             // 
             // materialMaskedTextBox_INN
             // 
@@ -779,13 +763,15 @@
             this.materialMaskedTextBox_INN.ShortcutsEnabled = true;
             this.materialMaskedTextBox_INN.Size = new System.Drawing.Size(407, 48);
             this.materialMaskedTextBox_INN.SkipLiterals = true;
-            this.materialMaskedTextBox_INN.TabIndex = 50;
+            this.materialMaskedTextBox_INN.TabIndex = 10;
             this.materialMaskedTextBox_INN.TabStop = false;
+            this.materialMaskedTextBox_INN.Text = "____________";
             this.materialMaskedTextBox_INN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox_INN.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox_INN.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             this.materialMaskedTextBox_INN.TrailingIcon = null;
             this.materialMaskedTextBox_INN.UseSystemPasswordChar = false;
             this.materialMaskedTextBox_INN.ValidatingType = null;
+            this.materialMaskedTextBox_INN.TextChanged += new System.EventHandler(this.materialMaskedTextBox_ogrn_TextChanged);
             // 
             // materialLabel15
             // 
@@ -880,7 +866,7 @@
             this.materialMultiLineTextBox_address.SelectionStart = 0;
             this.materialMultiLineTextBox_address.ShortcutsEnabled = true;
             this.materialMultiLineTextBox_address.Size = new System.Drawing.Size(407, 71);
-            this.materialMultiLineTextBox_address.TabIndex = 45;
+            this.materialMultiLineTextBox_address.TabIndex = 8;
             this.materialMultiLineTextBox_address.TabStop = false;
             this.materialMultiLineTextBox_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialMultiLineTextBox_address.UseSystemPasswordChar = false;
@@ -896,11 +882,53 @@
             this.materialLabel17.TabIndex = 46;
             this.materialLabel17.Text = "Юридический адрес:";
             // 
+            // materialMaskedTextBox_bik
+            // 
+            this.materialMaskedTextBox_bik.AllowPromptAsInput = true;
+            this.materialMaskedTextBox_bik.AnimateReadOnly = false;
+            this.materialMaskedTextBox_bik.AsciiOnly = false;
+            this.materialMaskedTextBox_bik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialMaskedTextBox_bik.BeepOnError = false;
+            this.materialMaskedTextBox_bik.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox_bik.Depth = 0;
+            this.materialMaskedTextBox_bik.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialMaskedTextBox_bik.HidePromptOnLeave = false;
+            this.materialMaskedTextBox_bik.HideSelection = true;
+            this.materialMaskedTextBox_bik.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.materialMaskedTextBox_bik.LeadingIcon = null;
+            this.materialMaskedTextBox_bik.Location = new System.Drawing.Point(90, 320);
+            this.materialMaskedTextBox_bik.Mask = "00000000";
+            this.materialMaskedTextBox_bik.MaxLength = 32767;
+            this.materialMaskedTextBox_bik.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialMaskedTextBox_bik.Name = "materialMaskedTextBox_bik";
+            this.materialMaskedTextBox_bik.PasswordChar = '\0';
+            this.materialMaskedTextBox_bik.PrefixSuffixText = null;
+            this.materialMaskedTextBox_bik.PromptChar = '_';
+            this.materialMaskedTextBox_bik.ReadOnly = false;
+            this.materialMaskedTextBox_bik.RejectInputOnFirstFailure = false;
+            this.materialMaskedTextBox_bik.ResetOnPrompt = true;
+            this.materialMaskedTextBox_bik.ResetOnSpace = true;
+            this.materialMaskedTextBox_bik.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.materialMaskedTextBox_bik.SelectedText = "";
+            this.materialMaskedTextBox_bik.SelectionLength = 0;
+            this.materialMaskedTextBox_bik.SelectionStart = 0;
+            this.materialMaskedTextBox_bik.ShortcutsEnabled = true;
+            this.materialMaskedTextBox_bik.Size = new System.Drawing.Size(407, 48);
+            this.materialMaskedTextBox_bik.SkipLiterals = true;
+            this.materialMaskedTextBox_bik.TabIndex = 14;
+            this.materialMaskedTextBox_bik.TabStop = false;
+            this.materialMaskedTextBox_bik.Text = "________";
+            this.materialMaskedTextBox_bik.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialMaskedTextBox_bik.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.materialMaskedTextBox_bik.TrailingIcon = null;
+            this.materialMaskedTextBox_bik.UseSystemPasswordChar = false;
+            this.materialMaskedTextBox_bik.ValidatingType = null;
+            // 
             // FormAddOrChangeTenant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 813);
+            this.ClientSize = new System.Drawing.Size(1248, 771);
             this.Controls.Add(this.materialLabel17);
             this.Controls.Add(this.materialMultiLineTextBox_address);
             this.Controls.Add(this.groupBox2);
@@ -939,7 +967,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox_bank;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox_bik;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox_email;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
@@ -970,5 +997,6 @@
         private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox_rs;
         private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox_KPP;
         private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox_INN;
+        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox_bik;
     }
 }
