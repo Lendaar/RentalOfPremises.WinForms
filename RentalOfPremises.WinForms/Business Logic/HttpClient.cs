@@ -102,5 +102,40 @@ namespace RentalOfPremises.WinForms.BL
                 return DialogResult.No;
             }
         }
+
+        public static Tuple<string, byte[]> GetDocument(string path)
+        {
+            try
+            {
+                var client = new GetHttpClient().GetClient();
+                var dataBytes = client.GetByteArrayAsync(path).Result;
+                var response = client.GetAsync(path);
+                var fileName = response.Result.Content.Headers.ContentDisposition.FileName;
+                return new Tuple<string, byte[]>(fileName, dataBytes);
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        public static async Task<int> GetNumber(string path)
+        {
+            try
+            {
+                var client = new GetHttpClient().GetClient();
+                var data = await client.GetAsync(path);
+                data.EnsureSuccessStatusCode();
+                var result = await data.Content.ReadAsStringAsync();
+                var listResponse = JsonConvert.DeserializeObject<int>(result);
+                return listResponse;
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+        }
     }
 }
