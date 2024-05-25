@@ -39,6 +39,7 @@ namespace RentalOfPremises.WinForms.UserControls
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllBytes(saveFileDialog.FileName, data);
+                MessageBox.Show("Документ создан", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -72,7 +73,7 @@ namespace RentalOfPremises.WinForms.UserControls
             UserControlContract_Load(sender, e);
         }
 
-        private void UserControlContract_Load(object sender, EventArgs e)
+        public void UserControlContract_Load(object sender, EventArgs e)
         {
             var data = HttpClient.GetData<ContractResponse>("Contract/");
             Contracts = data;

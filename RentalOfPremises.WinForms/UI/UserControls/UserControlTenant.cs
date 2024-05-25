@@ -54,7 +54,7 @@ namespace RentalOfPremises.WinForms.UserControls
             UserControlTenant_Load(sender, e);
         }
 
-        private void UserControlTenant_Load(object sender, EventArgs e)
+        public void UserControlTenant_Load(object sender, EventArgs e)
         {
             var data = HttpClient.GetData<TenantResponse>("Tenant/");
             dataGridView1.DataSource = data;

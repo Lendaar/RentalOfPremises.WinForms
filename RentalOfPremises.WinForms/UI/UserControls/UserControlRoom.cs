@@ -54,7 +54,7 @@ namespace RentalOfPremises.WinForms.UserControls
             UserControlRoom_Load(sender, e);
         }
 
-        private void UserControlRoom_Load(object sender, EventArgs e)
+        public void UserControlRoom_Load(object sender, EventArgs e)
         {
             var data = HttpClient.GetData<RoomResponse>("Room/");
             dataGridView1.DataSource = data;
