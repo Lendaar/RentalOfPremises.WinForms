@@ -29,7 +29,7 @@ namespace RentalOfPremises.WinForms.UserControls
             UserControlPrice_Load(sender, e);
         }
 
-        private void UserControlPrice_Load(object sender, EventArgs e)
+        public void UserControlPrice_Load(object sender, EventArgs e)
         {
             var data = HttpClient.GetData<PriceResponse>("Price/");
             dataGridView1.DataSource = data;
