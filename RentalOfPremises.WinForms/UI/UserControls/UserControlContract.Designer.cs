@@ -37,18 +37,20 @@
             this.materialListBox_roomInArend = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialButton_exit = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialButton_toPDF = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -100,6 +102,7 @@
             this.materialTextBox_search.TrailingIcon = null;
             this.materialTextBox_search.UseAccent = false;
             this.materialTextBox_search.UseSystemPasswordChar = false;
+            this.materialTextBox_search.TextChanged += new System.EventHandler(this.materialTextBox_search_TextChanged);
             // 
             // materialButton_delete
             // 
@@ -107,6 +110,7 @@
             this.materialButton_delete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_delete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_delete.Depth = 0;
+            this.materialButton_delete.Enabled = false;
             this.materialButton_delete.HighEmphasis = true;
             this.materialButton_delete.Icon = null;
             this.materialButton_delete.Location = new System.Drawing.Point(336, 6);
@@ -128,6 +132,7 @@
             this.materialButton_change.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_change.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_change.Depth = 0;
+            this.materialButton_change.Enabled = false;
             this.materialButton_change.HighEmphasis = true;
             this.materialButton_change.Icon = null;
             this.materialButton_change.Location = new System.Drawing.Point(170, 6);
@@ -167,6 +172,7 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialLabel1);
             this.materialCard1.Controls.Add(this.materialListBox_roomInArend);
             this.materialCard1.Controls.Add(this.materialLabel2);
             this.materialCard1.Depth = 0;
@@ -186,14 +192,14 @@
             this.materialListBox_roomInArend.BorderColor = System.Drawing.Color.LightGray;
             this.materialListBox_roomInArend.Depth = 0;
             this.materialListBox_roomInArend.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox_roomInArend.Location = new System.Drawing.Point(17, 50);
+            this.materialListBox_roomInArend.Location = new System.Drawing.Point(17, 82);
             this.materialListBox_roomInArend.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox_roomInArend.Name = "materialListBox_roomInArend";
             this.materialListBox_roomInArend.SelectedIndex = -1;
             this.materialListBox_roomInArend.SelectedItem = null;
             this.materialListBox_roomInArend.ShowBorder = false;
             this.materialListBox_roomInArend.ShowScrollBar = true;
-            this.materialListBox_roomInArend.Size = new System.Drawing.Size(218, 229);
+            this.materialListBox_roomInArend.Size = new System.Drawing.Size(218, 197);
             this.materialListBox_roomInArend.TabIndex = 3;
             this.materialListBox_roomInArend.UseAccentColor = true;
             // 
@@ -219,11 +225,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
             this.Column3,
             this.Column4,
             this.Column6,
-            this.Column7});
+            this.Column7,
+            this.Column2});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(4, 67);
@@ -234,47 +240,8 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1105, 558);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Номер договора";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Арендная плата";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Наименование арендатора";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "ИНН арендатора";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Дата начала";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Дата окончания";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -374,13 +341,75 @@
             this.materialButton_toPDF.UseVisualStyleBackColor = true;
             this.materialButton_toPDF.Click += new System.EventHandler(this.materialButton_toPDF_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(17, 47);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(218, 23);
+            this.materialLabel1.TabIndex = 4;
+            this.materialLabel1.Text = "Цена | Литер | Номер";
+            this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Number";
+            this.Column1.HeaderText = "Номер договора";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TenantTitle";
+            this.Column3.HeaderText = "Наименование арендатора";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TenantInn";
+            this.Column4.HeaderText = "ИНН арендатора";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "DateStart";
+            this.Column6.HeaderText = "Дата начала";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "DateEnd";
+            this.Column7.HeaderText = "Дата окончания";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Archive";
+            this.Column2.HeaderText = "Архив";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // UserControlContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "UserControlContract";
             this.Size = new System.Drawing.Size(1392, 657);
+            this.Load += new System.EventHandler(this.UserControlContract_Load);
             this.materialCard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -405,15 +434,17 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private MaterialSkin.Controls.MaterialButton materialButton_exit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private MaterialSkin.Controls.MaterialButton materialButton_toPDF;
         private MaterialSkin.Controls.MaterialListBox materialListBox_roomInArend;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
