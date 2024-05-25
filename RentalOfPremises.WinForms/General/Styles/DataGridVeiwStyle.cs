@@ -10,7 +10,6 @@ namespace RentalOfPremises.WinForms
             dgv.BorderStyle = BorderStyle.None;
             dgv.BackgroundColor = Color.FromArgb(255, 230, 230, 230);
             dgv.EnableHeadersVisualStyles = true;
-            dgv.ReadOnly = true;
             dgv.AllowUserToAddRows = false;
             dgv.AllowUserToDeleteRows = false;
             dgv.AllowUserToOrderColumns = false;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace RentalOfPremises.Api.Models
 {
@@ -36,5 +37,15 @@ namespace RentalOfPremises.Api.Models
         /// Занято ли помещение
         /// </summary>
         public bool Occupied { get; set; }
+
+        /// <summary>
+        /// Литер - Номер
+        /// </summary>
+        public string LiterNumber { get; set; } = string.Empty;
+
+        public void InitLiterNumber()
+        {
+            LiterNumber = $"{Liter} - {NumberRoom}";
+        }
     }
 }
