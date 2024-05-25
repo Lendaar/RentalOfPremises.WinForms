@@ -45,7 +45,7 @@ namespace RentalOfPremises.WinForms.Forms
             this.materialButton_save.Text = "Изменить";
         }
 
-        private async void materialButton_save_Click(object sender, EventArgs e)
+        private void materialButton_save_Click(object sender, EventArgs e)
         {
             Room.Liter = materialMaskedTextBox_liter.Text.Trim();
             Room.NumberRoom = Convert.ToInt32(materialTextBox_number.Text);
@@ -53,11 +53,11 @@ namespace RentalOfPremises.WinForms.Forms
             Room.TypeRoom = (PremisesTypes)((EnumConverter)materialComboBox_type.SelectedItem).Type;
             if (!IsEdit)
             {
-                Dialog = await HttpClient.CreateData(Room, "Room/");
+                Dialog = HttpClient.CreateData(Room, "Room/");
             }
             else
             {
-                Dialog = await HttpClient.UpdateData(Room, "Room/");
+                Dialog = HttpClient.UpdateData(Room, "Room/");
             }
             if (Dialog == DialogResult.OK)
             {

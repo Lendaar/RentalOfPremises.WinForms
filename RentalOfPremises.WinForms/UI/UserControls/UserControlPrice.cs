@@ -1,7 +1,6 @@
 ﻿using RentalOfPremises.Api.Models;
 using RentalOfPremises.WinForms.BL;
 using RentalOfPremises.WinForms.Forms;
-using RentalOfPremises.WinForms.Models;
 using System;
 using System.Windows.Forms;
 
@@ -30,9 +29,9 @@ namespace RentalOfPremises.WinForms.UserControls
             UserControlPrice_Load(sender, e);
         }
 
-        private async void UserControlPrice_Load(object sender, EventArgs e)
+        private void UserControlPrice_Load(object sender, EventArgs e)
         {
-            var data = await HttpClient.GetData<PriceResponse>("Price/");
+            var data = HttpClient.GetData<PriceResponse>("Price/");
             dataGridView1.DataSource = data;
             materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
         }

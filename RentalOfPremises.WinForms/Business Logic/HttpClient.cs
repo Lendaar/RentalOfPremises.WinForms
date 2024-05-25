@@ -5,21 +5,20 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentalOfPremises.WinForms.BL
 {
     public class HttpClient
     {
-        public static async Task<List<T>> GetData<T>(string path)
+        public static List<T> GetData<T>(string path)
         {
             try
             {
                 var client = new GetHttpClient().GetClient();
-                var data = await client.GetAsync(path);
+                var data = client.GetAsync(path).Result;
                 data.EnsureSuccessStatusCode();
-                var result = await data.Content.ReadAsStringAsync();
+                var result = data.Content.ReadAsStringAsync().Result;
                 var listResponse = JsonConvert.DeserializeObject<List<T>>(result);
                 return listResponse;
             }
@@ -30,14 +29,14 @@ namespace RentalOfPremises.WinForms.BL
             }
         }
 
-        public static async Task<DialogResult> CreateData<T>(T modelRequest, string path)
+        public static DialogResult CreateData<T>(T modelRequest, string path)
         {
             try
             {
                 var client = new GetHttpClient().GetClient();
                 var json = JsonConvert.SerializeObject(modelRequest);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var data = await client.PostAsync(path, content);
+                var data = client.PostAsync(path, content).Result;
                 if (data.StatusCode.Equals(HttpStatusCode.Conflict))
                 {
                     GetMessageFromApi.GetMessageFromValidator(data);
@@ -54,12 +53,12 @@ namespace RentalOfPremises.WinForms.BL
             }
         }
 
-        public static async Task DeleteData(Guid id, string path)
+        public static void DeleteData(Guid id, string path)
         {
             try
             {
                 var client = new GetHttpClient().GetClient();
-                var data = await client.DeleteAsync(path + id);
+                var data = client.DeleteAsync(path + id).Result;
                 if(data.StatusCode.Equals(HttpStatusCode.NotAcceptable))
                 {
                     GetMessageFromApi.GetMessageAboutErrors(data);
@@ -74,14 +73,14 @@ namespace RentalOfPremises.WinForms.BL
             }
         }
 
-        public static async Task<DialogResult> UpdateData<T>(T modelRequest, string path)
+        public static DialogResult UpdateData<T>(T modelRequest, string path)
         {
             try
             {
                 var client = new GetHttpClient().GetClient();
                 var json = JsonConvert.SerializeObject(modelRequest);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var data = await client.PutAsync(path, content);
+                var data = client.PutAsync(path, content).Result;
                 if (data.StatusCode.Equals(HttpStatusCode.Conflict))
                 {
                     GetMessageFromApi.GetMessageFromValidator(data);
@@ -103,15 +102,13 @@ namespace RentalOfPremises.WinForms.BL
             }
         }
 
-        public static Tuple<string, byte[]> GetDocument(string path)
+        public static byte[] GetDocument(string path)
         {
             try
             {
                 var client = new GetHttpClient().GetClient();
                 var dataBytes = client.GetByteArrayAsync(path).Result;
-                var response = client.GetAsync(path);
-                var fileName = response.Result.Content.Headers.ContentDisposition.FileName;
-                return new Tuple<string, byte[]>(fileName, dataBytes);
+                return dataBytes;
             }
             catch
             {
@@ -120,14 +117,14 @@ namespace RentalOfPremises.WinForms.BL
             }
         }
 
-        public static async Task<int> GetNumber(string path)
+        public static int GetNumber(string path)
         {
             try
             {
                 var client = new GetHttpClient().GetClient();
-                var data = await client.GetAsync(path);
+                var data = client.GetAsync(path).Result;
                 data.EnsureSuccessStatusCode();
-                var result = await data.Content.ReadAsStringAsync();
+                var result = data.Content.ReadAsStringAsync().Result;
                 var listResponse = JsonConvert.DeserializeObject<int>(result);
                 return listResponse;
             }

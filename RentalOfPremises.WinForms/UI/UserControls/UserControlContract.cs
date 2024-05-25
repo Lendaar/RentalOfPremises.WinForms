@@ -32,20 +32,20 @@ namespace RentalOfPremises.WinForms.UserControls
         {
             var number = ((ContractResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem).Number;
             var data = HttpClient.GetDocument($"Contract/Document?id={number}");
-            saveFileDialog.FileName = data.Item1;
+            saveFileDialog.FileName = $"Договор аренды №{number}";
             saveFileDialog.Filter = "PDF-файл (*.pdf)|*.pdf";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllBytes(saveFileDialog.FileName, data.Item2);
+                File.WriteAllBytes(saveFileDialog.FileName, data);
             }
         }
 
-        private async void materialButton_delete_Click(object sender, EventArgs e)
+        private void materialButton_delete_Click(object sender, EventArgs e)
         {
             var record = (ContractResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
             if (MessageBox.Show($"Вы действительно хотите удалить договор №{record.Number}?", "Информация", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                await HttpClient.DeleteData(record.Id, "Contract/");
+                HttpClient.DeleteData(record.Id, "Contract/");
                 UserControlContract_Load(sender, e);
             }
         }
@@ -70,11 +70,11 @@ namespace RentalOfPremises.WinForms.UserControls
             UserControlContract_Load(sender, e);
         }
 
-        private async void UserControlContract_Load(object sender, EventArgs e)
+        private void UserControlContract_Load(object sender, EventArgs e)
         {
-            var data = await HttpClient.GetData<ContractResponse>("Contract/");
+            var data = HttpClient.GetData<ContractResponse>("Contract/");
             var contractInView = new List<ContractResponse>();
-            foreach(var num in data.GroupBy(x => x.Number))
+            foreach (var num in data.GroupBy(x => x.Number))
             {
                 contractInView.Add(data.FirstOrDefault(x => x.Number == num.Key));
             }

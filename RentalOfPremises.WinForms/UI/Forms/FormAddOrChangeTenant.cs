@@ -68,7 +68,7 @@ namespace RentalOfPremises.WinForms.Forms
             BlockAllControls(this);
         }
 
-        private async void materialButton_save_Click(object sender, System.EventArgs e)
+        private void materialButton_save_Click(object sender, System.EventArgs e)
         {
             Tenant.Name = materialTextBox_name.Text.Trim();
             Tenant.Surname = materialTextBox_surname.Text.Trim();
@@ -90,11 +90,11 @@ namespace RentalOfPremises.WinForms.Forms
 
             if (!IsEdit)
             {
-                Dialog = await HttpClient.CreateData(Tenant, "Tenant/");
+                Dialog = HttpClient.CreateData(Tenant, "Tenant/");
             }
             else
             {
-                Dialog = await HttpClient.UpdateData(Tenant, "Tenant/");
+                Dialog = HttpClient.UpdateData(Tenant, "Tenant/");
             }
             if (Dialog == DialogResult.OK)
             {

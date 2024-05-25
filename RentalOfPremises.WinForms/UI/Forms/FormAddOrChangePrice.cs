@@ -19,7 +19,7 @@ namespace RentalOfPremises.WinForms.Forms
             Price = new PriceRequest();
         }
 
-        private async void materialButton_save_Click(object sender, System.EventArgs e)
+        private void materialButton_save_Click(object sender, System.EventArgs e)
         {
             Price.Electricity = Convert.ToDecimal(materialTextBox_electro.Text);
             Price.WaterPl = Convert.ToDecimal(materialTextBox_waretIn.Text);
@@ -27,7 +27,7 @@ namespace RentalOfPremises.WinForms.Forms
             Price.PassPerson = Convert.ToDecimal(materialTextBox_propuskHuman.Text);
             Price.PassLegСar = Convert.ToDecimal(materialTextBox_propuskLegAvto.Text);
             Price.PassGrСar = Convert.ToDecimal(materialTextBox_propuskGruzAvto.Text);
-            Dialog = await HttpClient.CreateData(Price, "Price/");
+            Dialog = HttpClient.CreateData(Price, "Price/");
             if (Dialog == DialogResult.OK)
             {
                 Close();

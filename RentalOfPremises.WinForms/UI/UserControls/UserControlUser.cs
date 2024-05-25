@@ -29,12 +29,12 @@ namespace RentalOfPremises.WinForms.UserControls
             }
         }
 
-        private async void materialButton_delete_Click(object sender, EventArgs e)
+        private void materialButton_delete_Click(object sender, EventArgs e)
         {
             var record = (UserResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
             if (MessageBox.Show($"Вы действительно хотите удалить {record.FIO}?", "Информация", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                await HttpClient.DeleteData(record.Id, "User/");
+                HttpClient.DeleteData(record.Id, "User/");
                 UserControlUser_Load(sender, e);
             }
         }
@@ -54,9 +54,9 @@ namespace RentalOfPremises.WinForms.UserControls
             UserControlUser_Load(sender, e);
         }
 
-        public async void UserControlUser_Load(object sender, EventArgs e)
+        public void UserControlUser_Load(object sender, EventArgs e)
         {
-            var data = await HttpClient.GetData<UserResponse>("User/");
+            var data = HttpClient.GetData<UserResponse>("User/");
             data.ForEach(x => x.InitFio());
             dataGridView1.DataSource = data;
             Users = data;

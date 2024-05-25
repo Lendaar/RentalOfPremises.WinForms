@@ -45,7 +45,7 @@ namespace RentalOfPremises.WinForms.Forms
             this.materialButton_save.Text = "Изменить";
         }
 
-        private async void materialButton_save_Click(object sender, System.EventArgs e)
+        private void materialButton_save_Click(object sender, System.EventArgs e)
         {
             User.Name = materialTextBox_name.Text.Trim();
             User.Surname = materialTextBox_surname.Text.Trim();
@@ -55,11 +55,11 @@ namespace RentalOfPremises.WinForms.Forms
             User.RoleUser = (RoleTypes)((EnumConverter)materialComboBox_role.SelectedItem).Type;
             if (!IsEdit)
             {
-                Dialog = await HttpClient.CreateData(User, "User/");
+                Dialog = HttpClient.CreateData(User, "User/");
             }
             else
             {
-                Dialog = await HttpClient.UpdateData(User, "User/");
+                Dialog = HttpClient.UpdateData(User, "User/");
             }
             if(Dialog == DialogResult.OK)
             {

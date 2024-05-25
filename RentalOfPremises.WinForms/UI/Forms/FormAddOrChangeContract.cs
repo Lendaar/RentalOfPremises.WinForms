@@ -35,7 +35,7 @@ namespace RentalOfPremises.WinForms.Forms
         }
 
 
-        private async void materialButton_save_Click(object sender, System.EventArgs e)
+        private void materialButton_save_Click(object sender, System.EventArgs e)
         {
             if (!IsEdit)
             {
@@ -54,7 +54,7 @@ namespace RentalOfPremises.WinForms.Forms
                 }
                 if (Validation(roomsForArenda))
                 {
-                    var number = await HttpClient.GetNumber("Contract/MaxNumber");
+                    var number = HttpClient.GetNumber("Contract/MaxNumber");
                     foreach (DataGridViewRow row in roomsForArenda)
                     {
                         Contract.Payment = Convert.ToDecimal(row.Cells[2].Value);
@@ -64,7 +64,7 @@ namespace RentalOfPremises.WinForms.Forms
                         Contract.DateEnd = dateTimePicker_dateStart.Value.AddMonths(Convert.ToInt32(materialTextBox_period.Text)).ToUniversalTime();
                         Contract.Number = number;
 
-                        Dialog = await HttpClient.CreateData(Contract, "Contract/");
+                        Dialog = HttpClient.CreateData(Contract, "Contract/");
                     }
                 }
             }
@@ -83,13 +83,13 @@ namespace RentalOfPremises.WinForms.Forms
             Close();
         }
 
-        private async void FillTenants(ContractResponse contract = null)
+        private void FillTenants(ContractResponse contract = null)
         {
-            var tenants = await HttpClient.GetData<TenantResponse>("Tenant/");
+            var tenants = HttpClient.GetData<TenantResponse>("Tenant/");
             materialComboBox_arendator.DataSource = tenants;
             materialComboBox_arendator.ValueMember = "Id";
             materialComboBox_arendator.DisplayMember = "Title";
-            if(contract == null)
+            if (contract == null)
             {
                 materialComboBox_arendator.SelectedIndex = 0;
             }
@@ -99,9 +99,9 @@ namespace RentalOfPremises.WinForms.Forms
             }
         }
 
-        private async void FillRooms()
+        private void FillRooms()
         {
-            var rooms = await HttpClient.GetData<RoomResponse>("Room/");
+            var rooms = HttpClient.GetData<RoomResponse>("Room/");
             var noOccupiedRooms = rooms.Where(x => x.Occupied == false).ToList();
             noOccupiedRooms.ForEach(x => x.InitLiterNumber());
             dataGridView1.DataSource = noOccupiedRooms;

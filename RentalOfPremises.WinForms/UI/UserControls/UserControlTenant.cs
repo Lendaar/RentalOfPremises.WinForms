@@ -29,12 +29,12 @@ namespace RentalOfPremises.WinForms.UserControls
             }
         }
 
-        private async void materialButton_delete_Click(object sender, EventArgs e)
+        private void materialButton_delete_Click(object sender, EventArgs e)
         {
             var record = (TenantResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
             if (MessageBox.Show($"Вы действительно хотите удалить арендатора \"{record.Title}\"?", "Информация", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                await HttpClient.DeleteData(record.Id, "Tenant/");
+                HttpClient.DeleteData(record.Id, "Tenant/");
                 UserControlTenant_Load(sender, e);
             }
         }
@@ -54,9 +54,9 @@ namespace RentalOfPremises.WinForms.UserControls
             UserControlTenant_Load(sender, e);
         }
 
-        private async void UserControlTenant_Load(object sender, EventArgs e)
+        private void UserControlTenant_Load(object sender, EventArgs e)
         {
-            var data = await HttpClient.GetData<TenantResponse>("Tenant/");
+            var data = HttpClient.GetData<TenantResponse>("Tenant/");
             dataGridView1.DataSource = data;
             Tenants = data;
             materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;

@@ -59,128 +59,129 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\UserHttpClient.cs" />
-    <Compile Include="Forms\FormAddOrChangePrice.cs">
+    <Compile Include="Business Logic\HttpClient.cs" />
+    <Compile Include="UI\Forms\FormAddOrChangePrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAddOrChangePrice.Designer.cs">
+    <Compile Include="UI\Forms\FormAddOrChangePrice.Designer.cs">
       <DependentUpon>FormAddOrChangePrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAddOrChangeContract.cs">
+    <Compile Include="UI\Forms\FormAddOrChangeContract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAddOrChangeContract.Designer.cs">
+    <Compile Include="UI\Forms\FormAddOrChangeContract.Designer.cs">
       <DependentUpon>FormAddOrChangeContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="General\DataGridVeiwStyle.cs" />
-    <Compile Include="Enums\EnumRoleTypesConverter.cs" />
-    <Compile Include="Enums\PremisesTypes.cs" />
-    <Compile Include="Enums\RoleTypes.cs" />
-    <Compile Include="Enums\TenantTypes.cs" />
-    <Compile Include="Forms\FormAddOrChangeTenant.cs">
+    <Compile Include="General\MessageFromAPI\GetMessageFromApi.cs" />
+    <Compile Include="General\Styles\DataGridVeiwStyle.cs" />
+    <Compile Include="Context\Enums\EnumConverter.cs" />
+    <Compile Include="Context\Enums\PremisesTypes.cs" />
+    <Compile Include="Context\Enums\RoleTypes.cs" />
+    <Compile Include="Context\Enums\TenantTypes.cs" />
+    <Compile Include="UI\Forms\FormAddOrChangeTenant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAddOrChangeTenant.Designer.cs">
+    <Compile Include="UI\Forms\FormAddOrChangeTenant.Designer.cs">
       <DependentUpon>FormAddOrChangeTenant.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAddOrChangeRoom.cs">
+    <Compile Include="UI\Forms\FormAddOrChangeRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAddOrChangeRoom.Designer.cs">
+    <Compile Include="UI\Forms\FormAddOrChangeRoom.Designer.cs">
       <DependentUpon>FormAddOrChangeRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormMain.cs">
+    <Compile Include="UI\Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormMain.Designer.cs">
+    <Compile Include="UI\Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAddOrChangeUser.cs">
+    <Compile Include="UI\Forms\FormAddOrChangeUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAddOrChangeUser.Designer.cs">
+    <Compile Include="UI\Forms\FormAddOrChangeUser.Designer.cs">
       <DependentUpon>FormAddOrChangeUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormAuthorization.cs">
+    <Compile Include="UI\Forms\FormAuthorization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAuthorization.Designer.cs">
+    <Compile Include="UI\Forms\FormAuthorization.Designer.cs">
       <DependentUpon>FormAuthorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="General\Errors.cs" />
+    <Compile Include="General\MessageFromAPI\Errors.cs" />
     <Compile Include="General\GetElementsFromEnum.cs" />
     <Compile Include="General\GetHttpClient.cs" />
-    <Compile Include="General\MessageErrors.cs" />
-    <Compile Include="General\InitMaterial.cs" />
-    <Compile Include="ModelsRequest\ContractRequest.cs" />
-    <Compile Include="ModelsRequest\PaymentInvoiceRequestModel.cs" />
-    <Compile Include="ModelsRequest\PriceRequest.cs" />
-    <Compile Include="ModelsRequest\RoomRequest.cs" />
-    <Compile Include="ModelsRequest\TenantRequest.cs" />
-    <Compile Include="ModelsRequest\UserRequest.cs" />
-    <Compile Include="Models\ContractResponse.cs" />
-    <Compile Include="Models\PaymentInvoiceResponse.cs" />
-    <Compile Include="Models\PriceResponse.cs" />
-    <Compile Include="Models\RoomResponse.cs" />
-    <Compile Include="Models\TenantResponse.cs" />
-    <Compile Include="Models\UserResponse.cs" />
+    <Compile Include="General\MessageFromAPI\MessageErrors.cs" />
+    <Compile Include="General\Styles\InitMaterial.cs" />
+    <Compile Include="Context\ModelsRequest\ContractRequest.cs" />
+    <Compile Include="Context\ModelsRequest\PaymentInvoiceRequestModel.cs" />
+    <Compile Include="Context\ModelsRequest\PriceRequest.cs" />
+    <Compile Include="Context\ModelsRequest\RoomRequest.cs" />
+    <Compile Include="Context\ModelsRequest\TenantRequest.cs" />
+    <Compile Include="Context\ModelsRequest\UserRequest.cs" />
+    <Compile Include="Context\Models\ContractResponse.cs" />
+    <Compile Include="Context\Models\PaymentInvoiceResponse.cs" />
+    <Compile Include="Context\Models\PriceResponse.cs" />
+    <Compile Include="Context\Models\RoomResponse.cs" />
+    <Compile Include="Context\Models\TenantResponse.cs" />
+    <Compile Include="Context\Models\UserResponse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\UserControlPayment.cs">
+    <Compile Include="UI\UserControls\UserControlPayment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlPayment.Designer.cs">
+    <Compile Include="UI\UserControls\UserControlPayment.Designer.cs">
       <DependentUpon>UserControlPayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlPrice.cs">
+    <Compile Include="UI\UserControls\UserControlPrice.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlPrice.Designer.cs">
+    <Compile Include="UI\UserControls\UserControlPrice.Designer.cs">
       <DependentUpon>UserControlPrice.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlContract.cs">
+    <Compile Include="UI\UserControls\UserControlContract.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlContract.Designer.cs">
+    <Compile Include="UI\UserControls\UserControlContract.Designer.cs">
       <DependentUpon>UserControlContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlTenant.cs">
+    <Compile Include="UI\UserControls\UserControlTenant.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlTenant.Designer.cs">
+    <Compile Include="UI\UserControls\UserControlTenant.Designer.cs">
       <DependentUpon>UserControlTenant.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlRoom.cs">
+    <Compile Include="UI\UserControls\UserControlRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlRoom.Designer.cs">
+    <Compile Include="UI\UserControls\UserControlRoom.Designer.cs">
       <DependentUpon>UserControlRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlUser.cs">
+    <Compile Include="UI\UserControls\UserControlUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlUser.Designer.cs">
+    <Compile Include="UI\UserControls\UserControlUser.Designer.cs">
       <DependentUpon>UserControlUser.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\FormAddOrChangeContract.resx">
+    <EmbeddedResource Include="UI\Forms\FormAddOrChangeContract.resx">
       <DependentUpon>FormAddOrChangeContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAddOrChangeTenant.resx">
+    <EmbeddedResource Include="UI\Forms\FormAddOrChangeTenant.resx">
       <DependentUpon>FormAddOrChangeTenant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAddOrChangeRoom.resx">
+    <EmbeddedResource Include="UI\Forms\FormAddOrChangeRoom.resx">
       <DependentUpon>FormAddOrChangeRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAddOrChangePrice.resx">
+    <EmbeddedResource Include="UI\Forms\FormAddOrChangePrice.resx">
       <DependentUpon>FormAddOrChangePrice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormMain.resx">
+    <EmbeddedResource Include="UI\Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAddOrChangeUser.resx">
+    <EmbeddedResource Include="UI\Forms\FormAddOrChangeUser.resx">
       <DependentUpon>FormAddOrChangeUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormAuthorization.resx">
+    <EmbeddedResource Include="UI\Forms\FormAuthorization.resx">
       <DependentUpon>FormAuthorization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -192,22 +193,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\UserControlPayment.resx">
+    <EmbeddedResource Include="UI\UserControls\UserControlPayment.resx">
       <DependentUpon>UserControlPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlPrice.resx">
+    <EmbeddedResource Include="UI\UserControls\UserControlPrice.resx">
       <DependentUpon>UserControlPrice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlContract.resx">
+    <EmbeddedResource Include="UI\UserControls\UserControlContract.resx">
       <DependentUpon>UserControlContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlTenant.resx">
+    <EmbeddedResource Include="UI\UserControls\UserControlTenant.resx">
       <DependentUpon>UserControlTenant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlRoom.resx">
+    <EmbeddedResource Include="UI\UserControls\UserControlRoom.resx">
       <DependentUpon>UserControlRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlUser.resx">
+    <EmbeddedResource Include="UI\UserControls\UserControlUser.resx">
       <DependentUpon>UserControlUser.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -233,5 +234,6 @@
     <Content Include="Resources\room.png" />
     <Content Include="Resources\user.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
