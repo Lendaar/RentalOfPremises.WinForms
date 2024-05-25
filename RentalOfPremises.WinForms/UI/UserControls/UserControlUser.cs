@@ -60,7 +60,7 @@ namespace RentalOfPremises.WinForms.UserControls
             data.ForEach(x => x.InitFio());
             dataGridView1.DataSource = data;
             Users = data;
-            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Users.Count}";
         }
 
         private void FillListBox()
@@ -108,7 +108,7 @@ namespace RentalOfPremises.WinForms.UserControls
             {
                 dataGridView1.DataSource = Users.Where(x => x.FIO.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList();
             }
-            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Users.Count}";
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

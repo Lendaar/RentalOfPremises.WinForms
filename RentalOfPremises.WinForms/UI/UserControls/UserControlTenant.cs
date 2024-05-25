@@ -59,7 +59,7 @@ namespace RentalOfPremises.WinForms.UserControls
             var data = HttpClient.GetData<TenantResponse>("Tenant/");
             dataGridView1.DataSource = data;
             Tenants = data;
-            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Tenants.Count}";
         }
 
         private void FillListBox()
@@ -107,7 +107,7 @@ namespace RentalOfPremises.WinForms.UserControls
             {
                 dataGridView1.DataSource = Tenants.Where(x => x.Title.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList();
             }
-            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Tenants.Count}";
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

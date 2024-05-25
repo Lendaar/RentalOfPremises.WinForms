@@ -59,7 +59,7 @@ namespace RentalOfPremises.WinForms.UserControls
             var data = HttpClient.GetData<RoomResponse>("Room/");
             dataGridView1.DataSource = data;
             Rooms = data;
-            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Rooms.Count}";
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -104,7 +104,7 @@ namespace RentalOfPremises.WinForms.UserControls
                 case 1: dataGridView1.DataSource = Rooms.Where(x => x.Occupied == true && x.Liter.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList(); break;
                 case 2: dataGridView1.DataSource = Rooms.Where(x => x.Occupied == false && x.Liter.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList(); break;
             }
-            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Rooms.Count}";
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

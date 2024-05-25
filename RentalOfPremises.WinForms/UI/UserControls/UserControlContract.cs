@@ -13,6 +13,8 @@ namespace RentalOfPremises.WinForms.UserControls
     public partial class UserControlContract : UserControl
     {
         public List<ContractResponse> Contracts = new List<ContractResponse>();
+
+        public List<ContractResponse> ContractsOnView = new List<ContractResponse>();
         public UserControlContract()
         {
             InitializeComponent();
@@ -73,15 +75,15 @@ namespace RentalOfPremises.WinForms.UserControls
         private void UserControlContract_Load(object sender, EventArgs e)
         {
             var data = HttpClient.GetData<ContractResponse>("Contract/");
-            var contractInView = new List<ContractResponse>();
+            Contracts = data;
+            ContractsOnView.Clear();
             foreach (var num in data.GroupBy(x => x.Number))
             {
-                contractInView.Add(data.FirstOrDefault(x => x.Number == num.Key));
+                ContractsOnView.Add(data.FirstOrDefault(x => x.Number == num.Key));
             }
-            dataGridView1.DataSource = contractInView;
-            Contracts = data;
+            dataGridView1.DataSource = ContractsOnView;
             FillArendRooms();
-            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {ContractsOnView.Count}";
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -119,9 +121,18 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialTextBox_search_TextChanged(object sender, EventArgs e)
         {
-            var result = Contracts.Where(x => x.TenantTitle.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList();
-            dataGridView1.DataSource = result;
-            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            if(materialTextBox_search.Text != string.Empty)
+            {
+                var result = ContractsOnView.Where(x => x.TenantTitle.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList();
+                dataGridView1.DataSource = result;
+                materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {ContractsOnView.Count}";
+            }
+            else
+            {
+                UserControlContract_Load(sender, e);
+            }
+            
+
         }
     }
 }
