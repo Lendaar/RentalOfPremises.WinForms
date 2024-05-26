@@ -45,10 +45,18 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton_delete_Click(object sender, EventArgs e)
         {
-            var record = (ContractResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-            if (MessageBox.Show($"Вы действительно хотите удалить договор №{record.Number}?", "Информация", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            var listContractResponse = new List<ContractResponse>();
+            var number = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            foreach (var contract in Contracts.Where(x => x.Number == number))
             {
-                HttpClient.DeleteData(record.Id, "Contract/");
+                listContractResponse.Add(contract);
+            }
+            if (MessageBox.Show($"Вы действительно хотите удалить договор №{number}?", "Информация", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                foreach (var contract in listContractResponse)
+                {
+                    HttpClient.DeleteData(contract.Id, "Contract/");
+                }
                 UserControlContract_Load(sender, e);
             }
         }
@@ -83,6 +91,13 @@ namespace RentalOfPremises.WinForms.UserControls
                 ContractsOnView.Add(data.FirstOrDefault(x => x.Number == num.Key));
             }
             dataGridView1.DataSource = ContractsOnView;
+
+            CurrencyManager cm = (CurrencyManager)this.dataGridView1.BindingContext[ContractsOnView];
+            if (cm != null)
+            {
+                cm.Refresh();
+            }
+
             FillArendRooms();
             materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {ContractsOnView.Count}";
         }
@@ -109,15 +124,15 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void FillArendRooms()
         {
-            materialListBox_roomInArend.Items.Clear();
-            if (dataGridView1.Rows.Count != 0)
-            {
-                var number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-                foreach (var contract in Contracts.Where(x => x.Number == number))
-                {
-                    materialListBox_roomInArend.Items.Add(new MaterialListBoxItem($"{contract.Payment} ₽ | {contract.RoomLiter} | {contract.RoomNumber}"));
-                }
-            }
+             materialListBox_roomInArend.Items.Clear();
+             if (dataGridView1.Rows.Count != 0 && dataGridView1.SelectedRows.Count != 0)
+             {
+                 var number = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                 foreach (var contract in Contracts.Where(x => x.Number == number))
+                 {
+                     materialListBox_roomInArend.Items.Add(new MaterialListBoxItem($"{contract.Payment} ₽ | {contract.RoomLiter} | {contract.RoomNumber}"));
+                 }
+             }
         }
 
         private void materialTextBox_search_TextChanged(object sender, EventArgs e)
@@ -132,8 +147,6 @@ namespace RentalOfPremises.WinForms.UserControls
             {
                 UserControlContract_Load(sender, e);
             }
-            
-
         }
     }
 }
