@@ -83,7 +83,7 @@ namespace RentalOfPremises.WinForms.Forms
             this.tabPage1.AutoScroll = true;
             this.tabPage1.Controls.Add(this.userControlContract1);
             this.tabPage1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabPage1.ImageKey = "dogovor.png";
+            this.tabPage1.ImageKey = "dogovor1.jpg";
             this.tabPage1.Location = new System.Drawing.Point(4, 42);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -208,11 +208,11 @@ namespace RentalOfPremises.WinForms.Forms
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Black;
             this.imageList1.Images.SetKeyName(0, "arendator.png");
-            this.imageList1.Images.SetKeyName(1, "dogovor.png");
-            this.imageList1.Images.SetKeyName(2, "payment.png");
-            this.imageList1.Images.SetKeyName(3, "price.png");
-            this.imageList1.Images.SetKeyName(4, "room.png");
-            this.imageList1.Images.SetKeyName(5, "user.png");
+            this.imageList1.Images.SetKeyName(1, "payment.png");
+            this.imageList1.Images.SetKeyName(2, "price.png");
+            this.imageList1.Images.SetKeyName(3, "room.png");
+            this.imageList1.Images.SetKeyName(4, "user.png");
+            this.imageList1.Images.SetKeyName(5, "dogovor1.jpg");
             // 
             // FormMain
             // 
@@ -230,7 +230,6 @@ namespace RentalOfPremises.WinForms.Forms
             this.Padding = new System.Windows.Forms.Padding(3, 72, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Договоры для аренды";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);

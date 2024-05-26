@@ -18,8 +18,8 @@ namespace RentalOfPremises.WinForms.Forms
             {
                 case 0:
                     userControlContract1.UserControlContract_Load(sender, e); break;
-                //case 1:
-                //    userControlPayment1.UserControlPayment_Load(sender, e); break;
+                case 1:
+                    userControlPayment1.UserControlPayment_Load(sender, e); break;
                 case 2:
                     userControlRoom1.UserControlRoom_Load(sender, e); break;
                 case 3:
@@ -29,10 +29,6 @@ namespace RentalOfPremises.WinForms.Forms
                 case 5:
                     userControlUser3.UserControlUser_Load(sender, e); break;
             }
-        }
-
-        private void Form1_Load(object sender, System.EventArgs e)
-        {
         }
     }
 }
