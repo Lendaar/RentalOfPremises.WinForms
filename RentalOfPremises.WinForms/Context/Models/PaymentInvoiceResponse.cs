@@ -13,6 +13,11 @@ namespace RentalOfPremises.Api.Models
         public Guid Id { get; set; }
 
         /// <summary>
+        /// Номер счета для оплаты
+        /// </summary>
+        public int Number { get; set; }
+
+        /// <summary>
         /// Номер договора
         /// </summary>
         public int NumberContract { get; set; }
