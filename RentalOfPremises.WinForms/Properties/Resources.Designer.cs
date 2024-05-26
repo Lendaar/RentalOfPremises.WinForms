@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestShell.Properties {
+namespace RentalOfPremises.WinForms.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TestShell.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TestShell.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RentalOfPremises.WinForms.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -73,9 +73,9 @@ namespace TestShell.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dogovor {
+        internal static System.Drawing.Bitmap dogovor1 {
             get {
-                object obj = ResourceManager.GetObject("dogovor", resourceCulture);
+                object obj = ResourceManager.GetObject("dogovor1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
