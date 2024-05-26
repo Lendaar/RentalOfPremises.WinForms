@@ -57,11 +57,14 @@ namespace RentalOfPremises.WinForms.UserControls
 
         public void UserControlPayment_Load(object sender, EventArgs e)
         {
-            var data = HttpClient.GetData<PaymentInvoiceResponse>("PaymentInvoice/");
-            dataGridView1.DataSource = data;
-            PaymentInvoices = data;
-            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {PaymentInvoices.Count}";
-            FillArendRooms();
+            if (!this.DesignMode)
+            {
+                var data = HttpClient.GetData<PaymentInvoiceResponse>("PaymentInvoice/");
+                dataGridView1.DataSource = data;
+                PaymentInvoices = data;
+                materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {PaymentInvoices.Count}";
+                FillArendRooms();
+            }
         }
 
         private void materialTextBox21_TextChanged(object sender, EventArgs e)

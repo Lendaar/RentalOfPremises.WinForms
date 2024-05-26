@@ -83,23 +83,26 @@ namespace RentalOfPremises.WinForms.UserControls
 
         public void UserControlContract_Load(object sender, EventArgs e)
         {
-            var data = HttpClient.GetData<ContractResponse>("Contract/");
-            Contracts = data;
-            ContractsOnView.Clear();
-            foreach (var num in data.GroupBy(x => x.Number))
+            if (!this.DesignMode)
             {
-                ContractsOnView.Add(data.FirstOrDefault(x => x.Number == num.Key));
-            }
-            dataGridView1.DataSource = ContractsOnView;
+                var data = HttpClient.GetData<ContractResponse>("Contract/");
+                Contracts = data;
+                ContractsOnView.Clear();
+                foreach (var num in data.GroupBy(x => x.Number))
+                {
+                    ContractsOnView.Add(data.FirstOrDefault(x => x.Number == num.Key));
+                }
+                dataGridView1.DataSource = ContractsOnView;
 
-            CurrencyManager cm = (CurrencyManager)this.dataGridView1.BindingContext[ContractsOnView];
-            if (cm != null)
-            {
-                cm.Refresh();
-            }
+                CurrencyManager cm = (CurrencyManager)this.dataGridView1.BindingContext[ContractsOnView];
+                if (cm != null)
+                {
+                    cm.Refresh();
+                }
 
-            FillArendRooms();
-            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {ContractsOnView.Count}";
+                FillArendRooms();
+                materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {ContractsOnView.Count}";
+            }
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

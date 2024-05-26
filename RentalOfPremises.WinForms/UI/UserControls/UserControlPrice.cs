@@ -31,9 +31,12 @@ namespace RentalOfPremises.WinForms.UserControls
 
         public void UserControlPrice_Load(object sender, EventArgs e)
         {
-            var data = HttpClient.GetData<PriceResponse>("Price/");
-            dataGridView1.DataSource = data;
-            materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            if(!this.DesignMode)
+            {
+                var data = HttpClient.GetData<PriceResponse>("Price/");
+                dataGridView1.DataSource = data;
+                materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
+            }
         }
     }
 }

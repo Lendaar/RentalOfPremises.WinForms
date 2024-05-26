@@ -17,7 +17,6 @@ namespace RentalOfPremises.WinForms.UserControls
         {
             InitializeComponent();
             dataGridView1.Stylization();
-            FillListBox();
         }
 
         private void materialButton_exit_Click(object sender, EventArgs e)
@@ -56,10 +55,14 @@ namespace RentalOfPremises.WinForms.UserControls
 
         public void UserControlRoom_Load(object sender, EventArgs e)
         {
-            var data = HttpClient.GetData<RoomResponse>("Room/");
-            dataGridView1.DataSource = data;
-            Rooms = data;
-            materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Rooms.Count}";
+            if (!this.DesignMode)
+            {
+                var data = HttpClient.GetData<RoomResponse>("Room/");
+                dataGridView1.DataSource = data;
+                Rooms = data;
+                materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Rooms.Count}";
+                FillListBox();
+            }
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -86,15 +89,15 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialListBox_filter_SelectedIndexChanged(object sender, MaterialListBoxItem selectedItem)
         {
-            WorkOnData();
+            WorkWithData();
         }
 
         private void materialTextBox_search_TextChanged(object sender, EventArgs e)
         {
-            WorkOnData();
+            WorkWithData();
         }
 
-        public void WorkOnData()
+        public void WorkWithData()
         {
             var index = materialListBox_filter.SelectedIndex;
 
