@@ -192,7 +192,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1056, 558);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Column1
             // 

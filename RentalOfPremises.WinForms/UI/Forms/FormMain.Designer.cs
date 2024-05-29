@@ -230,6 +230,7 @@ namespace RentalOfPremises.WinForms.Forms
             this.Padding = new System.Windows.Forms.Padding(3, 72, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Договоры для аренды";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);

@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
+using RentalOfPremises.Api.Models;
+using RentalOfPremises.WinForms.General;
 using RentalOfPremises.WinForms.General.MessageFromValidator;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Windows.Forms;
 
@@ -25,6 +27,7 @@ namespace RentalOfPremises.WinForms.BL
             catch 
             {
                 MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CloseForm.Close();
                 return new List<T>();
             }
         }
@@ -36,19 +39,20 @@ namespace RentalOfPremises.WinForms.BL
                 var client = new GetHttpClient().GetClient();
                 var json = JsonConvert.SerializeObject(modelRequest);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", DataFromToken.Token);
                 var data = client.PostAsync(path, content).Result;
-                if (data.StatusCode.Equals(HttpStatusCode.Conflict))
+                var dialogResult = GetMessageFromApi.MessageFiltr(data);
+                if (dialogResult == DialogResult.OK)
                 {
-                    GetMessageFromApi.GetMessageFromValidator(data);
-                    return DialogResult.No;
+                    MessageBox.Show("Запись создана", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return DialogResult.OK;
                 }
-                data.EnsureSuccessStatusCode();
-                MessageBox.Show("Запись создана", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return DialogResult.OK;
+                return DialogResult.No;
             }
             catch
             {
                 MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CloseForm.Close();
                 return DialogResult.No;
             }
         }
@@ -59,17 +63,17 @@ namespace RentalOfPremises.WinForms.BL
             {
                 var client = new GetHttpClient().GetClient();
                 var data = client.DeleteAsync(path + id).Result;
-                if(data.StatusCode.Equals(HttpStatusCode.NotAcceptable))
+                var dialogResult = GetMessageFromApi.MessageFiltr(data);
+                if (dialogResult == DialogResult.OK)
                 {
-                    GetMessageFromApi.GetMessageAboutErrors(data);
+                    MessageBox.Show("Запись удалена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                data.EnsureSuccessStatusCode();
-                MessageBox.Show("Запись удалена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
             {
                 MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CloseForm.Close();
             }
         }
 
@@ -81,23 +85,17 @@ namespace RentalOfPremises.WinForms.BL
                 var json = JsonConvert.SerializeObject(modelRequest);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var data = client.PutAsync(path, content).Result;
-                if (data.StatusCode.Equals(HttpStatusCode.Conflict))
+                var dialogResult = GetMessageFromApi.MessageFiltr(data);
+                if (dialogResult == DialogResult.OK)
                 {
-                    GetMessageFromApi.GetMessageFromValidator(data);
-                    return DialogResult.No;
+                    MessageBox.Show("Запись обновлена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if (data.StatusCode.Equals(HttpStatusCode.NotAcceptable))
-                {
-                    GetMessageFromApi.GetMessageAboutErrors(data);
-                    return DialogResult.No;
-                }
-                data.EnsureSuccessStatusCode();
-                MessageBox.Show("Запись обновлена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return DialogResult.OK;
             }
             catch
             {
                 MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CloseForm.Close();
                 return DialogResult.No;
             }
         }
@@ -113,6 +111,7 @@ namespace RentalOfPremises.WinForms.BL
             catch
             {
                 MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CloseForm.Close();
                 return null;
             }
         }
@@ -125,13 +124,40 @@ namespace RentalOfPremises.WinForms.BL
                 var data = client.GetAsync(path).Result;
                 data.EnsureSuccessStatusCode();
                 var result = data.Content.ReadAsStringAsync().Result;
-                var listResponse = JsonConvert.DeserializeObject<int>(result);
-                return listResponse;
+                var response = JsonConvert.DeserializeObject<int>(result);
+                return response;
             }
             catch
             {
                 MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CloseForm.Close();
                 return 0;
+            }
+        }
+
+        public static bool SignIn(string login, string password)
+        {
+            try
+            {
+                var client = new GetHttpClient().GetClient();
+                var data = client.PostAsync($"Authorization/SignIn?login={login}&password={password}", null).Result;
+                var dialogResult = GetMessageFromApi.MessageFiltr(data);
+                if (dialogResult == DialogResult.OK)
+                {
+                    var result = data.Content.ReadAsStringAsync().Result;
+                    var response = JsonConvert.DeserializeObject<TokenResponse>(result);
+                    DataFromToken.RoleUser = response.RoleUser;
+                    DataFromToken.Token = response.Token;
+                    MessageBox.Show("Успешный вход в приложение.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка соединения с сервером.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CloseForm.Close();
+                return false;
             }
         }
     }

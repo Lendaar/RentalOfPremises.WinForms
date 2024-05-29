@@ -41,15 +41,15 @@
             this.materialListBox_filter = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.materialButton_exit = new MaterialSkin.Controls.MaterialButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.materialButton_exit = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -250,7 +250,47 @@
             this.dataGridView1.Size = new System.Drawing.Size(1103, 558);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Liter";
+            this.Column1.HeaderText = "Литер";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "NumberRoom";
+            this.Column2.HeaderText = "Номер помещения";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "SquareRoom";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column5.HeaderText = "Площадь";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TypeRoom";
+            this.Column3.HeaderText = "Тип помещения";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Occupied";
+            this.Column4.HeaderText = "Арендовано";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -316,47 +356,6 @@
             this.materialButton_exit.UseAccentColor = false;
             this.materialButton_exit.UseVisualStyleBackColor = true;
             this.materialButton_exit.Click += new System.EventHandler(this.materialButton_exit_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Liter";
-            this.Column1.HeaderText = "Литер";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "NumberRoom";
-            this.Column2.HeaderText = "Номер помещения";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "SquareRoom";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column5.HeaderText = "Площадь";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "TypeRoom";
-            this.Column3.HeaderText = "Тип помещения";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Occupied";
-            this.Column4.HeaderText = "Арендовано";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // UserControlRoom
             // 

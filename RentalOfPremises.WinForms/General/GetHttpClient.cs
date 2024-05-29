@@ -9,6 +9,7 @@ namespace RentalOfPremises.WinForms
         {
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7190/");
+            client.Timeout = TimeSpan.FromSeconds(2);
             return client;
         }
     }

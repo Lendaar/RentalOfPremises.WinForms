@@ -1,6 +1,7 @@
 ﻿using RentalOfPremises.Api.Models;
 using RentalOfPremises.WinForms.BL;
 using RentalOfPremises.WinForms.Forms;
+using RentalOfPremises.WinForms.General;
 using System;
 using System.Windows.Forms;
 
@@ -15,11 +16,7 @@ namespace RentalOfPremises.WinForms.UserControls
         }
         private void materialButton_exit_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Вы действительно хотите выйти из аккаунта?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                ((Form)this.TopLevelControl).Close();
-            }
+            ((Form)this.TopLevelControl).Close();
         }
 
         private void materialButton_add_Click(object sender, EventArgs e)
@@ -34,6 +31,10 @@ namespace RentalOfPremises.WinForms.UserControls
             if(!this.DesignMode)
             {
                 var data = HttpClient.GetData<PriceResponse>("Price/");
+                if (CloseForm.SystemClosing)
+                {
+                    return;
+                }
                 dataGridView1.DataSource = data;
                 materialLabel_count.Text = "Количество записей: " + dataGridView1.Rows.Count;
             }

@@ -2,6 +2,7 @@
 using RentalOfPremises.Api.Models;
 using RentalOfPremises.WinForms.BL;
 using RentalOfPremises.WinForms.Forms;
+using RentalOfPremises.WinForms.General;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,7 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton_Exit_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Вы действительно хотите выйти из аккаунта?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                ((Form)this.TopLevelControl).Close();
-            }
+            ((Form)this.TopLevelControl).Close();
         }
 
         private void materialButton_toPDF_Click(object sender, EventArgs e)
@@ -60,6 +57,10 @@ namespace RentalOfPremises.WinForms.UserControls
             if (!this.DesignMode)
             {
                 var data = HttpClient.GetData<PaymentInvoiceResponse>("PaymentInvoice/");
+                if (CloseForm.SystemClosing)
+                {
+                    return;
+                }
                 dataGridView1.DataSource = data;
                 PaymentInvoices = data;
                 materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {PaymentInvoices.Count}";

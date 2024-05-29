@@ -2,6 +2,7 @@
 using RentalOfPremises.Api.Models;
 using RentalOfPremises.WinForms.BL;
 using RentalOfPremises.WinForms.Forms;
+using RentalOfPremises.WinForms.General;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,11 +24,7 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton_exit_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Вы действительно хотите выйти из аккаунта?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                ((Form)this.TopLevelControl).Close();
-            }
+            ((Form)this.TopLevelControl).Close();
         }
 
         private void materialButton_toPDF_Click(object sender, EventArgs e)
@@ -61,19 +58,6 @@ namespace RentalOfPremises.WinForms.UserControls
             }
         }
 
-        private void materialButton_change_Click(object sender, EventArgs e)
-        {
-            var listContractResponse = new List<ContractResponse>();
-            var number = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            foreach (var contract in Contracts.Where(x => x.Number == number))
-            {
-                listContractResponse.Add(contract);
-            }
-            var form = new FormAddOrChangeContract(listContractResponse);
-            form.ShowDialog();
-            UserControlContract_Load(sender, e);
-        }
-
         private void materialButton_add_Click(object sender, EventArgs e)
         {
             var form = new FormAddOrChangeContract();
@@ -86,6 +70,10 @@ namespace RentalOfPremises.WinForms.UserControls
             if (!this.DesignMode)
             {
                 var data = HttpClient.GetData<ContractResponse>("Contract/");
+                if (CloseForm.SystemClosing)
+                {
+                    return;
+                }
                 Contracts = data;
                 ContractsOnView.Clear();
                 foreach (var num in data.GroupBy(x => x.Number))
@@ -121,7 +109,7 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            materialButton_change.Enabled = materialButton_delete.Enabled = materialButton_toPDF.Enabled = dataGridView1.SelectedRows.Count > 0;
+            materialButton_delete.Enabled = materialButton_toPDF.Enabled = dataGridView1.SelectedRows.Count > 0;
             FillArendRooms();
         }
 

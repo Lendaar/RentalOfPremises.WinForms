@@ -60,6 +60,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Logic\HttpClient.cs" />
+    <Compile Include="Context\Models\TokenResponse.cs" />
+    <Compile Include="General\CloseForm.cs" />
+    <Compile Include="General\DataFromToken.cs" />
+    <Compile Include="UI\Forms\FormAddOrChangePaymentInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\FormAddOrChangePaymentInvoice.Designer.cs">
+      <DependentUpon>FormAddOrChangePaymentInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Forms\FormAddOrChangePrice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +175,9 @@
     <EmbeddedResource Include="UI\Forms\FormAddOrChangeContract.resx">
       <DependentUpon>FormAddOrChangeContract.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\FormAddOrChangePaymentInvoice.resx">
+      <DependentUpon>FormAddOrChangePaymentInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forms\FormAddOrChangeTenant.resx">
       <DependentUpon>FormAddOrChangeTenant.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +204,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\UserControls\UserControlPayment.resx">
       <DependentUpon>UserControlPayment.cs</DependentUpon>
@@ -229,6 +242,7 @@
   <ItemGroup>
     <Content Include="Resources\arendator.png" />
     <Content Include="Resources\dogovor.png" />
+    <None Include="Resources\dogovor1.jpg" />
     <Content Include="Resources\payment.png" />
     <Content Include="Resources\price.png" />
     <Content Include="Resources\room.png" />

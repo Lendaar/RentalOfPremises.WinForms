@@ -2,6 +2,7 @@
 using RentalOfPremises.WinForms.BL;
 using RentalOfPremises.WinForms.Enums;
 using RentalOfPremises.WinForms.Forms;
+using RentalOfPremises.WinForms.General;
 using RentalOfPremises.WinForms.Models;
 using System;
 using System.Collections.Generic;
@@ -21,11 +22,7 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton_exit_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Вы действительно хотите выйти из аккаунта?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                ((Form)this.TopLevelControl).Close();
-            }
+            ((Form)this.TopLevelControl).Close();
         }
 
         private void materialButton_delete_Click(object sender, EventArgs e)
@@ -58,6 +55,10 @@ namespace RentalOfPremises.WinForms.UserControls
             if (!this.DesignMode)
             {
                 var data = HttpClient.GetData<UserResponse>("User/");
+                if (CloseForm.SystemClosing)
+                {
+                    return;
+                }
                 data.ForEach(x => x.InitFio());
                 dataGridView1.DataSource = data;
                 Users = data;

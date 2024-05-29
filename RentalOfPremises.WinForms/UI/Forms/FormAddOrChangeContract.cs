@@ -28,7 +28,7 @@ namespace RentalOfPremises.WinForms.Forms
 
         public FormAddOrChangeContract(List<ContractResponse> contractResponses) : this() 
         {
-            FillTenants(contractResponses[0]);
+            FillTenants();
             materialTextBox_period.Text = (contractResponses[0].DateEnd.Month - contractResponses[0].DateStart.Month).ToString();
             dateTimePicker_dateStart.Value = contractResponses[0].DateStart.Date;
             IsEdit = true;
@@ -83,20 +83,12 @@ namespace RentalOfPremises.WinForms.Forms
             Close();
         }
 
-        private void FillTenants(ContractResponse contract = null)
+        private void FillTenants()
         {
             var tenants = HttpClient.GetData<TenantResponse>("Tenant/");
             materialComboBox_arendator.DataSource = tenants;
             materialComboBox_arendator.ValueMember = "Id";
             materialComboBox_arendator.DisplayMember = "Title";
-            if (contract == null)
-            {
-                materialComboBox_arendator.SelectedIndex = 0;
-            }
-            else
-            {
-                materialComboBox_arendator.SelectedItem = materialComboBox_arendator.Items.Cast<TenantResponse>().FirstOrDefault(x => x.Inn == contract.TenantInn);
-            }
         }
 
         private void FillRooms()

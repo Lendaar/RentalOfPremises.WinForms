@@ -3,6 +3,7 @@ using RentalOfPremises.Api.Enums;
 using RentalOfPremises.Api.Models;
 using RentalOfPremises.WinForms.BL;
 using RentalOfPremises.WinForms.Forms;
+using RentalOfPremises.WinForms.General;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,7 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton_exit_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Вы действительно хотите выйти из аккаунта?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                ((Form)this.TopLevelControl).Close();
-            }
+            ((Form)this.TopLevelControl).Close();
         }
 
         private void materialButton_delete_Click(object sender, EventArgs e)
@@ -58,8 +55,15 @@ namespace RentalOfPremises.WinForms.UserControls
             if (!this.DesignMode)
             {
                 var data = HttpClient.GetData<RoomResponse>("Room/");
+                if (CloseForm.SystemClosing)
+                {
+                    return;
+                }
                 dataGridView1.DataSource = data;
                 Rooms = data;
+
+                materialButton_add.Enabled = materialButton_change.Enabled = materialButton_delete.Enabled = dataGridView1.Rows.Count > 0 && DataFromToken.RoleUser != Enums.RoleTypes.Employee;
+
                 materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Rooms.Count}";
                 FillListBox();
             }
@@ -108,11 +112,6 @@ namespace RentalOfPremises.WinForms.UserControls
                 case 2: dataGridView1.DataSource = Rooms.Where(x => x.Occupied == false && x.Liter.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList(); break;
             }
             materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Rooms.Count}";
-        }
-
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            materialButton_change.Enabled = materialButton_delete.Enabled = dataGridView1.SelectedRows.Count > 0;
         }
     }
 }
