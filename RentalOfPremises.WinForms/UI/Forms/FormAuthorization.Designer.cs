@@ -1,4 +1,4 @@
-﻿namespace RentalOfPremises.WinForms.Forms
+﻿namespace RentalOfPremises.WinForms.UI.Forms
 {
     partial class FormAuthorization
     {

@@ -1,18 +1,18 @@
 ﻿using MaterialSkin.Controls;
-using RentalOfPremises.Api.Enums;
-using RentalOfPremises.Api.Models;
-using RentalOfPremises.Api.ModelsRequest.Room;
-using RentalOfPremises.WinForms.BL;
-using RentalOfPremises.WinForms.Enums;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Enums;
+using RentalOfPremises.WinForms.Context.Models;
+using RentalOfPremises.WinForms.Context.ModelsRequest;
+using RentalOfPremises.WinForms.General.Styles;
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.Forms
+namespace RentalOfPremises.WinForms.UI.Forms
 {
     public partial class FormAddOrChangeRoom : MaterialForm
     {
-        private readonly RoomRequest Room;
+        private readonly RoomRequest Room = new RoomRequest();
 
         private bool IsEdit = false;
 
@@ -22,7 +22,6 @@ namespace RentalOfPremises.WinForms.Forms
         {
             InitializeComponent();
             InitMaterial.GetUI(this);
-            Room = new RoomRequest();
 
             materialComboBox_type.Items.Clear();
             foreach (PremisesTypes dir in Enum.GetValues(typeof(PremisesTypes)))
@@ -48,8 +47,8 @@ namespace RentalOfPremises.WinForms.Forms
         private void materialButton_save_Click(object sender, EventArgs e)
         {
             Room.Liter = materialMaskedTextBox_liter.Text.Trim();
-            Room.NumberRoom = Convert.ToInt32(materialTextBox_number.Text);
-            Room.SquareRoom = Math.Round(Convert.ToDouble(materialTextBox_area.Text), 2);
+            Room.NumberRoom = int.TryParse(materialTextBox_number.Text, out var value) ? value : 0;
+            Room.SquareRoom = double.TryParse(materialTextBox_area.Text, out var result) ? Math.Round(result, 2) : 0;
             Room.TypeRoom = (PremisesTypes)((EnumConverter)materialComboBox_type.SelectedItem).Type;
             if (!IsEdit)
             {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace RentalOfPremises.Api.Enums
+namespace RentalOfPremises.WinForms.Context.Enums
 {
     /// <summary>
     /// Типы помещений

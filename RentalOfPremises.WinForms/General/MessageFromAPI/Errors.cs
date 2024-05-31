@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace RentalOfPremises.WinForms.General
+namespace RentalOfPremises.WinForms.General.MessageFromAPI
 {
     public class Errors
     {

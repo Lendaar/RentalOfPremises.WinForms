@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 
-namespace RentalOfPremises.WinForms
+namespace RentalOfPremises.WinForms.General
 {
     public class GetHttpClient
     {

@@ -1,19 +1,19 @@
 ﻿using MaterialSkin.Controls;
-using RentalOfPremises.Api.Enums;
-using RentalOfPremises.Api.Models;
-using RentalOfPremises.Api.ModelsRequest.Tenant;
-using RentalOfPremises.WinForms.BL;
-using RentalOfPremises.WinForms.Enums;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Enums;
+using RentalOfPremises.WinForms.Context.Models;
+using RentalOfPremises.WinForms.Context.ModelsRequest;
+using RentalOfPremises.WinForms.General.Styles;
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.Forms
+namespace RentalOfPremises.WinForms.UI.Forms
 {
     public partial class FormAddOrChangeTenant : MaterialForm
     {
 
-        private readonly TenantRequest Tenant;
+        private readonly TenantRequest Tenant = new TenantRequest();
 
         private bool IsEdit = false;
 
@@ -80,7 +80,7 @@ namespace RentalOfPremises.WinForms.Forms
             Tenant.Address = materialMultiLineTextBox_address.Text.Trim();
 
             Tenant.Inn = materialMaskedTextBox_INN.Text;
-            Tenant.Kpp = materialMaskedTextBox_KPP.Enabled ? materialMaskedTextBox_KPP.Text : "";
+            Tenant.Kpp = materialMaskedTextBox_KPP.Enabled ? materialMaskedTextBox_KPP.Text : string.Empty;
             Tenant.Rs = materialMaskedTextBox_rs.Text;
             Tenant.Ks = materialMaskedTextBox_ks.Text;
             Tenant.Bik = materialMaskedTextBox_bik.Text;
@@ -109,7 +109,7 @@ namespace RentalOfPremises.WinForms.Forms
 
         private void materialMaskedTextBox_ogrn_TextChanged(object sender, EventArgs e)
         {
-                materialButton_save.Enabled = Validations();
+            materialButton_save.Enabled = Validations();
         }
 
         private bool Validations()
@@ -134,7 +134,7 @@ namespace RentalOfPremises.WinForms.Forms
 
         private void materialComboBox_type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(materialComboBox_type.SelectedItem == materialComboBox_type.Items.Cast<EnumConverter>().FirstOrDefault(x => x.Type.ToString() == "Individual"))
+            if (materialComboBox_type.SelectedItem == materialComboBox_type.Items.Cast<EnumConverter>().FirstOrDefault(x => x.Type.ToString() == "Individual"))
             {
                 materialMaskedTextBox_INN.Mask = "0000000000";
                 materialMaskedTextBox_KPP.Enabled = false;

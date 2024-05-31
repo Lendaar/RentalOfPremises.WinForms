@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Logic\HttpClient.cs" />
+    <Compile Include="Context\Enums\Months.cs" />
     <Compile Include="Context\Models\TokenResponse.cs" />
     <Compile Include="General\CloseForm.cs" />
     <Compile Include="General\DataFromToken.cs" />

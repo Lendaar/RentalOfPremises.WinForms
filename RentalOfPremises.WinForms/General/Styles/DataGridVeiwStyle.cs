@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms
+namespace RentalOfPremises.WinForms.General.Styles
 {
     public static class DataGridVeiwStyle
     {
@@ -24,7 +24,7 @@ namespace RentalOfPremises.WinForms
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255 ,130, 177, 255);
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 130, 177, 255);
             dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 15, FontStyle.Regular);

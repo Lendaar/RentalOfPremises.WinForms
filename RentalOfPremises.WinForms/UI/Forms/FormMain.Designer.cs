@@ -1,6 +1,6 @@
-﻿using RentalOfPremises.WinForms.UserControls;
+﻿using RentalOfPremises.WinForms.UI.UserControls;
 
-namespace RentalOfPremises.WinForms.Forms
+namespace RentalOfPremises.WinForms.UI.Forms
 {
     partial class FormMain
     {
@@ -34,17 +34,17 @@ namespace RentalOfPremises.WinForms.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.userControlContract1 = new RentalOfPremises.WinForms.UserControls.UserControlContract();
+            this.userControlContract1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlContract();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.userControlPayment1 = new RentalOfPremises.WinForms.UserControls.UserControlPayment();
+            this.userControlPayment1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlPayment();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.userControlRoom1 = new RentalOfPremises.WinForms.UserControls.UserControlRoom();
+            this.userControlRoom1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlRoom();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.userControlTenant1 = new RentalOfPremises.WinForms.UserControls.UserControlTenant();
+            this.userControlTenant1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlTenant();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.userControlPrice1 = new RentalOfPremises.WinForms.UserControls.UserControlPrice();
+            this.userControlPrice1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlPrice();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.userControlUser3 = new RentalOfPremises.WinForms.UserControls.UserControlUser();
+            this.userControlUser3 = new RentalOfPremises.WinForms.UI.UserControls.UserControlUser();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();

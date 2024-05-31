@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RentalOfPremises.Api.Models
+namespace RentalOfPremises.WinForms.Context.Models
 {
     /// <summary>
     /// Модель ответа счета на оплату

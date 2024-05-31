@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RentalOfPremises.Api.ModelsRequest.PaymentInvoice
+namespace RentalOfPremises.WinForms.Context.ModelsRequest
 {
     public class PaymentInvoiceRequest
     {

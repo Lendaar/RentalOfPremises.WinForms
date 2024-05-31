@@ -1,14 +1,17 @@
 ﻿using MaterialSkin;
-using RentalOfPremises.Api.Models;
-using RentalOfPremises.WinForms.BL;
-using RentalOfPremises.WinForms.Forms;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Enums;
+using RentalOfPremises.WinForms.Context.Models;
 using RentalOfPremises.WinForms.General;
+using RentalOfPremises.WinForms.General.Styles;
+using RentalOfPremises.WinForms.UI.Forms;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.UserControls
+namespace RentalOfPremises.WinForms.UI.UserControls
 {
     public partial class UserControlPayment : UserControl
     {
@@ -26,7 +29,23 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton_toPDF_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var number = ((PaymentInvoiceResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem).Number;
+                var data = HttpClient.GetDocument($"PaymentInvoice/Payment?id={number}");
+                if (CloseForm.SystemClosing)
+                {
+                    return;
+                }
+                saveFileDialog.FileName = $"Счет на оплату №{number}";
+                saveFileDialog.Filter = "PDF-файл (*.pdf)|*.pdf";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllBytes(saveFileDialog.FileName, data);
+                    MessageBox.Show("Документ создан", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch { }
         }
 
         private void materialButton_delete_Click(object sender, EventArgs e)
@@ -94,6 +113,15 @@ namespace RentalOfPremises.WinForms.UserControls
                 materialListBox_Info.Items.Add(new MaterialListBoxItem($"ИНН Арендатора: {contract.TenantInn}"));
                 materialListBox_Info.Items.Add(new MaterialListBoxItem($"Дата начала договора: {contract.DateStart.Date.ToShortDateString()}"));
                 materialListBox_Info.Items.Add(new MaterialListBoxItem($"Дата окончания договора: {contract.DateEnd.Date.ToShortDateString()}"));
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "PeriodPayment")
+            {
+                var myStatus = GetElementsFromEnum.ParseEnum<Months>(e.Value.ToString());
+                e.Value = myStatus.PerevodDescription();
             }
         }
     }

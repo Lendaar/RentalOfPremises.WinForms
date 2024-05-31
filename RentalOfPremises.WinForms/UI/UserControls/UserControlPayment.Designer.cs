@@ -1,4 +1,4 @@
-﻿namespace RentalOfPremises.WinForms.UserControls
+﻿namespace RentalOfPremises.WinForms.UI.UserControls
 {
     partial class UserControlPayment
     {
@@ -33,6 +33,7 @@
             this.materialButton_delete = new MaterialSkin.Controls.MaterialButton();
             this.materialButton_add = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialListBox_Info = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +51,7 @@
             this.materialButton_Exit = new MaterialSkin.Controls.MaterialButton();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.materialButton_toPDF = new MaterialSkin.Controls.MaterialButton();
-            this.materialListBox_Info = new MaterialSkin.Controls.MaterialListBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -163,6 +164,23 @@
             this.materialCard1.Size = new System.Drawing.Size(252, 295);
             this.materialCard1.TabIndex = 10;
             // 
+            // materialListBox_Info
+            // 
+            this.materialListBox_Info.BackColor = System.Drawing.Color.White;
+            this.materialListBox_Info.BorderColor = System.Drawing.Color.LightGray;
+            this.materialListBox_Info.Depth = 0;
+            this.materialListBox_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialListBox_Info.Location = new System.Drawing.Point(17, 59);
+            this.materialListBox_Info.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialListBox_Info.Name = "materialListBox_Info";
+            this.materialListBox_Info.SelectedIndex = -1;
+            this.materialListBox_Info.SelectedItem = null;
+            this.materialListBox_Info.ShowBorder = false;
+            this.materialListBox_Info.ShowScrollBar = true;
+            this.materialListBox_Info.Size = new System.Drawing.Size(218, 197);
+            this.materialListBox_Info.TabIndex = 4;
+            this.materialListBox_Info.UseAccentColor = true;
+            // 
             // materialLabel2
             // 
             this.materialLabel2.Depth = 0;
@@ -204,6 +222,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1103, 558);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // Column9
@@ -357,6 +376,7 @@
             this.materialButton_toPDF.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_toPDF.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_toPDF.Depth = 0;
+            this.materialButton_toPDF.Enabled = false;
             this.materialButton_toPDF.HighEmphasis = true;
             this.materialButton_toPDF.Icon = null;
             this.materialButton_toPDF.Location = new System.Drawing.Point(14, 318);
@@ -371,23 +391,6 @@
             this.materialButton_toPDF.UseAccentColor = false;
             this.materialButton_toPDF.UseVisualStyleBackColor = true;
             this.materialButton_toPDF.Click += new System.EventHandler(this.materialButton_toPDF_Click);
-            // 
-            // materialListBox_Info
-            // 
-            this.materialListBox_Info.BackColor = System.Drawing.Color.White;
-            this.materialListBox_Info.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox_Info.Depth = 0;
-            this.materialListBox_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox_Info.Location = new System.Drawing.Point(17, 59);
-            this.materialListBox_Info.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox_Info.Name = "materialListBox_Info";
-            this.materialListBox_Info.SelectedIndex = -1;
-            this.materialListBox_Info.SelectedItem = null;
-            this.materialListBox_Info.ShowBorder = false;
-            this.materialListBox_Info.ShowScrollBar = true;
-            this.materialListBox_Info.Size = new System.Drawing.Size(218, 197);
-            this.materialListBox_Info.TabIndex = 4;
-            this.materialListBox_Info.UseAccentColor = true;
             // 
             // UserControlPayment
             // 
@@ -433,5 +436,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private MaterialSkin.Controls.MaterialListBox materialListBox_Info;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

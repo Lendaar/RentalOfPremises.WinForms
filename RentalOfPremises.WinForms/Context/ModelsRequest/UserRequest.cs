@@ -1,7 +1,7 @@
-﻿using RentalOfPremises.WinForms.Enums;
+﻿using RentalOfPremises.WinForms.Context.Enums;
 using System;
 
-namespace RentalOfPremises.WinForms.ModelsRequest.User
+namespace RentalOfPremises.WinForms.Context.ModelsRequest
 {
     public class UserRequest
     {

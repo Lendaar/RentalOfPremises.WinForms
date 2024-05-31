@@ -1,14 +1,14 @@
 ﻿using MaterialSkin.Controls;
-using RentalOfPremises.Api.ModelsRequest.Price;
-using RentalOfPremises.WinForms.BL;
-using System;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.ModelsRequest;
+using RentalOfPremises.WinForms.General.Styles;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.Forms
+namespace RentalOfPremises.WinForms.UI.Forms
 {
     public partial class FormAddOrChangePrice : MaterialForm
     {
-        private readonly PriceRequest Price;
+        private readonly PriceRequest Price = new PriceRequest();
 
         private DialogResult Dialog = DialogResult.None;
 
@@ -16,17 +16,16 @@ namespace RentalOfPremises.WinForms.Forms
         {
             InitializeComponent();
             InitMaterial.GetUI(this);
-            Price = new PriceRequest();
         }
 
         private void materialButton_save_Click(object sender, System.EventArgs e)
         {
-            Price.Electricity = Convert.ToDecimal(materialTextBox_electro.Text);
-            Price.WaterPl = Convert.ToDecimal(materialTextBox_waretIn.Text);
-            Price.WaterMi = Convert.ToDecimal(materialTextBox_waterOut.Text);
-            Price.PassPerson = Convert.ToDecimal(materialTextBox_propuskHuman.Text);
-            Price.PassLegСar = Convert.ToDecimal(materialTextBox_propuskLegAvto.Text);
-            Price.PassGrСar = Convert.ToDecimal(materialTextBox_propuskGruzAvto.Text);
+            Price.Electricity = decimal.TryParse(materialTextBox_electro.Text, out var value) ? value : 0;
+            Price.WaterPl = decimal.TryParse(materialTextBox_waretIn.Text, out value) ? value : 0;
+            Price.WaterMi = decimal.TryParse(materialTextBox_waterOut.Text, out value) ? value : 0;
+            Price.PassPerson = decimal.TryParse(materialTextBox_propuskHuman.Text, out value) ? value : 0;
+            Price.PassLegСar = decimal.TryParse(materialTextBox_propuskLegAvto.Text, out value) ? value : 0;
+            Price.PassGrСar = decimal.TryParse(materialTextBox_propuskGruzAvto.Text, out value) ? value : 0;
             Dialog = HttpClient.CreateData(Price, "Price/");
             if (Dialog == DialogResult.OK)
             {

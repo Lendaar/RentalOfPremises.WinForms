@@ -1,6 +1,6 @@
-﻿using RentalOfPremises.WinForms.Enums;
+﻿using RentalOfPremises.WinForms.Context.Enums;
 
-namespace RentalOfPremises.WinForms.General
+namespace RentalOfPremises.WinForms.Context.General
 {
     public static class DataFromToken
     {

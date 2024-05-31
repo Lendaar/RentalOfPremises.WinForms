@@ -1,9 +1,10 @@
 ﻿using MaterialSkin.Controls;
-using RentalOfPremises.WinForms.BL;
+using RentalOfPremises.WinForms.BusinessLogic;
 using RentalOfPremises.WinForms.General;
+using RentalOfPremises.WinForms.General.Styles;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.Forms
+namespace RentalOfPremises.WinForms.UI.Forms
 {
     public partial class FormAuthorization : MaterialForm
     {

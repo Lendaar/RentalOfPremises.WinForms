@@ -1,4 +1,4 @@
-﻿namespace RentalOfPremises.WinForms.UserControls
+﻿namespace RentalOfPremises.WinForms.UI.UserControls
 {
     partial class UserControlTenant
     {

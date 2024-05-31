@@ -1,6 +1,7 @@
-﻿using System;
+﻿using RentalOfPremises.WinForms.General;
+using System;
 
-namespace RentalOfPremises.WinForms.Enums
+namespace RentalOfPremises.WinForms.Context.Enums
 {
     public class EnumConverter
     {

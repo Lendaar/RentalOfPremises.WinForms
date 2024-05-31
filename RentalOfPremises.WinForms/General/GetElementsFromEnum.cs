@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace RentalOfPremises.WinForms
+namespace RentalOfPremises.WinForms.General
 {
     public static class GetElementsFromEnum
     {

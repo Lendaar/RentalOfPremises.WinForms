@@ -1,8 +1,11 @@
 ﻿using MaterialSkin.Controls;
+using RentalOfPremises.WinForms.Context.Enums;
+using RentalOfPremises.WinForms.Context.General;
 using RentalOfPremises.WinForms.General;
+using RentalOfPremises.WinForms.General.Styles;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.Forms
+namespace RentalOfPremises.WinForms.UI.Forms
 {
     public partial class FormMain : MaterialForm
     {
@@ -12,7 +15,7 @@ namespace RentalOfPremises.WinForms.Forms
             InitMaterial.GetUI(this);
             materialTabControl1.SelectedIndex = 0;
 
-            if(DataFromToken.RoleUser != Enums.RoleTypes.Administrator)
+            if (DataFromToken.RoleUser != RoleTypes.Administrator)
             {
                 tabPage6.Dispose();
             }

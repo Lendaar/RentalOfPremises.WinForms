@@ -1,16 +1,17 @@
 ﻿using MaterialSkin;
-using MaterialSkin.Controls;
-using RentalOfPremises.Api.Enums;
-using RentalOfPremises.Api.Models;
-using RentalOfPremises.WinForms.BL;
-using RentalOfPremises.WinForms.Forms;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Enums;
+using RentalOfPremises.WinForms.Context.General;
+using RentalOfPremises.WinForms.Context.Models;
 using RentalOfPremises.WinForms.General;
+using RentalOfPremises.WinForms.General.Styles;
+using RentalOfPremises.WinForms.UI.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.UserControls
+namespace RentalOfPremises.WinForms.UI.UserControls
 {
     public partial class UserControlTenant : UserControl
     {
@@ -63,8 +64,9 @@ namespace RentalOfPremises.WinForms.UserControls
                 dataGridView1.DataSource = data;
                 Tenants = data;
 
-                materialButton_add.Enabled = materialButton_change.Enabled = materialButton_delete.Enabled = dataGridView1.Rows.Count > 0 && DataFromToken.RoleUser != Enums.RoleTypes.Employee;
+                materialButton_change.Enabled = materialButton_delete.Enabled = dataGridView1.Rows.Count > 0 && DataFromToken.RoleUser != RoleTypes.Employee;
                 materialButton_allInfo.Enabled = dataGridView1.Rows.Count > 0;
+                materialButton_add.Enabled = DataFromToken.RoleUser != RoleTypes.Employee;
 
                 materialLabel_count.Text = $"Количество записей: {dataGridView1.Rows.Count} из {Tenants.Count}";
                 FillListBox();

@@ -1,19 +1,18 @@
 ﻿using MaterialSkin.Controls;
-using RentalOfPremises.Api.Models;
-using RentalOfPremises.Api.ModelsRequest.Contract;
-using RentalOfPremises.WinForms.BL;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Models;
+using RentalOfPremises.WinForms.Context.ModelsRequest;
+using RentalOfPremises.WinForms.General.Styles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.Forms
+namespace RentalOfPremises.WinForms.UI.Forms
 {
     public partial class FormAddOrChangeContract : MaterialForm
     {
         private readonly ContractRequest Contract = new ContractRequest();
-
-        private bool IsEdit = false;
 
         private DialogResult Dialog = DialogResult.None;
         public FormAddOrChangeContract()
@@ -26,52 +25,48 @@ namespace RentalOfPremises.WinForms.Forms
             dateTimePicker_dateStart.MinDate = DateTime.Now.Date;
         }
 
-        public FormAddOrChangeContract(List<ContractResponse> contractResponses) : this() 
-        {
-            FillTenants();
-            materialTextBox_period.Text = (contractResponses[0].DateEnd.Month - contractResponses[0].DateStart.Month).ToString();
-            dateTimePicker_dateStart.Value = contractResponses[0].DateStart.Date;
-            IsEdit = true;
-        }
-
-
         private void materialButton_save_Click(object sender, System.EventArgs e)
         {
-            if (!IsEdit)
+            var roomsForArenda = new List<DataGridViewRow>();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                var roomsForArenda = new List<DataGridViewRow>();
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                object value = row.Cells[1].Value;
+                if (value != null && (Boolean)value)
                 {
-                    object value = row.Cells[1].Value;
-                    if (value != null && (Boolean)value)
-                    {
-                        roomsForArenda.Add(row);
-                    }
-                }
-                if (roomsForArenda.Count == 0)
-                {
-                    MessageBox.Show("Для составления договора не выбрано ни одного помещения!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (Validation(roomsForArenda))
-                {
-                    var number = HttpClient.GetNumber("Contract/MaxNumber");
-                    foreach (DataGridViewRow row in roomsForArenda)
-                    {
-                        Contract.Payment = Convert.ToDecimal(row.Cells[2].Value);
-                        Contract.Room = ((RoomResponse)row.DataBoundItem).Id;
-                        Contract.Tenant = (Guid)materialComboBox_arendator.SelectedValue;
-                        Contract.DateStart = dateTimePicker_dateStart.Value.ToUniversalTime();
-                        Contract.DateEnd = dateTimePicker_dateStart.Value.AddMonths(Convert.ToInt32(materialTextBox_period.Text)).ToUniversalTime();
-                        Contract.Number = number;
-
-                        Dialog = HttpClient.CreateData(Contract, "Contract/");
-                    }
+                    roomsForArenda.Add(row);
                 }
             }
-            else
+            if (roomsForArenda.Count == 0)
             {
-
+                MessageBox.Show("Для составления договора не выбрано ни одного помещения!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            if (materialComboBox_arendator.SelectedValue == null)
+            {
+                MessageBox.Show("Для составления договора не выбрано ни одного арендатора!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (materialTextBox_period.Text == string.Empty)
+            {
+                MessageBox.Show("Для составления договора не указан период аренды!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (Validation(roomsForArenda))
+            {
+                var number = HttpClient.GetNumber("Contract/MaxNumber");
+                foreach (DataGridViewRow row in roomsForArenda)
+                {
+                    Contract.Payment = Convert.ToDecimal(row.Cells[2].Value);
+                    Contract.Room = ((RoomResponse)row.DataBoundItem).Id;
+                    Contract.Tenant = (Guid)materialComboBox_arendator.SelectedValue;
+                    Contract.DateStart = dateTimePicker_dateStart.Value.ToUniversalTime();
+                    Contract.DateEnd = dateTimePicker_dateStart.Value.AddMonths(Convert.ToInt32(materialTextBox_period.Text)).ToUniversalTime();
+                    Contract.Number = number;
+
+                    Dialog = HttpClient.CreateData(Contract, "Contract/");
+                }
+            }
+
             if (Dialog == DialogResult.OK)
             {
                 Close();

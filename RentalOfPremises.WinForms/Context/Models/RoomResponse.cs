@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Xml.Linq;
 
-namespace RentalOfPremises.Api.Models
+namespace RentalOfPremises.WinForms.Context.Models
 {
     /// <summary>
     /// Модель ответа помещения

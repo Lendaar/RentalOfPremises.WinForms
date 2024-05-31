@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RentalOfPremises.WinForms.Models
+namespace RentalOfPremises.WinForms.Context.Models
 {
     /// <summary>
     /// Модель ответа пользователя

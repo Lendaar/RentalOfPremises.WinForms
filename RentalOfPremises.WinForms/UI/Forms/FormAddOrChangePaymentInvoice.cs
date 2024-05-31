@@ -1,13 +1,16 @@
 ﻿using MaterialSkin.Controls;
-using RentalOfPremises.Api.Models;
-using RentalOfPremises.Api.ModelsRequest.PaymentInvoice;
-using RentalOfPremises.WinForms.BL;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Enums;
+using RentalOfPremises.WinForms.Context.Models;
+using RentalOfPremises.WinForms.Context.ModelsRequest;
+using RentalOfPremises.WinForms.General;
+using RentalOfPremises.WinForms.General.Styles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.Forms
+namespace RentalOfPremises.WinForms.UI.Forms
 {
     public partial class FormAddOrChangePaymentInvoice : MaterialForm
     {
@@ -38,6 +41,12 @@ namespace RentalOfPremises.WinForms.Forms
 
         private void materialButton_save_Click(object sender, EventArgs e)
         {
+            if (materialComboBox_dogovorNumber.SelectedItem == null)
+            {
+                MessageBox.Show("Для составления счета для оплаты не выбрано ни одного договора!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             PaymentInvoice.Electricity = int.TryParse(materialTextBox_electro.Text, out var value) ? value : 0;
             PaymentInvoice.WaterPl = int.TryParse(materialTextBox_waretIn.Text, out value) ? value : 0;
             PaymentInvoice.WaterMi = PaymentInvoice.WaterPl;
@@ -79,12 +88,19 @@ namespace RentalOfPremises.WinForms.Forms
 
         private void FillComboBoxPeriods(ContractResponse contract)
         {
-            var period = contract.DateEnd.Month - contract.DateStart.Month;
+            var period = (contract.DateEnd - contract.DateStart).Days / 30;
             var periods = new List<Tuple<int, string>>();
             for (int i = 1; i <= period; i++)
             {
                 var number = contract.DateStart.Month + i;
-                periods.Add(new Tuple<int, string>(number, $"{number} месяц"));
+                if (number > 12)
+                {
+                    periods.Add(new Tuple<int, string>(i, $"{GetElementsFromEnum.PerevodDescription((Months)Math.Abs(number - 12))}"));
+                }
+                else
+                {
+                    periods.Add(new Tuple<int, string>(i, $"{GetElementsFromEnum.PerevodDescription((Months)number)}"));
+                }
             }
             materialComboBox_period.DataSource = periods;
             materialComboBox_period.DisplayMember = "Item2";

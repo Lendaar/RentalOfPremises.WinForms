@@ -1,6 +1,6 @@
-﻿using RentalOfPremises.WinForms.Enums;
+﻿using RentalOfPremises.WinForms.Context.Enums;
 
-namespace RentalOfPremises.Api.Models
+namespace RentalOfPremises.WinForms.Context.Models
 {
     /// <summary>
     /// Модель ответа токена

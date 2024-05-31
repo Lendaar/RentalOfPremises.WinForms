@@ -1,4 +1,4 @@
-﻿using RentalOfPremises.WinForms.Forms;
+﻿using RentalOfPremises.WinForms.UI.Forms;
 using System;
 using System.Windows.Forms;
 

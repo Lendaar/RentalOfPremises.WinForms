@@ -1,11 +1,12 @@
-﻿using RentalOfPremises.Api.Models;
-using RentalOfPremises.WinForms.BL;
-using RentalOfPremises.WinForms.Forms;
+﻿using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Models;
 using RentalOfPremises.WinForms.General;
+using RentalOfPremises.WinForms.General.Styles;
+using RentalOfPremises.WinForms.UI.Forms;
 using System;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.UserControls
+namespace RentalOfPremises.WinForms.UI.UserControls
 {
     public partial class UserControlPrice : UserControl
     {
@@ -28,7 +29,7 @@ namespace RentalOfPremises.WinForms.UserControls
 
         public void UserControlPrice_Load(object sender, EventArgs e)
         {
-            if(!this.DesignMode)
+            if (!this.DesignMode)
             {
                 var data = HttpClient.GetData<PriceResponse>("Price/");
                 if (CloseForm.SystemClosing)

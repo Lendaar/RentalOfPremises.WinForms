@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.General.MessageFromValidator
+namespace RentalOfPremises.WinForms.General.MessageFromAPI
 {
     public static class GetMessageFromApi
     {

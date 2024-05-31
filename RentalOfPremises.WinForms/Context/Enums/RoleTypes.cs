@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace RentalOfPremises.WinForms.Enums
+namespace RentalOfPremises.WinForms.Context.Enums
 {
     /// <summary>
     /// Роли пользователей

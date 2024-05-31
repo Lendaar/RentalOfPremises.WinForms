@@ -1,7 +1,7 @@
-﻿using RentalOfPremises.Api.Enums;
+﻿using RentalOfPremises.WinForms.Context.Enums;
 using System;
 
-namespace RentalOfPremises.Api.ModelsRequest.Tenant
+namespace RentalOfPremises.WinForms.Context.ModelsRequest
 {
     public class TenantRequest
     {

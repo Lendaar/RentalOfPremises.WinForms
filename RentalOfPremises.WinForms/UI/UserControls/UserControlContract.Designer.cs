@@ -1,4 +1,4 @@
-﻿namespace RentalOfPremises.WinForms.UserControls
+﻿namespace RentalOfPremises.WinForms.UI.UserControls
 {
     partial class UserControlContract
     {
@@ -356,12 +356,13 @@
             // 
             // materialButton_toPDF
             // 
-            this.materialButton_toPDF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.materialButton_toPDF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton_toPDF.AutoSize = false;
             this.materialButton_toPDF.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_toPDF.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_toPDF.Depth = 0;
+            this.materialButton_toPDF.Enabled = false;
             this.materialButton_toPDF.HighEmphasis = true;
             this.materialButton_toPDF.Icon = null;
             this.materialButton_toPDF.Location = new System.Drawing.Point(14, 318);

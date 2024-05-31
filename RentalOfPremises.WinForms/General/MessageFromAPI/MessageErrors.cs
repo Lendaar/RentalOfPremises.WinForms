@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace RentalOfPremises.WinForms.General
+namespace RentalOfPremises.WinForms.General.MessageFromAPI
 {
     public class MessageErrors
     {

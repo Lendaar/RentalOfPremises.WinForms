@@ -1,15 +1,16 @@
 ﻿using MaterialSkin;
-using RentalOfPremises.WinForms.BL;
-using RentalOfPremises.WinForms.Enums;
-using RentalOfPremises.WinForms.Forms;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Enums;
+using RentalOfPremises.WinForms.Context.Models;
 using RentalOfPremises.WinForms.General;
-using RentalOfPremises.WinForms.Models;
+using RentalOfPremises.WinForms.General.Styles;
+using RentalOfPremises.WinForms.UI.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.UserControls
+namespace RentalOfPremises.WinForms.UI.UserControls
 {
     public partial class UserControlUser : UserControl
     {

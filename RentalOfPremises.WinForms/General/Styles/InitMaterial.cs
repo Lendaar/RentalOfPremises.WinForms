@@ -1,7 +1,7 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 
-namespace RentalOfPremises.WinForms
+namespace RentalOfPremises.WinForms.General.Styles
 {
     public static class InitMaterial
     {

@@ -1,15 +1,16 @@
 ﻿using MaterialSkin;
-using RentalOfPremises.Api.Models;
-using RentalOfPremises.WinForms.BL;
-using RentalOfPremises.WinForms.Forms;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Models;
 using RentalOfPremises.WinForms.General;
+using RentalOfPremises.WinForms.General.Styles;
+using RentalOfPremises.WinForms.UI.Forms;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.UserControls
+namespace RentalOfPremises.WinForms.UI.UserControls
 {
     public partial class UserControlContract : UserControl
     {
@@ -29,15 +30,23 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void materialButton_toPDF_Click(object sender, EventArgs e)
         {
-            var number = ((ContractResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem).Number;
-            var data = HttpClient.GetDocument($"Contract/Document?id={number}");
-            saveFileDialog.FileName = $"Договор аренды №{number}";
-            saveFileDialog.Filter = "PDF-файл (*.pdf)|*.pdf";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                File.WriteAllBytes(saveFileDialog.FileName, data);
-                MessageBox.Show("Документ создан", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var number = ((ContractResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem).Number;
+                var data = HttpClient.GetDocument($"Contract/Document?id={number}");
+                if (CloseForm.SystemClosing)
+                {
+                    return;
+                }
+                saveFileDialog.FileName = $"Договор аренды №{number}";
+                saveFileDialog.Filter = "PDF-файл (*.pdf)|*.pdf";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllBytes(saveFileDialog.FileName, data);
+                    MessageBox.Show("Документ создан", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+            catch { }
         }
 
         private void materialButton_delete_Click(object sender, EventArgs e)
@@ -115,20 +124,20 @@ namespace RentalOfPremises.WinForms.UserControls
 
         private void FillArendRooms()
         {
-             materialListBox_roomInArend.Items.Clear();
-             if (dataGridView1.Rows.Count != 0 && dataGridView1.SelectedRows.Count != 0)
-             {
-                 var number = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
-                 foreach (var contract in Contracts.Where(x => x.Number == number))
-                 {
-                     materialListBox_roomInArend.Items.Add(new MaterialListBoxItem($"{contract.Payment} ₽ | {contract.RoomLiter} | {contract.RoomNumber}"));
-                 }
-             }
+            materialListBox_roomInArend.Items.Clear();
+            if (dataGridView1.Rows.Count != 0 && dataGridView1.SelectedRows.Count != 0)
+            {
+                var number = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                foreach (var contract in Contracts.Where(x => x.Number == number))
+                {
+                    materialListBox_roomInArend.Items.Add(new MaterialListBoxItem($"{contract.Payment} ₽ | {contract.RoomLiter} | {contract.RoomNumber}"));
+                }
+            }
         }
 
         private void materialTextBox_search_TextChanged(object sender, EventArgs e)
         {
-            if(materialTextBox_search.Text != string.Empty)
+            if (materialTextBox_search.Text != string.Empty)
             {
                 var result = ContractsOnView.Where(x => x.TenantTitle.ToLower().Contains(materialTextBox_search.Text.ToLower())).ToList();
                 dataGridView1.DataSource = result;

@@ -1,17 +1,18 @@
 ﻿using MaterialSkin.Controls;
-using RentalOfPremises.WinForms.BL;
-using RentalOfPremises.WinForms.Enums;
-using RentalOfPremises.WinForms.Models;
-using RentalOfPremises.WinForms.ModelsRequest.User;
+using RentalOfPremises.WinForms.BusinessLogic;
+using RentalOfPremises.WinForms.Context.Enums;
+using RentalOfPremises.WinForms.Context.Models;
+using RentalOfPremises.WinForms.Context.ModelsRequest;
+using RentalOfPremises.WinForms.General.Styles;
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.Forms
+namespace RentalOfPremises.WinForms.UI.Forms
 {
     public partial class FormAddOrChangeUser : MaterialForm
     {
-        private readonly UserRequest User;
+        private readonly UserRequest User = new UserRequest();
 
         private bool IsEdit = false;
 
@@ -61,9 +62,9 @@ namespace RentalOfPremises.WinForms.Forms
             {
                 Dialog = HttpClient.UpdateData(User, "User/");
             }
-            if(Dialog == DialogResult.OK)
+            if (Dialog == DialogResult.OK)
             {
-                Close(); 
+                Close();
             }
         }
 

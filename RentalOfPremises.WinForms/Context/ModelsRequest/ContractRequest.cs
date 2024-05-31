@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace RentalOfPremises.Api.ModelsRequest.Contract
+namespace RentalOfPremises.WinForms.Context.ModelsRequest
 {
-    public class ContractRequest 
+    public class ContractRequest
     {
         /// <summary>
         /// Идентификатор

@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
-using RentalOfPremises.Api.Models;
+using RentalOfPremises.WinForms.Context.General;
+using RentalOfPremises.WinForms.Context.Models;
 using RentalOfPremises.WinForms.General;
-using RentalOfPremises.WinForms.General.MessageFromValidator;
+using RentalOfPremises.WinForms.General.MessageFromAPI;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -9,7 +10,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Windows.Forms;
 
-namespace RentalOfPremises.WinForms.BL
+namespace RentalOfPremises.WinForms.BusinessLogic
 {
     public class HttpClient
     {
@@ -24,7 +25,7 @@ namespace RentalOfPremises.WinForms.BL
                 var listResponse = JsonConvert.DeserializeObject<List<T>>(result);
                 return listResponse;
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 CloseForm.Close();
@@ -148,7 +149,7 @@ namespace RentalOfPremises.WinForms.BL
                     var response = JsonConvert.DeserializeObject<TokenResponse>(result);
                     DataFromToken.RoleUser = response.RoleUser;
                     DataFromToken.Token = response.Token;
-                    MessageBox.Show("Успешный вход в приложение.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Успешный вход в приложение", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
                 return false;
