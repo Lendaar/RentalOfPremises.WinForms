@@ -58,6 +58,35 @@ namespace RentalOfPremises.WinForms.BusinessLogic
             }
         }
 
+        public static DialogResult CreateDataList<T>(List<T> modelsRequest, string path)
+        {
+            try
+            {
+                var client = new GetHttpClient().GetClient();
+                var dialogResult = DialogResult.OK;
+                foreach (var model in modelsRequest )
+                {
+                    var json = JsonConvert.SerializeObject(model);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", DataFromToken.Token);
+                    var data = client.PostAsync(path, content).Result;
+                    dialogResult = GetMessageFromApi.MessageFiltr(data);
+                }
+                if (dialogResult == DialogResult.OK)
+                {
+                    MessageBox.Show("Запись создана", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return DialogResult.OK;
+                }
+                return DialogResult.No;
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CloseForm.Close();
+                return DialogResult.No;
+            }
+        }
+
         public static void DeleteData(Guid id, string path)
         {
             try
@@ -65,6 +94,30 @@ namespace RentalOfPremises.WinForms.BusinessLogic
                 var client = new GetHttpClient().GetClient();
                 var data = client.DeleteAsync(path + id).Result;
                 var dialogResult = GetMessageFromApi.MessageFiltr(data);
+                if (dialogResult == DialogResult.OK)
+                {
+                    MessageBox.Show("Запись удалена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось установить соединение с сервером", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CloseForm.Close();
+            }
+        }
+
+        public static void DeleteDataList(List<Guid> records, string path)
+        {
+            try
+            {
+                var client = new GetHttpClient().GetClient();
+                var dialogResult = DialogResult.OK;
+                foreach (var record in records)
+                {
+                    var data = client.DeleteAsync(path + record).Result;
+                    dialogResult = GetMessageFromApi.MessageFiltr(data);
+                }
                 if (dialogResult == DialogResult.OK)
                 {
                     MessageBox.Show("Запись удалена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);

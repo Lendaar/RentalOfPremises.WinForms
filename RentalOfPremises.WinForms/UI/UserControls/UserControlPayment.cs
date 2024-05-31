@@ -123,6 +123,20 @@ namespace RentalOfPremises.WinForms.UI.UserControls
                 var myStatus = GetElementsFromEnum.ParseEnum<Months>(e.Value.ToString());
                 e.Value = myStatus.PerevodDescription();
             }
+            if (dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "Electricity")
+            {
+                e.Value = e.Value + " кВт/ч";
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "WaterPl")
+            {
+                e.Value = e.Value + " м³";
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "PassPerson" ||
+                dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "PassLegСar" ||
+                dataGridView1.Columns[e.ColumnIndex].DataPropertyName == "PassGrСar")
+            {
+                e.Value = e.Value + " шт";
+            }
         }
     }
 }

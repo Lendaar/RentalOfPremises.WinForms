@@ -12,7 +12,7 @@ namespace RentalOfPremises.WinForms.UI.Forms
 {
     public partial class FormAddOrChangeContract : MaterialForm
     {
-        private readonly ContractRequest Contract = new ContractRequest();
+        private readonly List<ContractRequest> Contracts = new List<ContractRequest>();
 
         private DialogResult Dialog = DialogResult.None;
         public FormAddOrChangeContract()
@@ -56,15 +56,19 @@ namespace RentalOfPremises.WinForms.UI.Forms
                 var number = HttpClient.GetNumber("Contract/MaxNumber");
                 foreach (DataGridViewRow row in roomsForArenda)
                 {
-                    Contract.Payment = Convert.ToDecimal(row.Cells[2].Value);
-                    Contract.Room = ((RoomResponse)row.DataBoundItem).Id;
-                    Contract.Tenant = (Guid)materialComboBox_arendator.SelectedValue;
-                    Contract.DateStart = dateTimePicker_dateStart.Value.ToUniversalTime();
-                    Contract.DateEnd = dateTimePicker_dateStart.Value.AddMonths(Convert.ToInt32(materialTextBox_period.Text)).ToUniversalTime();
-                    Contract.Number = number;
+                    var contract = new ContractRequest()
+                    {
+                        Payment = Convert.ToDecimal(row.Cells[2].Value),
+                        Room = ((RoomResponse)row.DataBoundItem).Id,
+                        Tenant = (Guid)materialComboBox_arendator.SelectedValue,
+                        DateStart = dateTimePicker_dateStart.Value.ToUniversalTime(),
+                        DateEnd = dateTimePicker_dateStart.Value.AddMonths(Convert.ToInt32(materialTextBox_period.Text)).ToUniversalTime(),
+                        Number = number
+                    };
 
-                    Dialog = HttpClient.CreateData(Contract, "Contract/");
+                    Contracts.Add(contract);
                 }
+                Dialog = HttpClient.CreateDataList(Contracts, "Contract/");
             }
 
             if (Dialog == DialogResult.OK)

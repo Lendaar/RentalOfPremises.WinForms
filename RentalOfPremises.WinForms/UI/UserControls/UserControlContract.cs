@@ -51,18 +51,15 @@ namespace RentalOfPremises.WinForms.UI.UserControls
 
         private void materialButton_delete_Click(object sender, EventArgs e)
         {
-            var listContractResponse = new List<ContractResponse>();
+            var listIdContractResponse = new List<Guid>();
             var number = (int)dataGridView1.CurrentRow.Cells[0].Value;
             foreach (var contract in Contracts.Where(x => x.Number == number))
             {
-                listContractResponse.Add(contract);
+                listIdContractResponse.Add(contract.Id);
             }
             if (MessageBox.Show($"Вы действительно хотите удалить договор №{number}?", "Информация", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                foreach (var contract in listContractResponse)
-                {
-                    HttpClient.DeleteData(contract.Id, "Contract/");
-                }
+                HttpClient.DeleteDataList(listIdContractResponse, "Contract/");
                 UserControlContract_Load(sender, e);
             }
         }
