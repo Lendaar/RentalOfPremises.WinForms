@@ -109,10 +109,13 @@ namespace RentalOfPremises.WinForms.UI.UserControls
                 var number = (int)dataGridView1.SelectedRows[0].Cells[1].Value;
                 var contracts = HttpClient.GetData<ContractResponse>("Contract/");
                 var contract = contracts.FirstOrDefault(x => x.Number == number);
-                materialListBox_Info.Items.Add(new MaterialListBoxItem($"Арендатор: {contract.TenantTitle}"));
-                materialListBox_Info.Items.Add(new MaterialListBoxItem($"ИНН Арендатора: {contract.TenantInn}"));
-                materialListBox_Info.Items.Add(new MaterialListBoxItem($"Дата начала договора: {contract.DateStart.Date.ToShortDateString()}"));
-                materialListBox_Info.Items.Add(new MaterialListBoxItem($"Дата окончания договора: {contract.DateEnd.Date.ToShortDateString()}"));
+                if(contract != null)
+                {
+                    materialListBox_Info.Items.Add(new MaterialListBoxItem($"Арендатор: {contract.TenantTitle}"));
+                    materialListBox_Info.Items.Add(new MaterialListBoxItem($"ИНН Арендатора: {contract.TenantInn}"));
+                    materialListBox_Info.Items.Add(new MaterialListBoxItem($"Дата начала договора: {contract.DateStart.Date.ToShortDateString()}"));
+                    materialListBox_Info.Items.Add(new MaterialListBoxItem($"Дата окончания договора: {contract.DateEnd.Date.ToShortDateString()}"));
+                }
             }
         }
 

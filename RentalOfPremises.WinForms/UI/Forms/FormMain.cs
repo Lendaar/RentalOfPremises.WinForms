@@ -19,6 +19,10 @@ namespace RentalOfPremises.WinForms.UI.Forms
             {
                 tabPage6.Dispose();
             }
+            if (DataFromToken.RoleUser == RoleTypes.Employee)
+            {
+                tabPage5.Dispose();
+            }
         }
 
         private void materialTabControl1_SelectedIndexChanged(object sender, System.EventArgs e)

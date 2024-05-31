@@ -54,11 +54,12 @@ namespace RentalOfPremises.WinForms.UI.Forms
             if (Validation(roomsForArenda))
             {
                 var number = HttpClient.GetNumber("Contract/MaxNumber");
+                Contracts.Clear();
                 foreach (DataGridViewRow row in roomsForArenda)
                 {
                     var contract = new ContractRequest()
                     {
-                        Payment = Convert.ToDecimal(row.Cells[2].Value),
+                        Payment = decimal.TryParse(row.Cells[2].Value.ToString(), out var value) ? value : 0,
                         Room = ((RoomResponse)row.DataBoundItem).Id,
                         Tenant = (Guid)materialComboBox_arendator.SelectedValue,
                         DateStart = dateTimePicker_dateStart.Value.ToUniversalTime(),

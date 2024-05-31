@@ -471,7 +471,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(1014, 573);
+            this.ClientSize = new System.Drawing.Size(1030, 548);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.materialLabel8);

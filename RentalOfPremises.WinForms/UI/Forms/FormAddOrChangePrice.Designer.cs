@@ -110,7 +110,7 @@
             this.materialTextBox_electro.Hint = "Введите цену";
             this.materialTextBox_electro.LeadingIcon = null;
             this.materialTextBox_electro.Location = new System.Drawing.Point(164, 111);
-            this.materialTextBox_electro.MaxLength = 100;
+            this.materialTextBox_electro.MaxLength = 20;
             this.materialTextBox_electro.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_electro.Name = "materialTextBox_electro";
             this.materialTextBox_electro.PasswordChar = '\0';
@@ -152,7 +152,7 @@
             this.materialTextBox_waretIn.Hint = "Введите цену";
             this.materialTextBox_waretIn.LeadingIcon = null;
             this.materialTextBox_waretIn.Location = new System.Drawing.Point(164, 181);
-            this.materialTextBox_waretIn.MaxLength = 100;
+            this.materialTextBox_waretIn.MaxLength = 20;
             this.materialTextBox_waretIn.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_waretIn.Name = "materialTextBox_waretIn";
             this.materialTextBox_waretIn.PasswordChar = '\0';
@@ -194,7 +194,7 @@
             this.materialTextBox_waterOut.Hint = "Введите цену";
             this.materialTextBox_waterOut.LeadingIcon = null;
             this.materialTextBox_waterOut.Location = new System.Drawing.Point(164, 251);
-            this.materialTextBox_waterOut.MaxLength = 100;
+            this.materialTextBox_waterOut.MaxLength = 20;
             this.materialTextBox_waterOut.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_waterOut.Name = "materialTextBox_waterOut";
             this.materialTextBox_waterOut.PasswordChar = '\0';
@@ -236,7 +236,7 @@
             this.materialTextBox_propuskHuman.Hint = "Введите цену";
             this.materialTextBox_propuskHuman.LeadingIcon = null;
             this.materialTextBox_propuskHuman.Location = new System.Drawing.Point(658, 111);
-            this.materialTextBox_propuskHuman.MaxLength = 100;
+            this.materialTextBox_propuskHuman.MaxLength = 20;
             this.materialTextBox_propuskHuman.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_propuskHuman.Name = "materialTextBox_propuskHuman";
             this.materialTextBox_propuskHuman.PasswordChar = '\0';
@@ -278,7 +278,7 @@
             this.materialTextBox_propuskLegAvto.Hint = "Введите цену";
             this.materialTextBox_propuskLegAvto.LeadingIcon = null;
             this.materialTextBox_propuskLegAvto.Location = new System.Drawing.Point(658, 181);
-            this.materialTextBox_propuskLegAvto.MaxLength = 100;
+            this.materialTextBox_propuskLegAvto.MaxLength = 20;
             this.materialTextBox_propuskLegAvto.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_propuskLegAvto.Name = "materialTextBox_propuskLegAvto";
             this.materialTextBox_propuskLegAvto.PasswordChar = '\0';
@@ -309,7 +309,7 @@
             this.materialTextBox_propuskGruzAvto.Hint = "Введите цену";
             this.materialTextBox_propuskGruzAvto.LeadingIcon = null;
             this.materialTextBox_propuskGruzAvto.Location = new System.Drawing.Point(658, 251);
-            this.materialTextBox_propuskGruzAvto.MaxLength = 100;
+            this.materialTextBox_propuskGruzAvto.MaxLength = 20;
             this.materialTextBox_propuskGruzAvto.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_propuskGruzAvto.Name = "materialTextBox_propuskGruzAvto";
             this.materialTextBox_propuskGruzAvto.PasswordChar = '\0';
@@ -346,7 +346,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(946, 370);
+            this.ClientSize = new System.Drawing.Size(978, 358);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialTextBox_propuskGruzAvto);
             this.Controls.Add(this.materialLabel5);

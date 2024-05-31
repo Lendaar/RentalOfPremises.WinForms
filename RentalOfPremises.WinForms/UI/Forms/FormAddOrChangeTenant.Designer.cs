@@ -131,7 +131,7 @@
             this.materialTextBox_bank.Hint = "Введите банк";
             this.materialTextBox_bank.LeadingIcon = null;
             this.materialTextBox_bank.Location = new System.Drawing.Point(90, 386);
-            this.materialTextBox_bank.MaxLength = 20;
+            this.materialTextBox_bank.MaxLength = 100;
             this.materialTextBox_bank.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_bank.Name = "materialTextBox_bank";
             this.materialTextBox_bank.PasswordChar = '\0';
@@ -185,7 +185,7 @@
             this.materialTextBox_email.Hint = "Введите email";
             this.materialTextBox_email.LeadingIcon = null;
             this.materialTextBox_email.Location = new System.Drawing.Point(158, 570);
-            this.materialTextBox_email.MaxLength = 20;
+            this.materialTextBox_email.MaxLength = 100;
             this.materialTextBox_email.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_email.Name = "materialTextBox_email";
             this.materialTextBox_email.PasswordChar = '\0';
@@ -239,7 +239,7 @@
             this.materialTextBox_name.Hint = "Введите имя";
             this.materialTextBox_name.LeadingIcon = null;
             this.materialTextBox_name.Location = new System.Drawing.Point(133, 110);
-            this.materialTextBox_name.MaxLength = 20;
+            this.materialTextBox_name.MaxLength = 100;
             this.materialTextBox_name.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_name.Name = "materialTextBox_name";
             this.materialTextBox_name.PasswordChar = '\0';
@@ -326,7 +326,7 @@
             this.materialTextBox_patronomic.Hint = "Введите отчество";
             this.materialTextBox_patronomic.LeadingIcon = null;
             this.materialTextBox_patronomic.Location = new System.Drawing.Point(133, 188);
-            this.materialTextBox_patronomic.MaxLength = 20;
+            this.materialTextBox_patronomic.MaxLength = 100;
             this.materialTextBox_patronomic.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_patronomic.Name = "materialTextBox_patronomic";
             this.materialTextBox_patronomic.PasswordChar = '\0';
@@ -368,7 +368,7 @@
             this.materialTextBox_surname.Hint = "Введите фимилию";
             this.materialTextBox_surname.LeadingIcon = null;
             this.materialTextBox_surname.Location = new System.Drawing.Point(133, 40);
-            this.materialTextBox_surname.MaxLength = 20;
+            this.materialTextBox_surname.MaxLength = 100;
             this.materialTextBox_surname.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_surname.Name = "materialTextBox_surname";
             this.materialTextBox_surname.PasswordChar = '\0';
@@ -409,7 +409,7 @@
             this.materialTextBox_title.Hint = "Введите наименование арендатора";
             this.materialTextBox_title.LeadingIcon = null;
             this.materialTextBox_title.Location = new System.Drawing.Point(158, 369);
-            this.materialTextBox_title.MaxLength = 20;
+            this.materialTextBox_title.MaxLength = 100;
             this.materialTextBox_title.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_title.Name = "materialTextBox_title";
             this.materialTextBox_title.PasswordChar = '\0';
@@ -897,7 +897,7 @@
             this.materialMultiLineTextBox_address.HideSelection = true;
             this.materialMultiLineTextBox_address.Hint = "Введите юридический адрес";
             this.materialMultiLineTextBox_address.Location = new System.Drawing.Point(158, 642);
-            this.materialMultiLineTextBox_address.MaxLength = 32767;
+            this.materialMultiLineTextBox_address.MaxLength = 150;
             this.materialMultiLineTextBox_address.MouseState = MaterialSkin.MouseState.OUT;
             this.materialMultiLineTextBox_address.Name = "materialMultiLineTextBox_address";
             this.materialMultiLineTextBox_address.PasswordChar = '\0';
@@ -928,7 +928,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 773);
+            this.ClientSize = new System.Drawing.Size(1221, 783);
             this.Controls.Add(this.materialLabel17);
             this.Controls.Add(this.materialMultiLineTextBox_address);
             this.Controls.Add(this.groupBox2);

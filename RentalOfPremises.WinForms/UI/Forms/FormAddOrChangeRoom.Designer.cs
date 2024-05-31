@@ -119,7 +119,7 @@
             this.materialTextBox_number.Hint = "Введите номер помещения";
             this.materialTextBox_number.LeadingIcon = null;
             this.materialTextBox_number.Location = new System.Drawing.Point(180, 181);
-            this.materialTextBox_number.MaxLength = 20;
+            this.materialTextBox_number.MaxLength = 3;
             this.materialTextBox_number.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_number.Name = "materialTextBox_number";
             this.materialTextBox_number.PasswordChar = '\0';
@@ -197,7 +197,7 @@
             this.materialTextBox_area.Hint = "Введите площадь";
             this.materialTextBox_area.LeadingIcon = null;
             this.materialTextBox_area.Location = new System.Drawing.Point(180, 251);
-            this.materialTextBox_area.MaxLength = 20;
+            this.materialTextBox_area.MaxLength = 10;
             this.materialTextBox_area.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox_area.Name = "materialTextBox_area";
             this.materialTextBox_area.PasswordChar = '\0';
@@ -264,7 +264,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(613, 448);
+            this.ClientSize = new System.Drawing.Size(645, 433);
             this.Controls.Add(this.materialMaskedTextBox_liter);
             this.Controls.Add(this.materialComboBox_type);
             this.Controls.Add(this.materialLabel6);

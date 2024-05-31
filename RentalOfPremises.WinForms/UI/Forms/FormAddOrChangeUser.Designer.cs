@@ -343,7 +343,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(1091, 365);
+            this.ClientSize = new System.Drawing.Size(1107, 365);
             this.Controls.Add(this.materialComboBox_role);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);

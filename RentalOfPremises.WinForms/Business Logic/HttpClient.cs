@@ -71,6 +71,10 @@ namespace RentalOfPremises.WinForms.BusinessLogic
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", DataFromToken.Token);
                     var data = client.PostAsync(path, content).Result;
                     dialogResult = GetMessageFromApi.MessageFiltr(data);
+                    if(dialogResult != DialogResult.OK)
+                    {
+                        return DialogResult.No;
+                    }
                 }
                 if (dialogResult == DialogResult.OK)
                 {
@@ -143,8 +147,9 @@ namespace RentalOfPremises.WinForms.BusinessLogic
                 if (dialogResult == DialogResult.OK)
                 {
                     MessageBox.Show("Запись обновлена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return DialogResult.OK;
                 }
-                return DialogResult.OK;
+                return DialogResult.No;
             }
             catch
             {
