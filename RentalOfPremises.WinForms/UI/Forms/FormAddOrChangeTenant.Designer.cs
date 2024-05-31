@@ -928,7 +928,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 775);
+            this.ClientSize = new System.Drawing.Size(1189, 773);
             this.Controls.Add(this.materialLabel17);
             this.Controls.Add(this.materialMultiLineTextBox_address);
             this.Controls.Add(this.groupBox2);

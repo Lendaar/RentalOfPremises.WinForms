@@ -122,7 +122,7 @@
             this.materialTextBox_electro.SelectionStart = 0;
             this.materialTextBox_electro.ShortcutsEnabled = true;
             this.materialTextBox_electro.Size = new System.Drawing.Size(258, 48);
-            this.materialTextBox_electro.TabIndex = 9;
+            this.materialTextBox_electro.TabIndex = 1;
             this.materialTextBox_electro.TabStop = false;
             this.materialTextBox_electro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_electro.TrailingIcon = null;
@@ -164,7 +164,7 @@
             this.materialTextBox_waretIn.SelectionStart = 0;
             this.materialTextBox_waretIn.ShortcutsEnabled = true;
             this.materialTextBox_waretIn.Size = new System.Drawing.Size(258, 48);
-            this.materialTextBox_waretIn.TabIndex = 11;
+            this.materialTextBox_waretIn.TabIndex = 2;
             this.materialTextBox_waretIn.TabStop = false;
             this.materialTextBox_waretIn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_waretIn.TrailingIcon = null;
@@ -206,7 +206,7 @@
             this.materialTextBox_waterOut.SelectionStart = 0;
             this.materialTextBox_waterOut.ShortcutsEnabled = true;
             this.materialTextBox_waterOut.Size = new System.Drawing.Size(258, 48);
-            this.materialTextBox_waterOut.TabIndex = 13;
+            this.materialTextBox_waterOut.TabIndex = 3;
             this.materialTextBox_waterOut.TabStop = false;
             this.materialTextBox_waterOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_waterOut.TrailingIcon = null;
@@ -248,7 +248,7 @@
             this.materialTextBox_propuskHuman.SelectionStart = 0;
             this.materialTextBox_propuskHuman.ShortcutsEnabled = true;
             this.materialTextBox_propuskHuman.Size = new System.Drawing.Size(258, 48);
-            this.materialTextBox_propuskHuman.TabIndex = 15;
+            this.materialTextBox_propuskHuman.TabIndex = 4;
             this.materialTextBox_propuskHuman.TabStop = false;
             this.materialTextBox_propuskHuman.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_propuskHuman.TrailingIcon = null;
@@ -290,7 +290,7 @@
             this.materialTextBox_propuskLegAvto.SelectionStart = 0;
             this.materialTextBox_propuskLegAvto.ShortcutsEnabled = true;
             this.materialTextBox_propuskLegAvto.Size = new System.Drawing.Size(258, 48);
-            this.materialTextBox_propuskLegAvto.TabIndex = 17;
+            this.materialTextBox_propuskLegAvto.TabIndex = 5;
             this.materialTextBox_propuskLegAvto.TabStop = false;
             this.materialTextBox_propuskLegAvto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_propuskLegAvto.TrailingIcon = null;
@@ -321,7 +321,7 @@
             this.materialTextBox_propuskGruzAvto.SelectionStart = 0;
             this.materialTextBox_propuskGruzAvto.ShortcutsEnabled = true;
             this.materialTextBox_propuskGruzAvto.Size = new System.Drawing.Size(258, 48);
-            this.materialTextBox_propuskGruzAvto.TabIndex = 19;
+            this.materialTextBox_propuskGruzAvto.TabIndex = 6;
             this.materialTextBox_propuskGruzAvto.TabStop = false;
             this.materialTextBox_propuskGruzAvto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_propuskGruzAvto.TrailingIcon = null;
@@ -346,7 +346,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(930, 358);
+            this.ClientSize = new System.Drawing.Size(946, 370);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialTextBox_propuskGruzAvto);
             this.Controls.Add(this.materialLabel5);

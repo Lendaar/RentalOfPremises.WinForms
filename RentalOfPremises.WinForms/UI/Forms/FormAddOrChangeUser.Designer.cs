@@ -123,7 +123,7 @@
             this.materialTextBox_name.SelectionStart = 0;
             this.materialTextBox_name.ShortcutsEnabled = true;
             this.materialTextBox_name.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_name.TabIndex = 9;
+            this.materialTextBox_name.TabIndex = 1;
             this.materialTextBox_name.TabStop = false;
             this.materialTextBox_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_name.TrailingIcon = null;
@@ -165,7 +165,7 @@
             this.materialTextBox_surname.SelectionStart = 0;
             this.materialTextBox_surname.ShortcutsEnabled = true;
             this.materialTextBox_surname.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_surname.TabIndex = 11;
+            this.materialTextBox_surname.TabIndex = 2;
             this.materialTextBox_surname.TabStop = false;
             this.materialTextBox_surname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_surname.TrailingIcon = null;
@@ -207,7 +207,7 @@
             this.materialTextBox_patronomic.SelectionStart = 0;
             this.materialTextBox_patronomic.ShortcutsEnabled = true;
             this.materialTextBox_patronomic.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_patronomic.TabIndex = 13;
+            this.materialTextBox_patronomic.TabIndex = 3;
             this.materialTextBox_patronomic.TabStop = false;
             this.materialTextBox_patronomic.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_patronomic.TrailingIcon = null;
@@ -249,7 +249,7 @@
             this.materialTextBox_login.SelectionStart = 0;
             this.materialTextBox_login.ShortcutsEnabled = true;
             this.materialTextBox_login.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_login.TabIndex = 15;
+            this.materialTextBox_login.TabIndex = 4;
             this.materialTextBox_login.TabStop = false;
             this.materialTextBox_login.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_login.TrailingIcon = null;
@@ -291,7 +291,7 @@
             this.materialTextBox_password.SelectionStart = 0;
             this.materialTextBox_password.ShortcutsEnabled = true;
             this.materialTextBox_password.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_password.TabIndex = 17;
+            this.materialTextBox_password.TabIndex = 5;
             this.materialTextBox_password.TabStop = false;
             this.materialTextBox_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_password.TrailingIcon = null;
@@ -334,7 +334,7 @@
             this.materialComboBox_role.Name = "materialComboBox_role";
             this.materialComboBox_role.Size = new System.Drawing.Size(407, 49);
             this.materialComboBox_role.StartIndex = 0;
-            this.materialComboBox_role.TabIndex = 21;
+            this.materialComboBox_role.TabIndex = 6;
             this.materialComboBox_role.UseAccent = false;
             // 
             // FormAddOrChangeUser
@@ -343,7 +343,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(1075, 361);
+            this.ClientSize = new System.Drawing.Size(1091, 365);
             this.Controls.Add(this.materialComboBox_role);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);

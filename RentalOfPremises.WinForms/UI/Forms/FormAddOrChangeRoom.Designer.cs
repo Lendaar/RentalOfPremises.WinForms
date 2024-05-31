@@ -55,7 +55,7 @@
             this.materialButton_cancel.Name = "materialButton_cancel";
             this.materialButton_cancel.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton_cancel.Size = new System.Drawing.Size(266, 49);
-            this.materialButton_cancel.TabIndex = 8;
+            this.materialButton_cancel.TabIndex = 6;
             this.materialButton_cancel.Text = "Отмена";
             this.materialButton_cancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_cancel.UseAccentColor = false;
@@ -77,7 +77,7 @@
             this.materialButton_save.Name = "materialButton_save";
             this.materialButton_save.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton_save.Size = new System.Drawing.Size(266, 49);
-            this.materialButton_save.TabIndex = 7;
+            this.materialButton_save.TabIndex = 5;
             this.materialButton_save.Text = "Создать";
             this.materialButton_save.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_save.UseAccentColor = false;
@@ -131,7 +131,7 @@
             this.materialTextBox_number.SelectionStart = 0;
             this.materialTextBox_number.ShortcutsEnabled = true;
             this.materialTextBox_number.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_number.TabIndex = 11;
+            this.materialTextBox_number.TabIndex = 2;
             this.materialTextBox_number.TabStop = false;
             this.materialTextBox_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_number.TrailingIcon = null;
@@ -183,7 +183,7 @@
             this.materialComboBox_type.Name = "materialComboBox_type";
             this.materialComboBox_type.Size = new System.Drawing.Size(407, 49);
             this.materialComboBox_type.StartIndex = 0;
-            this.materialComboBox_type.TabIndex = 21;
+            this.materialComboBox_type.TabIndex = 4;
             this.materialComboBox_type.UseAccent = false;
             // 
             // materialTextBox_area
@@ -209,7 +209,7 @@
             this.materialTextBox_area.SelectionStart = 0;
             this.materialTextBox_area.ShortcutsEnabled = true;
             this.materialTextBox_area.Size = new System.Drawing.Size(407, 48);
-            this.materialTextBox_area.TabIndex = 13;
+            this.materialTextBox_area.TabIndex = 3;
             this.materialTextBox_area.TabStop = false;
             this.materialTextBox_area.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_area.TrailingIcon = null;
@@ -250,7 +250,7 @@
             this.materialMaskedTextBox_liter.ShortcutsEnabled = true;
             this.materialMaskedTextBox_liter.Size = new System.Drawing.Size(407, 48);
             this.materialMaskedTextBox_liter.SkipLiterals = true;
-            this.materialMaskedTextBox_liter.TabIndex = 51;
+            this.materialMaskedTextBox_liter.TabIndex = 1;
             this.materialMaskedTextBox_liter.TabStop = false;
             this.materialMaskedTextBox_liter.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialMaskedTextBox_liter.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
@@ -264,7 +264,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(597, 443);
+            this.ClientSize = new System.Drawing.Size(613, 448);
             this.Controls.Add(this.materialMaskedTextBox_liter);
             this.Controls.Add(this.materialComboBox_type);
             this.Controls.Add(this.materialLabel6);

@@ -59,7 +59,7 @@
             this.materialButton_cancel.Name = "materialButton_cancel";
             this.materialButton_cancel.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton_cancel.Size = new System.Drawing.Size(266, 49);
-            this.materialButton_cancel.TabIndex = 8;
+            this.materialButton_cancel.TabIndex = 6;
             this.materialButton_cancel.Text = "Отмена";
             this.materialButton_cancel.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_cancel.UseAccentColor = false;
@@ -81,7 +81,7 @@
             this.materialButton_save.Name = "materialButton_save";
             this.materialButton_save.NoAccentTextColor = System.Drawing.Color.Empty;
             this.materialButton_save.Size = new System.Drawing.Size(266, 49);
-            this.materialButton_save.TabIndex = 7;
+            this.materialButton_save.TabIndex = 5;
             this.materialButton_save.Text = "Создать";
             this.materialButton_save.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton_save.UseAccentColor = false;
@@ -143,7 +143,7 @@
             this.materialComboBox_arendator.Name = "materialComboBox_arendator";
             this.materialComboBox_arendator.Size = new System.Drawing.Size(407, 49);
             this.materialComboBox_arendator.StartIndex = 0;
-            this.materialComboBox_arendator.TabIndex = 21;
+            this.materialComboBox_arendator.TabIndex = 1;
             this.materialComboBox_arendator.UseAccent = false;
             // 
             // dataGridView1
@@ -158,7 +158,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(669, 91);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 347);
-            this.dataGridView1.TabIndex = 52;
+            this.dataGridView1.TabIndex = 4;
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             // 
             // Column1
@@ -193,7 +193,7 @@
             this.dateTimePicker_dateStart.Location = new System.Drawing.Point(209, 267);
             this.dateTimePicker_dateStart.Name = "dateTimePicker_dateStart";
             this.dateTimePicker_dateStart.Size = new System.Drawing.Size(407, 40);
-            this.dateTimePicker_dateStart.TabIndex = 53;
+            this.dateTimePicker_dateStart.TabIndex = 3;
             // 
             // materialTextBox_period
             // 
@@ -220,7 +220,7 @@
             this.materialTextBox_period.ShortcutsEnabled = true;
             this.materialTextBox_period.ShowAssistiveText = true;
             this.materialTextBox_period.Size = new System.Drawing.Size(407, 64);
-            this.materialTextBox_period.TabIndex = 54;
+            this.materialTextBox_period.TabIndex = 2;
             this.materialTextBox_period.TabStop = false;
             this.materialTextBox_period.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.materialTextBox_period.TrailingIcon = null;
@@ -233,7 +233,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(1237, 451);
+            this.ClientSize = new System.Drawing.Size(1269, 437);
             this.Controls.Add(this.materialTextBox_period);
             this.Controls.Add(this.dateTimePicker_dateStart);
             this.Controls.Add(this.dataGridView1);
