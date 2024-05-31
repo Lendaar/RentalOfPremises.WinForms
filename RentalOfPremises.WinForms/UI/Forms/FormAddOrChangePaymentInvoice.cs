@@ -95,11 +95,11 @@ namespace RentalOfPremises.WinForms.UI.Forms
                 var number = contract.DateStart.Month + i;
                 if (number > 12)
                 {
-                    periods.Add(new Tuple<int, string>(i, $"{GetElementsFromEnum.PerevodDescription((Months)Math.Abs(number - 12))}"));
+                    periods.Add(new Tuple<int, string>(number - 12, $"{GetElementsFromEnum.PerevodDescription((Months)Math.Abs(number - 12))}"));
                 }
                 else
                 {
-                    periods.Add(new Tuple<int, string>(i, $"{GetElementsFromEnum.PerevodDescription((Months)number)}"));
+                    periods.Add(new Tuple<int, string>(number, $"{GetElementsFromEnum.PerevodDescription((Months)number)}"));
                 }
             }
             materialComboBox_period.DataSource = periods;

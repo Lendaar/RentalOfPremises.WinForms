@@ -346,7 +346,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.materialButton_cancel;
-            this.ClientSize = new System.Drawing.Size(1001, 448);
+            this.ClientSize = new System.Drawing.Size(930, 358);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialTextBox_propuskGruzAvto);
             this.Controls.Add(this.materialLabel5);

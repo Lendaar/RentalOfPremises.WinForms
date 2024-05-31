@@ -49,6 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialMaskedTextBox_telephone = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.materialMaskedTextBox_bik = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialMaskedTextBox_ogrn = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialMaskedTextBox_okpo = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialMaskedTextBox_ks = new MaterialSkin.Controls.MaterialMaskedTextBox();
@@ -63,7 +64,6 @@
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialMultiLineTextBox_address = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialMaskedTextBox_bik = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -515,6 +515,48 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Банковские реквизиты";
             // 
+            // materialMaskedTextBox_bik
+            // 
+            this.materialMaskedTextBox_bik.AllowPromptAsInput = true;
+            this.materialMaskedTextBox_bik.AnimateReadOnly = false;
+            this.materialMaskedTextBox_bik.AsciiOnly = false;
+            this.materialMaskedTextBox_bik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialMaskedTextBox_bik.BeepOnError = false;
+            this.materialMaskedTextBox_bik.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox_bik.Depth = 0;
+            this.materialMaskedTextBox_bik.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialMaskedTextBox_bik.HidePromptOnLeave = false;
+            this.materialMaskedTextBox_bik.HideSelection = true;
+            this.materialMaskedTextBox_bik.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.materialMaskedTextBox_bik.LeadingIcon = null;
+            this.materialMaskedTextBox_bik.Location = new System.Drawing.Point(90, 320);
+            this.materialMaskedTextBox_bik.Mask = "00000000";
+            this.materialMaskedTextBox_bik.MaxLength = 32767;
+            this.materialMaskedTextBox_bik.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialMaskedTextBox_bik.Name = "materialMaskedTextBox_bik";
+            this.materialMaskedTextBox_bik.PasswordChar = '\0';
+            this.materialMaskedTextBox_bik.PrefixSuffixText = null;
+            this.materialMaskedTextBox_bik.PromptChar = '_';
+            this.materialMaskedTextBox_bik.ReadOnly = false;
+            this.materialMaskedTextBox_bik.RejectInputOnFirstFailure = false;
+            this.materialMaskedTextBox_bik.ResetOnPrompt = true;
+            this.materialMaskedTextBox_bik.ResetOnSpace = true;
+            this.materialMaskedTextBox_bik.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.materialMaskedTextBox_bik.SelectedText = "";
+            this.materialMaskedTextBox_bik.SelectionLength = 0;
+            this.materialMaskedTextBox_bik.SelectionStart = 0;
+            this.materialMaskedTextBox_bik.ShortcutsEnabled = true;
+            this.materialMaskedTextBox_bik.Size = new System.Drawing.Size(407, 48);
+            this.materialMaskedTextBox_bik.SkipLiterals = true;
+            this.materialMaskedTextBox_bik.TabIndex = 14;
+            this.materialMaskedTextBox_bik.TabStop = false;
+            this.materialMaskedTextBox_bik.Text = "________";
+            this.materialMaskedTextBox_bik.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialMaskedTextBox_bik.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.materialMaskedTextBox_bik.TrailingIcon = null;
+            this.materialMaskedTextBox_bik.UseSystemPasswordChar = false;
+            this.materialMaskedTextBox_bik.ValidatingType = null;
+            // 
             // materialMaskedTextBox_ogrn
             // 
             this.materialMaskedTextBox_ogrn.AllowPromptAsInput = true;
@@ -882,53 +924,11 @@
             this.materialLabel17.TabIndex = 46;
             this.materialLabel17.Text = "Юридический адрес:";
             // 
-            // materialMaskedTextBox_bik
-            // 
-            this.materialMaskedTextBox_bik.AllowPromptAsInput = true;
-            this.materialMaskedTextBox_bik.AnimateReadOnly = false;
-            this.materialMaskedTextBox_bik.AsciiOnly = false;
-            this.materialMaskedTextBox_bik.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMaskedTextBox_bik.BeepOnError = false;
-            this.materialMaskedTextBox_bik.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox_bik.Depth = 0;
-            this.materialMaskedTextBox_bik.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMaskedTextBox_bik.HidePromptOnLeave = false;
-            this.materialMaskedTextBox_bik.HideSelection = true;
-            this.materialMaskedTextBox_bik.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.materialMaskedTextBox_bik.LeadingIcon = null;
-            this.materialMaskedTextBox_bik.Location = new System.Drawing.Point(90, 320);
-            this.materialMaskedTextBox_bik.Mask = "00000000";
-            this.materialMaskedTextBox_bik.MaxLength = 32767;
-            this.materialMaskedTextBox_bik.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMaskedTextBox_bik.Name = "materialMaskedTextBox_bik";
-            this.materialMaskedTextBox_bik.PasswordChar = '\0';
-            this.materialMaskedTextBox_bik.PrefixSuffixText = null;
-            this.materialMaskedTextBox_bik.PromptChar = '_';
-            this.materialMaskedTextBox_bik.ReadOnly = false;
-            this.materialMaskedTextBox_bik.RejectInputOnFirstFailure = false;
-            this.materialMaskedTextBox_bik.ResetOnPrompt = true;
-            this.materialMaskedTextBox_bik.ResetOnSpace = true;
-            this.materialMaskedTextBox_bik.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialMaskedTextBox_bik.SelectedText = "";
-            this.materialMaskedTextBox_bik.SelectionLength = 0;
-            this.materialMaskedTextBox_bik.SelectionStart = 0;
-            this.materialMaskedTextBox_bik.ShortcutsEnabled = true;
-            this.materialMaskedTextBox_bik.Size = new System.Drawing.Size(407, 48);
-            this.materialMaskedTextBox_bik.SkipLiterals = true;
-            this.materialMaskedTextBox_bik.TabIndex = 14;
-            this.materialMaskedTextBox_bik.TabStop = false;
-            this.materialMaskedTextBox_bik.Text = "________";
-            this.materialMaskedTextBox_bik.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox_bik.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-            this.materialMaskedTextBox_bik.TrailingIcon = null;
-            this.materialMaskedTextBox_bik.UseSystemPasswordChar = false;
-            this.materialMaskedTextBox_bik.ValidatingType = null;
-            // 
             // FormAddOrChangeTenant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 771);
+            this.ClientSize = new System.Drawing.Size(1173, 775);
             this.Controls.Add(this.materialLabel17);
             this.Controls.Add(this.materialMultiLineTextBox_address);
             this.Controls.Add(this.groupBox2);

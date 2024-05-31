@@ -34,18 +34,18 @@ namespace RentalOfPremises.WinForms.UI.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.userControlContract1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlContract();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.userControlPayment1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlPayment();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.userControlRoom1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlRoom();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.userControlTenant1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlTenant();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.userControlPrice1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlPrice();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.userControlUser3 = new RentalOfPremises.WinForms.UI.UserControls.UserControlUser();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.userControlContract1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlContract();
+            this.userControlPayment1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlPayment();
+            this.userControlRoom1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlRoom();
+            this.userControlTenant1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlTenant();
+            this.userControlPrice1 = new RentalOfPremises.WinForms.UI.UserControls.UserControlPrice();
+            this.userControlUser3 = new RentalOfPremises.WinForms.UI.UserControls.UserControlUser();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -93,15 +93,6 @@ namespace RentalOfPremises.WinForms.UI.Forms
             this.tabPage1.Text = "Договоры";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // userControlContract1
-            // 
-            this.userControlContract1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.userControlContract1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlContract1.Location = new System.Drawing.Point(3, 3);
-            this.userControlContract1.Name = "userControlContract1";
-            this.userControlContract1.Size = new System.Drawing.Size(1740, 673);
-            this.userControlContract1.TabIndex = 0;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.userControlPayment1);
@@ -115,14 +106,6 @@ namespace RentalOfPremises.WinForms.UI.Forms
             this.tabPage2.Text = "Счета";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // userControlPayment1
-            // 
-            this.userControlPayment1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlPayment1.Location = new System.Drawing.Point(3, 3);
-            this.userControlPayment1.Name = "userControlPayment1";
-            this.userControlPayment1.Size = new System.Drawing.Size(1740, 673);
-            this.userControlPayment1.TabIndex = 0;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.userControlRoom1);
@@ -134,14 +117,6 @@ namespace RentalOfPremises.WinForms.UI.Forms
             this.tabPage3.Tag = "Помещения для аренды";
             this.tabPage3.Text = "Помещения";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // userControlRoom1
-            // 
-            this.userControlRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlRoom1.Location = new System.Drawing.Point(0, 0);
-            this.userControlRoom1.Name = "userControlRoom1";
-            this.userControlRoom1.Size = new System.Drawing.Size(1746, 679);
-            this.userControlRoom1.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -155,14 +130,6 @@ namespace RentalOfPremises.WinForms.UI.Forms
             this.tabPage4.Text = "Арендаторы";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // userControlTenant1
-            // 
-            this.userControlTenant1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlTenant1.Location = new System.Drawing.Point(0, 0);
-            this.userControlTenant1.Name = "userControlTenant1";
-            this.userControlTenant1.Size = new System.Drawing.Size(1746, 679);
-            this.userControlTenant1.TabIndex = 0;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.userControlPrice1);
@@ -174,14 +141,6 @@ namespace RentalOfPremises.WinForms.UI.Forms
             this.tabPage5.Tag = "Прейскурант";
             this.tabPage5.Text = "Прейскурант";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // userControlPrice1
-            // 
-            this.userControlPrice1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlPrice1.Location = new System.Drawing.Point(0, 0);
-            this.userControlPrice1.Name = "userControlPrice1";
-            this.userControlPrice1.Size = new System.Drawing.Size(1746, 679);
-            this.userControlPrice1.TabIndex = 0;
             // 
             // tabPage6
             // 
@@ -195,14 +154,6 @@ namespace RentalOfPremises.WinForms.UI.Forms
             this.tabPage6.Text = "Пользователи";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // userControlUser3
-            // 
-            this.userControlUser3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlUser3.Location = new System.Drawing.Point(0, 0);
-            this.userControlUser3.Name = "userControlUser3";
-            this.userControlUser3.Size = new System.Drawing.Size(1746, 679);
-            this.userControlUser3.TabIndex = 1;
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -213,6 +164,55 @@ namespace RentalOfPremises.WinForms.UI.Forms
             this.imageList1.Images.SetKeyName(3, "room.png");
             this.imageList1.Images.SetKeyName(4, "user.png");
             this.imageList1.Images.SetKeyName(5, "dogovor1.jpg");
+            // 
+            // userControlContract1
+            // 
+            this.userControlContract1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.userControlContract1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlContract1.Location = new System.Drawing.Point(3, 3);
+            this.userControlContract1.Name = "userControlContract1";
+            this.userControlContract1.Size = new System.Drawing.Size(1740, 673);
+            this.userControlContract1.TabIndex = 0;
+            // 
+            // userControlPayment1
+            // 
+            this.userControlPayment1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlPayment1.Location = new System.Drawing.Point(3, 3);
+            this.userControlPayment1.Name = "userControlPayment1";
+            this.userControlPayment1.Size = new System.Drawing.Size(1740, 673);
+            this.userControlPayment1.TabIndex = 0;
+            // 
+            // userControlRoom1
+            // 
+            this.userControlRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlRoom1.Location = new System.Drawing.Point(0, 0);
+            this.userControlRoom1.Name = "userControlRoom1";
+            this.userControlRoom1.Size = new System.Drawing.Size(1746, 679);
+            this.userControlRoom1.TabIndex = 0;
+            // 
+            // userControlTenant1
+            // 
+            this.userControlTenant1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlTenant1.Location = new System.Drawing.Point(0, 0);
+            this.userControlTenant1.Name = "userControlTenant1";
+            this.userControlTenant1.Size = new System.Drawing.Size(1746, 679);
+            this.userControlTenant1.TabIndex = 0;
+            // 
+            // userControlPrice1
+            // 
+            this.userControlPrice1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlPrice1.Location = new System.Drawing.Point(0, 0);
+            this.userControlPrice1.Name = "userControlPrice1";
+            this.userControlPrice1.Size = new System.Drawing.Size(1746, 679);
+            this.userControlPrice1.TabIndex = 0;
+            // 
+            // userControlUser3
+            // 
+            this.userControlUser3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlUser3.Location = new System.Drawing.Point(0, 0);
+            this.userControlUser3.Name = "userControlUser3";
+            this.userControlUser3.Size = new System.Drawing.Size(1746, 679);
+            this.userControlUser3.TabIndex = 1;
             // 
             // FormMain
             // 
@@ -225,7 +225,7 @@ namespace RentalOfPremises.WinForms.UI.Forms
             this.DrawerTabControl = this.materialTabControl1;
             this.ForeColor = System.Drawing.Color.White;
             this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_48;
-            this.MinimumSize = new System.Drawing.Size(1500, 800);
+            this.MinimumSize = new System.Drawing.Size(1550, 800);
             this.Name = "FormMain";
             this.Padding = new System.Windows.Forms.Padding(3, 72, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -160,7 +160,7 @@
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(252, 295);
+            this.materialCard1.Size = new System.Drawing.Size(250, 295);
             this.materialCard1.TabIndex = 10;
             // 
             // materialListBox_Info
@@ -169,14 +169,14 @@
             this.materialListBox_Info.BorderColor = System.Drawing.Color.LightGray;
             this.materialListBox_Info.Depth = 0;
             this.materialListBox_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox_Info.Location = new System.Drawing.Point(17, 59);
+            this.materialListBox_Info.Location = new System.Drawing.Point(0, 59);
             this.materialListBox_Info.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox_Info.Name = "materialListBox_Info";
             this.materialListBox_Info.SelectedIndex = -1;
             this.materialListBox_Info.SelectedItem = null;
             this.materialListBox_Info.ShowBorder = false;
             this.materialListBox_Info.ShowScrollBar = true;
-            this.materialListBox_Info.Size = new System.Drawing.Size(218, 197);
+            this.materialListBox_Info.Size = new System.Drawing.Size(250, 197);
             this.materialListBox_Info.TabIndex = 4;
             this.materialListBox_Info.UseAccentColor = true;
             // 
@@ -347,20 +347,24 @@
             // 
             // Column3
             // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column3.DataPropertyName = "Electricity";
             this.Column3.HeaderText = "Электроэнергия";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column3.Width = 96;
             // 
             // Column4
             // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column4.DataPropertyName = "WaterPl";
-            this.Column4.HeaderText = "Водопотребление / Водоотведение";
+            this.Column4.HeaderText = "Водопотребление";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column4.Width = 103;
             // 
             // Column7
             // 

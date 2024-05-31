@@ -236,8 +236,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.47482F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.52518F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.materialLabel_count, 0, 2);
@@ -357,20 +357,19 @@
             // 
             // materialButton_allInfo
             // 
-            this.materialButton_allInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton_allInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.materialButton_allInfo.AutoSize = false;
             this.materialButton_allInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton_allInfo.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton_allInfo.Depth = 0;
             this.materialButton_allInfo.HighEmphasis = true;
             this.materialButton_allInfo.Icon = null;
-            this.materialButton_allInfo.Location = new System.Drawing.Point(4, 226);
+            this.materialButton_allInfo.Location = new System.Drawing.Point(18, 226);
             this.materialButton_allInfo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton_allInfo.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton_allInfo.Name = "materialButton_allInfo";
             this.materialButton_allInfo.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton_allInfo.Size = new System.Drawing.Size(310, 45);
+            this.materialButton_allInfo.Size = new System.Drawing.Size(281, 45);
             this.materialButton_allInfo.TabIndex = 14;
             this.materialButton_allInfo.Text = "Подробнее";
             this.materialButton_allInfo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
