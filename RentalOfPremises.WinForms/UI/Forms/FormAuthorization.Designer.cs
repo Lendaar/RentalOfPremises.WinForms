@@ -169,7 +169,7 @@
             this.AcceptButton = this.materialButton_auth;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.materialButton_exit;
-            this.ClientSize = new System.Drawing.Size(586, 335);
+            this.ClientSize = new System.Drawing.Size(586, 363);
             this.Controls.Add(this.materialButton_exit);
             this.Controls.Add(this.materialButton_auth);
             this.Controls.Add(this.materialTextBox_password);

@@ -53,7 +53,7 @@ namespace RentalOfPremises.WinForms.UI.UserControls
             var record = (PaymentInvoiceResponse)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
             if (MessageBox.Show($"Вы действительно хотите удалить счет №{record.Number}?", "Информация", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                HttpClient.DeleteData(record.Id, "User/");
+                HttpClient.DeleteData(record.Id, "Payment/");
                 UserControlPayment_Load(sender, e);
             }
         }
